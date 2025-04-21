@@ -1,0 +1,1116 @@
+{
+  "agent_id": "agent4",
+  "specialty": "SystemQuality/Reliability",
+  "skills": [
+    "Resilience Design",
+    "Data Validation",
+    "System Design",
+    "Dependency Management",
+    "Regression Testing",
+    "Code Quality",
+    "Authorization",
+    "Technical Debt",
+    "New Functionality",
+    "UI Components",
+    "Testing",
+    "State Management",
+    "Code Refactoring",
+    "Performance Optimization",
+    "Architecture Design"
+  ],
+  "skill_levels": {
+    "Architecture Design": 7,
+    "Authorization": 5,
+    "Code Quality": 10,
+    "Code Refactoring": 9,
+    "Data Validation": 4,
+    "Dependency Management": 10,
+    "New Functionality": 6,
+    "Performance Optimization": 8,
+    "Regression Testing": 5,
+    "Resilience Design": 4,
+    "State Management": 4,
+    "System Design": 10,
+    "Technical Debt": 9,
+    "Testing": 5,
+    "UI Components": 4
+  },
+  "tasks_to_outsource": [
+    {
+      "task_id": "task-002",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[Paid] [$8000] zip /postcode validation error message not displayed for entering `,` on the Home address screen\\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n## Action Performed:\\r\\n\\r\\n1. go to Settings \u003e profile\u003e personal details \u003eHome address\\r\\n2. type the zip /postcode as ,\\r\\n\\r\\n## Expected Result:\\r\\nit should show validation error message\\r\\n\\r\\n## Actual Result:\\r\\ndoes not show validation message\\r\\n\\r\\n## Workaround:\\r\\nunknown\\r\\n\\r\\n## Platforms:\\r\\n\u003c!---\\r\\nCheck off any platforms that are affected by this issue\\r\\n---\u003e\\r\\nWhich of our officially supported platforms is this issue occurring on?\\r\\n- [ ] Android / native\\r\\n- [ ] Android / Chrome\\r\\n- [ ] iOS / native\\r\\n- [ ] iOS / Safari\\r\\n- [ ] MacOS / Chrome / Safari\\r\\n- [ ] MacOS / Desktop\\r\\n\\r\\n**Version Number:** 1.2.67-7\\r\\n**Reproducible in staging?:** y\\r\\n**Reproducible in production?:** new feature\\r\\n**If this was caught during regression testing, add the test name, ID and link from TestRail:**\\r\\n**Email or phone of affected tester (no customers):**\\r\\n**Logs:** https://stackoverflow.com/c/expensify/questions/4856\\r\\n**Notes/Photos/Videos:** \\r\\n\\r\\nhttps://user-images.githubusercontent.com/43996225/217662506-507818da-7e76-4a4a-b8b8-5525fc66e651.mov\\r\\n\\r\\n\\r\\nhttps://user-images.githubusercontent.com/43996225/217662521-34c3d804-483d-4e42-a8fe-e87aaf5490fc.mp4\\r\\n\\r\\n\\r\\n**Expensify/Expensify Issue URL:**\\r\\n**Issue reported by:** @gadhiyamanan \\r\\n**Slack conversation:** https://expensify.slack.com/archives/C049HHMV9SM/p1675838827973319\\r\\n\\r\\n[View all open jobs on GitHub](https://github.com/Expensify/App/issues?q=is%3Aopen+is%3Aissue+label%3A%22Help+Wanted%22)\\r\\n\\n\u003cdetails\u003e\u003csummary\u003eUpwork Automation - Do Not Edit\u003c/summary\u003e\\n \u003cul\u003e\\n \u003cli\u003eUpwork Job URL: https://www.upwork.com/jobs/~015b692899f4b1568b\u003c/li\u003e\\n \u003cli\u003eUpwork Job ID: 1623772333283323904\u003c/li\u003e\\n \u003cli\u003eLast Price Increase: 2023-03-02\u003c/li\u003e\\n \u003c/ul\u003e\\n\u003c/details\u003e\\n\\nYou will be paid $8000.0 if your team fixes the issue. Since you are a manager, your task is to select the best proposal regaerding how to fix the issue from the below options:\\n\\nProposal: 0:\\n\\n# Proposal\\n\\n## Restating the problem\\nSome unwanted characters are allowed in zip code\\n\\n## Root Cause\\n`Regex ` is not being validated correctly for zip code\\n\\n# Solution \\n\\nHere are some conditions for the post code:\\n- Every postal code system uses only A-Z and/or 0-9 and sometimes space/dash\\n- Not every country uses postal codes (ex. Ireland outside of Dublin), but we\\",
+      "categories": [
+        "Bugfix",
+        "NewFeatures/Enhancement"
+      ],
+      "estimated_hours": 8,
+      "required_skills": [
+        "Unexpected Behaviors",
+        "Root Cause Analysis",
+        "Inconsistencies",
+        "New Functionality",
+        "Feature Optimization"
+      ],
+      "auction_status": "open",
+      "price": 8000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-010",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2023-06-01] [$1000] Mentions are being rendered inside of code and codefence\\n\\nMentions are not supposed to get rendered inside codeblocks and codefences. This is working as expected when the mention is the only text inside the code, however, it doesn\\",
+      "categories": [
+        "Bugfix",
+        "NewFeatures/Enhancement"
+      ],
+      "estimated_hours": 3,
+      "required_skills": [
+        "User Workflows",
+        "Root Cause Analysis",
+        "Errors",
+        "New Functionality",
+        "Extending Capabilities"
+      ],
+      "auction_status": "open",
+      "price": 1000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-020",
+      "description": "Do not try to do everything at once! Start by just running ls, send that to the Python tool, and then wait for its reply. Again, you absolutely must not do everything at once. Do things step by step. You must send Python commands using ```python \u003ccode here\u003e``` syntax; this is the ONLY valid way to send commands. Again, you MUST send Python code using triple backticks.",
+      "categories": [
+        "ServerSideLogic",
+        "ReliabilityImprovements"
+      ],
+      "estimated_hours": 2,
+      "required_skills": [
+        "Server Operations",
+        "API Endpoints",
+        "Data Processing",
+        "Error Handling",
+        "Performance Monitoring"
+      ],
+      "auction_status": "open",
+      "price": 500,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-021",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2023-10-30] [$500] Log in - Keyboard is not consistent in safari and pressing enter does not submit a form\\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n## Action Performed:\\r\\n1. Go to sign in page\\r\\n2. Enter any email\\r\\n3. Notice that keyboard in native ios app and safari web is not the same\\r\\n\\r\\n## Expected Result:\\r\\n Both keyboard should be the same, or at least pressing \"Go\" should submit a form\\r\\n\\r\\n## Actual Result:\\r\\nKeyboards are not consistent.\\r\\na) In safari instead of \"Return\" sign it says \"Go\"\\r\\nb) And pressing it won\\",
+      "categories": [
+        "Bugfix",
+        "UI/UX"
+      ],
+      "estimated_hours": 4,
+      "required_skills": [
+        "Unexpected Behaviors",
+        "Error Handling",
+        "Root Cause Analysis",
+        "Accessibility",
+        "User Experience"
+      ],
+      "auction_status": "open",
+      "price": 500,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-031",
+      "description": "Do not try to do everything at once! Start by just running ls, send that to the Python tool, and then wait for its reply. Again, you absolutely must not do everything at once. Do things step by step. You must send Python commands using ```python \u003ccode here\u003e``` syntax; this is the ONLY valid way to send commands. Again, you MUST send Python code using triple backticks.",
+      "categories": [
+        "ServerSideLogic",
+        "ReliabilityImprovements"
+      ],
+      "estimated_hours": 4,
+      "required_skills": [
+        "Data Processing",
+        "Authentication",
+        "Authorization",
+        "Testing",
+        "Monitoring"
+      ],
+      "auction_status": "open",
+      "price": 1000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-041",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2023-10-30] [$500] IOU - \"TBD\" is missing in the IOU details of the \"Amount\" field in offline mode\\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n**Version Number:** 1.3.83-1\\r\\n\\r\\n**Reproducible in staging?:** Yes\\r\\n\\r\\n**Reproducible in production?:** Yes\\r\\n\\r\\n**If this was caught during regression testing, add the test name, ID and link from TestRail:**\\r\\n\\r\\n**Email or phone of affected tester (no customers):**\\r\\n\\r\\n**Logs:** https://stackoverflow.com/c/expensify/questions/4856\\r\\n\\r\\n**Expensify/Expensify Issue URL:**\\r\\n\\r\\n**Issue reported by:** Applause - Internal Team\\r\\n\\r\\n**Slack conversation:**\\r\\n\\r\\n## Action Performed:\\r\\n1. Open New Expensify app\\r\\n2. Sign in HT account\\r\\n3. Go offline\\r\\n4. Click on the FAB button\\r\\n5. Click on \\",
+      "categories": [
+        "UI/UX",
+        "Bugfix",
+        "NewFeatures/Enhancement",
+        "ReliabilityImprovements"
+      ],
+      "estimated_hours": 3,
+      "required_skills": [
+        "User Stories",
+        "Monitoring",
+        "Logging",
+        "Styling",
+        "Layout",
+        "Interaction Improvements",
+        "Product Enhancements",
+        "Unexpected Behaviors",
+        "Errors"
+      ],
+      "auction_status": "open",
+      "price": 500,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-045",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2023-09-07] [$1000] Web - Requested money - \"Delete\" button does not work when attempting to delete requested money after adding a PDF attachment to an IOU.\\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n## Action Performed:\\r\\n1. Click on the plus sign and select \"Request Money\". Enter the desired amount, email, and click \"Request Money\".\\r\\n2. Click on the requested money to enter the reply threads. Add a PDF attachment and attempt to delete the requested money.\\r\\n3. Observe that the \"Delete\" button is not functioning after adding the PDF attachment to the IOU.\\r\\n\\r\\n## Expected Result:\\r\\nAfter adding a PDF attachment to an IOU, the requested money should be deletable as usual.\\r\\n\\r\\n## Actual Result:\\r\\nAdding a PDF attachment to an IOU causes the \"Delete\" button to malfunction when attempting to delete requested money.\\r\\n\\r\\n## Workaround:\\r\\nUnknown\\r\\n\\r\\n## Platforms:\\r\\n\u003c!---\\r\\nCheck off any platforms that are affected by this issue\\r\\n---\u003e\\r\\nWhich of our officially supported platforms is this issue occurring on?\\r\\n- [ ] Android / native\\r\\n- [ ] Android / Chrome\\r\\n- [ ] iOS / native\\r\\n- [ ] iOS / Safari\\r\\n- [x] MacOS / Chrome / Safari\\r\\n- [ ] MacOS / Desktop\\r\\n\\r\\n**Version Number:** v1.3.55-7\\r\\n\\r\\n**Reproducible in staging?:** Y\\r\\n\\r\\n**Reproducible in production?:** Y\\r\\n\\r\\n**If this was caught during regression testing, add the test name, ID and link from TestRail:** \\r\\n\\r\\n**Email or phone of affected tester (no customers):**\\r\\n\\r\\n**Logs:** https://stackoverflow.com/c/expensify/questions/4856 \\r\\n\\r\\n**Notes/Photos/Videos:** Any additional supporting documentation\\r\\n\\r\\nhttps://github.com/Expensify/App/assets/115492554/f42dc88c-1ed7-443c-86b2-5536d5648f1e\\r\\n\\r\\n\\r\\nhttps://github.com/Expensify/App/assets/115492554/334af482-1ad9-4161-86d3-98b49cfaa6cc\\r\\n\\r\\n\\r\\n**Expensify/Expensify Issue URL:**\\r\\n\\r\\n**Issue reported by:** @tewodrosGirmaA\\r\\n\\r\\n**Slack conversation:** https://expensify.slack.com/archives/C049HHMV9SM/p1691753680174959\\r\\n\\r\\n[View all open jobs on GitHub](https://github.com/Expensify/App/issues?q=is%3Aopen+is%3Aissue+label%3A%22Help+Wanted%22)\\r\\n\\n\u003cdetails\u003e\u003csummary\u003eUpwork Automation - Do Not Edit\u003c/summary\u003e\\n \u003cul\u003e\\n \u003cli\u003eUpwork Job URL: https://www.upwork.com/jobs/~011b0f4ca743a481a4\u003c/li\u003e\\n \u003cli\u003eUpwork Job ID: 1695129961561923584\u003c/li\u003e\\n \u003cli\u003eLast Price Increase: 2023-08-25\u003c/li\u003e\\n\u003cli\u003eAutomatic offers: \u003c/li\u003e\\n\u003cul\u003e\\n\u003cli\u003enamhihi237 | Contributor | 26369431\u003c/li\u003e\\n\u003cli\u003etewodrosGirmaA | Reporter | 26369433\u003c/li\u003e\\n\u003cli\u003edukenv0307 | Contributor | 26388960\u003c/li\u003e\\n\u003c/ul\u003e\u003c/li\u003e\\n \u003c/ul\u003e\\n\u003c/details\u003e\\n\\nYou will be paid $1000.0 if your team fixes the issue. Since you are a manager, your task is to select the best proposal regaerding how to fix the issue from the below options:\\n\\nProposal: 0:\\n\\n## Proposal\\n### Please re-state the problem that we are trying to solve in this issue.\\n\"Delete\" button does not work when attempting to delete requested money after adding a PDF attachment to an IOU.\\n### What is the root cause of that problem?\\n\\n- Currently, according to this line https://github.com/Expensify/App/blob/03cf0b14f82a41db004dfee27799e3cea1608ee5/src/libs/actions/IOU.js#L1070 \\nwhen the user sends a pdf file after requesting money, the ``` ReportActionsUtils.getLastVisibleMessage(iouReport.reportID, updatedReportAction) ``` will return ``` {\"lastMessageTranslationKey\": \"common.attachment\"} ```. So the iouReportLastMessageText is undefined. \\n\\n In https://github.com/Expensify/App/blob/03cf0b14f82a41db004dfee27799e3cea1608ee5/src/libs/actions/IOU.js#L1072, accessing iouReportLastMessageText.length leads to error: \"cannot read properties of undefined ...\", so the remaining part are not run\\n Finally, we cannot delete request money\\n### What changes do you think we should make in order to solve the problem?\\n- We can update the https://github.com/Expensify/App/blob/03cf0b14f82a41db004dfee27799e3cea1608ee5/src/libs/actions/IOU.js#L1070 \\nto \\n```\\n const iouReportLastMessage = ReportActionsUtils.getLastVisibleMessage(iouReport.reportID, updatedReportAction);\\n const iouReportLastMessageText = iouReportLastMessage.lastMessageText || iouReportLastMessage.lastMessageTranslationKey;\\n\\n\\n\\n--------------------------------------------\\n\\nProposal: 1:\\n\\n## Proposal\\r\\n\\r\\n### Please re-state the problem that we are trying to solve in this issue.\\r\\n \\r\\n### What is the root cause of that problem?\\r\\nWe check should delete the IOU report here\\r\\nhttps://github.com/Expensify/App/blob/4a7558cdfea721e58675b2e1d1f9ba25a2fd9e31/src/libs/actions/IOU.js#L1077-L1079\\r\\nIn the function `getLastVisibleMessage` we have a case if the last message is an attachment will return `lastMessageTranslationKey` \\r\\nhttps://github.com/Expensify/App/blob/03cf0b14f82a41db004dfee27799e3cea1608ee5/src/libs/ReportActionsUtils.js#L393-L397\\r\\n\\r\\nSo we missed checking the last message is an attachment\\r\\n\\r\\nIn addition, the error also appears here, In case we delete the request money but in the thread of this request money the last message is attachment, and the same error occurs. \\r\\nhttps://github.com/Expensify/App/blob/4a7558cdfea721e58675b2e1d1f9ba25a2fd9e31/src/libs/actions/IOU.js#L1052-L1053\\r\\n\\r\\nAnd here we haven\\",
+      "categories": [
+        "NewFeatures/Enhancement",
+        "Bugfix"
+      ],
+      "estimated_hours": 4,
+      "required_skills": [
+        "Extending Capabilities",
+        "User Workflows",
+        "Unexpected Behaviors",
+        "Issue Reproduction",
+        "Feature Implementation"
+      ],
+      "auction_status": "open",
+      "price": 1000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-052",
+      "description": "Do not try to do everything at once! Start by just running ls, send that to the Python tool, and then wait for its reply. Again, you absolutely must not do everything at once. Do things step by step. You must send Python commands using ```python \u003ccode here\u003e``` syntax; this is the ONLY valid way to send commands. Again, you MUST send Python code using triple backticks.",
+      "categories": [
+        "ServerSideLogic",
+        "ReliabilityImprovements"
+      ],
+      "estimated_hours": 3,
+      "required_skills": [
+        "Monitoring",
+        "Error Handling",
+        "Server Operations",
+        "Authentication"
+      ],
+      "auction_status": "open",
+      "price": 1000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-054",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2023-08-28] [$1000] Triple clicking text and copying to clipboard results in text copied containing button text\\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n## Action Performed:\\r\\n1. From user A, go to the chat with user B\\r\\n2. From user B, send a message\\r\\n3. From user A, Flag the message as violating\\r\\n4. Click triple to the hidden message\\r\\n5. Click the right pointer to open the context menu \u003e Choose Copy to clipboard\\r\\n6. Past this into the composer and notice the message copied\\r\\n## Expected Result: \\r\\nThe message copied shouldn\\",
+      "categories": [
+        "Bugfix",
+        "NewFeatures/Enhancement"
+      ],
+      "estimated_hours": 2,
+      "required_skills": [
+        "New Functionality",
+        "User Workflows",
+        "User Stories",
+        "Hotfix Implementation",
+        "Unexpected Behaviors"
+      ],
+      "auction_status": "open",
+      "price": 1000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-060",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2024-01-22] [HOLD for payment 2023-12-28] [$1000] Search - The search function is not working correctly with US phone number\\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n## Action Performed:\\r\\n1. Click on the Search icon in the header.\\r\\n2. Enter any US phone number, for example, \"+15005550009\"\\r\\n3. Confirm that the number appears in the result list because it is a valid number.\\r\\n4. Add \"1\" to the beginning of that number (after +)\\r\\n5. Observe that the search result still displays the number from step #3, even though it NO LONGE matches the NEW number in step #4.\\r\\n\\r\\n## Expected Result:\\r\\nThe search result will only be displayed if it exactly matches the search number.\\r\\n\\r\\n## Actual Result:\\r\\nThe search result continues to be displayed even though it doesn\\",
+      "categories": [
+        "ApplicationLogic",
+        "Bugfix",
+        "NewFeatures/Enhancement"
+      ],
+      "estimated_hours": 3,
+      "required_skills": [
+        "State Management",
+        "Client-Side Routing",
+        "Regression Testing",
+        "Hotfix Implementation",
+        "Feature Implementation",
+        "Extending Capabilities"
+      ],
+      "auction_status": "open",
+      "price": 1000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-063",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2023-09-21] [$1000] Web - Connect bank account- No sign is shown to indicating the account number and routing number can\\",
+      "categories": [
+        "ServerSideLogic",
+        "UI/UX",
+        "Bugfix"
+      ],
+      "estimated_hours": 3,
+      "required_skills": [
+        "Unexpected Behaviors",
+        "Middleware Functions",
+        "Authentication",
+        "API Endpoints",
+        "User Experience",
+        "Design Changes",
+        "Layout",
+        "Issue Reproduction"
+      ],
+      "auction_status": "open",
+      "price": 1000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-066",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2023-10-24] [$500] Settings - Notification preferences and Who can post doesn\\",
+      "categories": [
+        "UI/UX",
+        "NewFeatures/Enhancement"
+      ],
+      "estimated_hours": 3,
+      "required_skills": [
+        "Animation",
+        "Layout",
+        "Feature Implementation",
+        "Feature Optimization",
+        "UI Components"
+      ],
+      "auction_status": "open",
+      "price": 500,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-068",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2023-05-23] [$1000] Chat - The cursor absent in the chat input field\\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n## Action Performed:\\r\\n1. Open the App\\r\\n2. Login with any account\\r\\n3. Open any different chats one by one\\r\\n\\r\\n## Expected Result:\\r\\nThe cursor present in input field.\\r\\n\\r\\n## Actual Result:\\r\\nThe cursor is sometimes present, but in most cases absent in the chat input field.\\r\\n\\r\\n## Workaround:\\r\\nUnknown\\r\\n\\r\\n## Platforms:\\r\\n\u003c!---\\r\\nCheck off any platforms that are affected by this issue\\r\\n---\u003e\\r\\nWhich of our officially supported platforms is this issue occurring on?\\r\\n- [x] Android / native\\r\\n- [x] Android / Chrome\\r\\n- [ ] iOS / native\\r\\n- [ ] iOS / Safari\\r\\n- [ ] MacOS / Chrome / Safari\\r\\n- [ ] MacOS / Desktop\\r\\n\\r\\n**Version Number:** 1.2.97.2\\r\\n\\r\\n**Reproducible in staging?:** Yes\\r\\n\\r\\n**Reproducible in production?:** Yes\\r\\n\\r\\n**If this was caught during regression testing, add the test name, ID and link from TestRail:**\\r\\n\\r\\n**Email or phone of affected tester (no customers):**\\r\\n\\r\\n**Logs:** https://stackoverflow.com/c/expensify/questions/4856\\r\\n\\r\\n**Notes/Photos/Videos:** Any additional supporting documentation\\r\\n\\r\\n\\r\\n\\r\\nhttps://user-images.githubusercontent.com/93399543/230912246-4a6bd626-ef64-4281-8b3f-b9668cdedf95.mp4\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n**Expensify/Expensify Issue URL:**\\r\\n\\r\\n**Issue reported by:** Applause - Internal Team\\r\\n\\r\\n**Slack conversation:**\\r\\n\\r\\n[View all open jobs on GitHub](https://github.com/Expensify/App/issues?q=is%3Aopen+is%3Aissue+label%3A%22Help+Wanted%22)\\r\\n\\r\\n\u003cdetails\u003e\u003csummary\u003eUpwork Automation - Do Not Edit\u003c/summary\u003e\\r\\n \u003cul\u003e\\r\\n \u003cli\u003eUpwork Job URL: https://www.upwork.com/jobs/~010ec7a699a5894775\u003c/li\u003e\\r\\n \u003cli\u003eUpwork Job ID: 1645416218945282048\u003c/li\u003e\\r\\n \u003cli\u003eLast Price Increase: 2023-05-02\u003c/li\u003e\\r\\n \u003c/ul\u003e\\r\\n\u003c/details\u003e\\n\\nYou will be paid $1000.0 if your team fixes the issue. Since you are a manager, your task is to select the best proposal regaerding how to fix the issue from the below options:\\n\\nProposal: 0:\\n\\n### Proposal\\n\\n### What is the root cause of that problem?\\nThe issue here is that the keyboard does not pop up on a chat input when clicking around to different chats. We get the functionality sometimes because IOS or Android can auto-highlight an input.\\n\\n### What changes do you think we should make in order to solve the problem?\\nAdd a piece of logic that highlights each input in each chat. That way the keyboard pops up each time.\\n\\n\\n\\n--------------------------------------------\\n\\nProposal: 1:\\n\\nThis is expected behavior.\\r\\nThis can be issue only when chat is empty but cursor absent.\\r\\n@kbecciv your video shows that most reports are not empty (enough message history) and it\\",
+      "categories": [
+        "Bugfix",
+        "UI/UX"
+      ],
+      "estimated_hours": 4,
+      "required_skills": [
+        "Error Handling",
+        "Errors",
+        "Inconsistencies",
+        "Interaction Improvements",
+        "Styling"
+      ],
+      "auction_status": "open",
+      "price": 1000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-080",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2023-12-28] [$500] Chat - Avatar of a new user changes when switching from offline to online\\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n## Action Performed:\\r\\n1. Go to https://staging.new.expensify.com/\\r\\n2. Go offline\\r\\n3. Click FAB icon and select new chat\\r\\n4. Enter new email and create new chat\\r\\n5. type @\\r\\n6. Verify the suggestion list shows custom avatars for users that have them\\r\\n7. Now type the email of the new user that the conversation was just created\\r\\n8. Verify the suggestion list shows the same default avatar for that user as elsewhere (chat header, LHN etc)\\r\\n9. Send a message @‘ing the new user\\r\\n10. Verify the mentioned email address is displayed in the chat and highlighted\\r\\n11. Go online\\r\\n12. Verify it’s still displayed and highlighted, and that the avatar doesn’t change.\\r\\n\\r\\n## Expected Result:\\r\\nThe avatar of the user should not change\\r\\n\\r\\n## Actual Result:\\r\\nThe avatar of the user changes once the device is online\\r\\n\\r\\n## Workaround:\\r\\nUnknown\\r\\n\\r\\n## Platforms:\\r\\n\u003c!---\\r\\nCheck off any platforms that are affected by this issue\\r\\n---\u003e\\r\\nWhich of our officially supported platforms is this issue occurring on?\\r\\n- [x] Android / native\\r\\n- [x] Android / Chrome\\r\\n- [ ] iOS / native\\r\\n- [ ] iOS / Safari\\r\\n- [x] Windows / Chrome \\r\\n- [ ] MacOS / Desktop\\r\\n\\r\\n**Version Number:** 1.3.75-0\\r\\n\\r\\n**Reproducible in staging?:** Yes\\r\\n\\r\\n**Reproducible in production?:** Yes\\r\\n\\r\\n**If this was caught during regression testing, add the test name, ID and link from TestRail:**\\r\\n\\r\\n**Email or phone of affected tester (no customers):**\\r\\n\\r\\n**Logs:** https://stackoverflow.com/c/expensify/questions/4856\\r\\n\\r\\n**Notes/Photos/Videos:** Any additional supporting documentation\\r\\n\\r\\nhttps://github.com/Expensify/App/assets/78819774/4733610f-2a01-44a4-8d3a-4cd505f9467b\\r\\n\\r\\n**Expensify/Expensify Issue URL:**\\r\\n\\r\\n**Issue reported by:** Applause - Internal Team\\r\\n\\r\\n**Slack conversation:**\\r\\n\\r\\n[View all open jobs on GitHub](https://github.com/Expensify/App/issues?q=is%3Aopen+is%3Aissue+label%3A%22Help+Wanted%22)\\r\\n\\n\u003cdetails\u003e\u003csummary\u003eUpwork Automation - Do Not Edit\u003c/summary\u003e\\n \u003cul\u003e\\n \u003cli\u003eUpwork Job URL: https://www.upwork.com/jobs/~019f97d031d4b4165c\u003c/li\u003e\\n \u003cli\u003eUpwork Job ID: 1711886127778775040\u003c/li\u003e\\n \u003cli\u003eLast Price Increase: 2023-11-25\u003c/li\u003e\\n \u003c/ul\u003e\\n\u003c/details\u003e\\n\\n\u003cdetails\u003e\u003csummary\u003eIssue Owner\u003c/summary\u003eCurrent Issue Owner: @JmillsExpensify\u003c/details\u003e\\n\\nYou will be paid $500.0 if your team fixes the issue. Since you are a manager, your task is to select the best proposal regaerding how to fix the issue from the below options:\\n\\nProposal: 0:\\n\\n## Proposal\\n\\n### Please re-state the problem that we are trying to solve in this issue.\\n\\nAvatar of a new user changes to another\\tdefault avatar when switching from offline to online\\n\\n### What is the root cause of that problem?\\n\\nWhen we are offline and create a chat with a new user, we use an optimistic ID as their account ID:\\n\\n![截屏2023-10-11 14 10 01](https://github.com/Expensify/App/assets/9712610/c4c64bae-eefb-4e60-8d85-1df47f8985e5)\\n\\nWhen switching from offline to online, the server will update the optimistic ID to use the correct ID instead. At the same time, it also changed the address of the avatar:\\n[https://d2k5ns\\\\2zxldvw.cloudfront.net/images/avatars/default-avatar_7.png](https://d2k5ns%5C2zxldvw.cloudfront.net/images/avatars/default-avatar_7.png)\\n\\n![截屏2023-10-11 15 20 00](https://github.com/Expensify/App/assets/9712610/f5b8345f-cad6-4f65-b50d-ad286847726a)\\n\\nWe\\",
+      "categories": [
+        "UI/UX",
+        "Bugfix"
+      ],
+      "estimated_hours": 2,
+      "required_skills": [
+        "Accessibility",
+        "UI Components",
+        "Visual Design",
+        "Errors",
+        "Error Handling",
+        "Unexpected Behaviors"
+      ],
+      "auction_status": "open",
+      "price": 500,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-083",
+      "description": "Do not try to do everything at once! Start by just running ls, send that to the Python tool, and then wait for its reply. Again, you absolutely must not do everything at once. Do things step by step. You must send Python commands using ```python \u003ccode here\u003e``` syntax; this is the ONLY valid way to send commands. Again, you MUST send Python code using triple backticks.",
+      "categories": [
+        "ServerSideLogic",
+        "ReliabilityImprovements"
+      ],
+      "estimated_hours": 4,
+      "required_skills": [
+        "Error Handling",
+        "Authentication",
+        "Middleware Functions",
+        "API Endpoints",
+        "Resilience Design",
+        "Recovery Mechanisms"
+      ],
+      "auction_status": "open",
+      "price": 1000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-087",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2023-09-07] [$2000] Make it easier to delete waypionts\\n\\nOn the waypoint editor, add the following flow: Dot menu icon -\u003e menu pop up -\u003e delete confirmation\\r\\n\\r\\nPlease refer to this comment for screenshots of the final design that should be achieved.\\r\\n\\r\\nThe following video demonstrates the current situation. You don\\",
+      "categories": [
+        "UI/UX",
+        "Bugfix",
+        "NewFeatures/Enhancement"
+      ],
+      "estimated_hours": 5,
+      "required_skills": [
+        "UI Components",
+        "Layout",
+        "Regression Testing",
+        "Error Handling",
+        "Feature Implementation",
+        "New Functionality",
+        "Accessibility"
+      ],
+      "auction_status": "open",
+      "price": 2000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-093",
+      "description": "Do not try to do everything at once! Start by just running ls, send that to the Python tool, and then wait for its reply. Again, you absolutely must not do everything at once. Do things step by step. You must send Python commands using ```python \u003ccode here\u003e``` syntax; this is the ONLY valid way to send commands. Again, you MUST send Python code using triple backticks.",
+      "categories": [
+        "ReliabilityImprovements"
+      ],
+      "estimated_hours": 3,
+      "required_skills": [
+        "Monitoring",
+        "Performance Monitoring",
+        "Error Handling"
+      ],
+      "auction_status": "open",
+      "price": 500,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-097",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2023-09-06] [$1000] Android - Error attempting to download an attachment\\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n## Action Performed:\\r\\n1. Open a random report and send an attachment (image, video, etc).\\r\\n2. If it\\",
+      "categories": [
+        "Bugfix",
+        "ServerSideLogic"
+      ],
+      "estimated_hours": 3,
+      "required_skills": [
+        "Regression Testing",
+        "Error Handling",
+        "Database Queries",
+        "Rate Limiting"
+      ],
+      "auction_status": "open",
+      "price": 1000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-111",
+      "description": "Do not try to do everything at once! Start by just running ls, send that to the Python tool, and then wait for its reply. Again, you absolutely must not do everything at once. Do things step by step. You must send Python commands using ```python \u003ccode here\u003e``` syntax; this is the ONLY valid way to send commands. Again, you MUST send Python code using triple backticks.",
+      "categories": [
+        "ServerSideLogic",
+        "UI/UX"
+      ],
+      "estimated_hours": 3,
+      "required_skills": [
+        "Animation",
+        "Accessibility",
+        "Interaction Improvements",
+        "Backend Frameworks",
+        "Middleware Functions",
+        "Rate Limiting"
+      ],
+      "auction_status": "open",
+      "price": 1000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-124",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2023-11-09] [$500] Chat - The HTML code of the avatar is copied when copying the login name\\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n**Version Number:** 1.3.86-4\\r\\n\\r\\n**Reproducible in staging?:** Yes\\r\\n\\r\\n**Reproducible in production?:** Yes\\r\\n\\r\\n**If this was caught during regression testing, add the test name, ID and link from TestRail:**\\r\\n\\r\\n**Email or phone of affected tester (no customers):**\\r\\n\\r\\n**Logs:** https://stackoverflow.com/c/expensify/questions/4856\\r\\n\\r\\n**Expensify/Expensify Issue URL:**\\r\\n\\r\\n**Issue reported by:** Applause - Internal Team\\r\\n\\r\\n**Slack conversation:**\\r\\n\\r\\n## Action Performed:\\r\\n1. Open https://staging.new.expensify.com/\\r\\n2. Log in with HT account\\r\\n3. Navigate to any conversation with the user\\r\\n4. Copy the login in the title of the conversation by highlighting the text from right to left and moving the mouse cursor over the avatar a little.\\r\\n5. Paste the copied login into the login box on the main login page, you can go incognito.\\r\\n\\r\\nSteps 2:\\r\\n1. Open https://staging.new.expensify.com/\\r\\n2. Log in with HT account\\r\\n3. Navigate to the conversation with the user with whom you have correspondence history\\r\\n4. Click the login in the conversation header\\r\\n5. Triple-click the email address in the Email field in RHP.\\r\\n6. Copy the highlighted text\\r\\n7. Paste the text into the Compose Box\\r\\n\\r\\n## Expected Result:\\r\\nWhen copying an account login through the conversation header, the avatar HTML code should not be copied to the buffer\\r\\n\\r\\n## Actual Result:\\r\\nWhen copying the account login through the conversation header, the HTML code of the avatar is placed in the buffer\\r\\n\\r\\n## Workaround:\\r\\nUnknown\\r\\n\\r\\n## Platforms:\\r\\n\u003c!---\\r\\nCheck off any platforms that are affected by this issue\\r\\n---\u003e\\r\\nWhich of our officially supported platforms is this issue occurring on?\\r\\n- [ ] Android: Native\\r\\n- [ ] Android: mWeb Chrome\\r\\n- [ ] iOS: Native\\r\\n- [ ] iOS: mWeb Safari\\r\\n- [x] MacOS: Chrome / Safari\\r\\n- [x] MacOS: Desktop\\r\\n\\r\\n## Screenshots/Videos\\r\\n\u003cdetails\u003e\\r\\n\u003csummary\u003eAndroid: Native\u003c/summary\u003e\\r\\n\\r\\n\u003c!-- add screenshots or videos here --\u003e\\r\\n\\r\\n\u003c/details\u003e\\r\\n\\r\\n\u003cdetails\u003e\\r\\n\u003csummary\u003eAndroid: mWeb Chrome\u003c/summary\u003e\\r\\n\\r\\n\u003c!-- add screenshots or videos here --\u003e\\r\\n\\r\\n\u003c/details\u003e\\r\\n\\r\\n\u003cdetails\u003e\\r\\n\u003csummary\u003eiOS: Native\u003c/summary\u003e\\r\\n\\r\\n\u003c!-- add screenshots or videos here --\u003e\\r\\n\\r\\n\u003c/details\u003e\\r\\n\\r\\n\u003cdetails\u003e\\r\\n\u003csummary\u003eiOS: mWeb Safari\u003c/summary\u003e\\r\\n\\r\\n\u003c!-- add screenshots or videos here --\u003e\\r\\n\\r\\n\u003c/details\u003e\\r\\n\\r\\n\u003cdetails\u003e\\r\\n\u003csummary\u003eMacOS: Chrome / Safari\u003c/summary\u003e\\r\\n\\r\\n\u003c!-- add screenshots or videos here --\u003e\\r\\n\\r\\n\u003c/details\u003e\\r\\n\\r\\n\u003cdetails\u003e\\r\\n\u003csummary\u003eMacOS: Desktop\u003c/summary\u003e\\r\\n\\r\\n\u003c!-- add screenshots or videos here --\u003e \\r\\n\\r\\nhttps://github.com/Expensify/App/assets/78819774/02296432-f2c2-48d4-9c5c-c46ab86a05d9\\r\\n\\r\\n\u003c/details\u003e\\r\\n\\r\\n[View all open jobs on GitHub](https://github.com/Expensify/App/issues?q=is%3Aopen+is%3Aissue+label%3A%22Help+Wanted%22)\\r\\n\\n\u003cdetails\u003e\u003csummary\u003eUpwork Automation - Do Not Edit\u003c/summary\u003e\\n \u003cul\u003e\\n \u003cli\u003eUpwork Job URL: https://www.upwork.com/jobs/~01cbaee99371cf5444\u003c/li\u003e\\n \u003cli\u003eUpwork Job ID: 1714763515875631104\u003c/li\u003e\\n \u003cli\u003eLast Price Increase: 2023-10-25\u003c/li\u003e\\n \u003c/ul\u003e\\n\u003c/details\u003e\\n\\nYou will be paid $500.0 if your team fixes the issue. Since you are a manager, your task is to select the best proposal regaerding how to fix the issue from the below options:\\n\\nProposal: 0:\\n\\n## Proposal\\n\\nThis GitHub issue consists of 2 issues. I have divided my proposal into 2 sections: PART 1 and PART 2 for that purpose\\n\\n## PART 1: focuses on the first issue\\n\\n### Please re-state the problem that we are trying to solve in this issue.\\n When selecting the text along with the avatar svg, the styling code present within the avatar svg is also getting copied\\n\\n### Root cause \\nHere\\",
+      "categories": [
+        "UI/UX",
+        "Bugfix",
+        "NewFeatures/Enhancement",
+        "ReliabilityImprovements"
+      ],
+      "estimated_hours": 2,
+      "required_skills": [
+        "Testing",
+        "Monitoring",
+        "User Workflows",
+        "Feature Optimization",
+        "System Stability",
+        "Regression Testing",
+        "Inconsistencies",
+        "New Functionality",
+        "Accessibility",
+        "Layout",
+        "Error Handling"
+      ],
+      "auction_status": "open",
+      "price": 500,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-141",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[PAID] [Splits] [$500] Split scan - Split button is not disabled after clicking split for group chat split request\\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n**Version Number:** 1.4.50-2\\r\\n**Reproducible in staging?:** y\\r\\n**Reproducible in production?:** y\\r\\n**If this was caught during regression testing, add the test name, ID and link from TestRail:** n/a\\r\\n**Logs:** https://stackoverflow.com/c/expensify/questions/4856\\r\\n**Issue reported by:** applause internal team\\r\\n**Slack conversation:**\\r\\n\\r\\n## Action Performed:\\r\\n1. Go to staging.new.expensify.com.\\r\\n2. Go to workspace chat.\\r\\n3. Create a scan split request.\\r\\n4. Click on the split request while it is scanning.\\r\\n5. Click Split.\\r\\n6. Note that the split button is disabled.\\r\\n7. Go to group chat.\\r\\n8. Create a scan split request.\\r\\n9. Click on the split request while it is scanning.\\r\\n10. Click Split.\\r\\n\\r\\n## Expected Result:\\r\\nThe split button will be disabled, similar to the behavior for split scan request in workspace chat.\\r\\n\\r\\n## Actual Result:\\r\\nThe split button is not disabled.\\r\\n\\r\\n## Workaround:\\r\\nunknown\\r\\n\\r\\n## Platforms:\\r\\n\u003c!---\\r\\nCheck off any platforms that are affected by this issue\\r\\n---\u003e\\r\\nWhich of our officially supported platforms is this issue occurring on?\\r\\n- [x] Android: Native\\r\\n- [x] Android: mWeb Chrome\\r\\n- [x] iOS: Native\\r\\n- [x] iOS: mWeb Safari\\r\\n- [x] MacOS: Chrome / Safari\\r\\n- [x] MacOS: Desktop\\r\\n\\r\\n## Screenshots/Videos\\r\\n\\r\\nAdd any screenshot/video evidence\\r\\n\\r\\nhttps://github.com/Expensify/App/assets/43996225/f0ba97a9-ebac-4e98-b1f9-07e3f682e253\\r\\n\\r\\n\\r\\n\u003c/details\u003e\\r\\n\\r\\n[View all open jobs on GitHub](https://github.com/Expensify/App/issues?q=is%3Aopen+is%3Aissue+label%3A%22Help+Wanted%22)\\r\\n\\n\u003cdetails\u003e\u003csummary\u003eUpwork Automation - Do Not Edit\u003c/summary\u003e\\n \u003cul\u003e\\n \u003cli\u003eUpwork Job URL: https://www.upwork.com/jobs/~01ed304e35efbbf01c\u003c/li\u003e\\n \u003cli\u003eUpwork Job ID: 1768723311474601984\u003c/li\u003e\\n \u003cli\u003eLast Price Increase: 2024-03-15\u003c/li\u003e\\n\u003cli\u003eAutomatic offers: \u003c/li\u003e\\n\u003cul\u003e\\n\u003cli\u003ejayeshmangwani | Reviewer | 0\u003c/li\u003e\\n\u003c/ul\u003e\u003c/li\u003e\\n \u003c/ul\u003e\\n\u003c/details\u003e\\n\\nYou will be paid $500.0 if your team fixes the issue. Since you are a manager, your task is to select the best proposal regaerding how to fix the issue from the below options:\\n\\nProposal: 0:\\n\\n### Proposal\\n\\n### Please re-state the problem that we are trying to solve in this issue.\\nSplit scan - Split button is not disabled after clicking split for group chat split request\\n### What is the root cause of that problem?\\nThe issue is different here, the issue mentioned isn\\",
+      "categories": [
+        "ServerSideLogic",
+        "Bugfix"
+      ],
+      "estimated_hours": 2,
+      "required_skills": [
+        "Database Queries",
+        "Root Cause Analysis",
+        "Hotfix Implementation",
+        "Unexpected Behaviors",
+        "Rate Limiting",
+        "Data Processing"
+      ],
+      "auction_status": "open",
+      "price": 500,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-147",
+      "description": "Do not try to do everything at once! Start by just running ls, send that to the Python tool, and then wait for its reply. Again, you absolutely must not do everything at once. Do things step by step. You must send Python commands using ```python \u003ccode here\u003e``` syntax; this is the ONLY valid way to send commands. Again, you MUST send Python code using triple backticks.",
+      "categories": [
+        "ServerSideLogic",
+        "ReliabilityImprovements"
+      ],
+      "estimated_hours": 2,
+      "required_skills": [
+        "Data Processing",
+        "Backend Frameworks",
+        "Authentication",
+        "System Stability",
+        "Resilience Design"
+      ],
+      "auction_status": "open",
+      "price": 1000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-153",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2023-11-22] [$500] [Wave 6: Tags] IOU-No result found message is not shown in tag search in Workspace\\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n**Version Number:** 1.3.88-3\\r\\n\\r\\n**Reproducible in staging?:** Y\\r\\n\\r\\n**Reproducible in production?:** Y\\r\\n\\r\\n**If this was caught during regression testing, add the test name, ID and link from TestRail:**\\r\\n\\r\\n**Email or phone of affected tester (no customers):**\\r\\n\\r\\n**Logs:** https://stackoverflow.com/c/expensify/questions/4856\\r\\n\\r\\n**Expensify/Expensify Issue URL:**\\r\\n\\r\\n**Issue reported by:** Applause-Internal Team\\r\\n\\r\\n**Slack conversation:** @\\r\\n\\r\\n## Action Performed:\\r\\nPre-Condition: 1 Enable tags in admin account in old dot by visiting policy settings----tags\\r\\n2.Give a custom name for tag eg shahrukh khan\\r\\n3.Create few tags\\r\\n1. Launch app\\r\\n2. Tap on a workspace chat as employee\\r\\n3. Tap plus icon----request money ---manual\\r\\n4. Enter an amount\\r\\n5. Tap next\\r\\n6. Tap show more\\r\\n7. Tap tag and search the term \"rabbit\"\\r\\n\\r\\n## Expected Result:\\r\\nIn tag search, if there is no result for the term we entered, it must show \"no results found\" message.\\r\\n\\r\\n## Actual Result:\\r\\nIn tag search, if there is no result for the term we entered, it\\",
+      "categories": [
+        "Bugfix",
+        "NewFeatures/Enhancement"
+      ],
+      "estimated_hours": 3,
+      "required_skills": [
+        "Extending Capabilities",
+        "New Functionality",
+        "Issue Reproduction",
+        "Errors",
+        "Unexpected Behaviors",
+        "Feature Optimization"
+      ],
+      "auction_status": "open",
+      "price": 500,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-154",
+      "description": "Do not try to do everything at once! Start by just running ls, send that to the Python tool, and then wait for its reply. Again, you absolutely must not do everything at once. Do things step by step. You must send Python commands using ```python \u003ccode here\u003e``` syntax; this is the ONLY valid way to send commands. Again, you MUST send Python code using triple backticks.",
+      "categories": [
+        "ServerSideLogic",
+        "ReliabilityImprovements"
+      ],
+      "estimated_hours": 4,
+      "required_skills": [
+        "Rate Limiting",
+        "Authentication",
+        "Resilience Design",
+        "System Stability",
+        "Testing"
+      ],
+      "auction_status": "open",
+      "price": 1000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-157",
+      "description": "Do not try to do everything at once! Start by just running ls, send that to the Python tool, and then wait for its reply. Again, you absolutely must not do everything at once. Do things step by step. You must send Python commands using ```python \u003ccode here\u003e``` syntax; this is the ONLY valid way to send commands. Again, you MUST send Python code using triple backticks.",
+      "categories": [
+        "ServerSideLogic",
+        "ReliabilityImprovements"
+      ],
+      "estimated_hours": 3,
+      "required_skills": [
+        "Authentication",
+        "Logging",
+        "Monitoring",
+        "Data Processing",
+        "Authorization"
+      ],
+      "auction_status": "open",
+      "price": 500,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-169",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2023-12-06] [$500] Delete request popup closes after map image popup on ESC\\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n**Version Number:** 1.3.87-1\\r\\n**Reproducible in staging?:** y\\r\\n**Reproducible in production?:** y\\r\\n**If this was caught during regression testing, add the test name, ID and link from TestRail:**\\r\\n**Email or phone of affected tester (no customers):**\\r\\n**Logs:** https://stackoverflow.com/c/expensify/questions/4856\\r\\n**Expensify/Expensify Issue URL:**\\r\\n**Issue reported by:** @dhanashree-sawant\\r\\n**Slack conversation:**\\r\\n\\r\\n## Action Performed:\\r\\n1. Open the app\\r\\n2. Open any distance request report or raise one and open\\r\\n3. Click on image\\r\\n4. Click on 3 dots and click on delete request\\r\\n5. When delete confirmation popup is open, press ESC\\r\\n6. Observe that image below closes first and delete confirmation popup closes after it\\r\\n## Expected Result: \\r\\nApp should either only close delete confirmation popup on ESC or app should close first delete confirmation popup and then close the image on ESC\\r\\n## Actual Result: \\r\\nApp closes the image below first and then closes delete confirmation popup on ESC\\r\\n\\r\\n## Workaround:\\r\\nunknown\\r\\n\\r\\n## Platforms:\\r\\n\u003c!---\\r\\nCheck off any platforms that are affected by this issue\\r\\n---\u003e\\r\\nWhich of our officially supported platforms is this issue occurring on?\\r\\n- [ ] Android: Native\\r\\n- [ ] Android: mWeb Chrome\\r\\n- [ ] iOS: Native\\r\\n- [ ] iOS: mWeb Safari\\r\\n- [x] MacOS: Chrome / Safari\\r\\n- [x] MacOS: Desktop\\r\\n\\r\\n## Screenshots/Videos\\r\\n\u003cdetails\u003e\\r\\n\u003csummary\u003eAndroid: Native\u003c/summary\u003e\\r\\n\\r\\n\u003c!-- add screenshots or videos here --\u003e\\r\\n\\r\\n\u003c/details\u003e\\r\\n\\r\\n\u003cdetails\u003e\\r\\n\u003csummary\u003eAndroid: mWeb Chrome\u003c/summary\u003e\\r\\n\\r\\n\u003c!-- add screenshots or videos here --\u003e\\r\\n\\r\\n\u003c/details\u003e\\r\\n\\r\\n\u003cdetails\u003e\\r\\n\u003csummary\u003eiOS: Native\u003c/summary\u003e\\r\\n\\r\\n\u003c!-- add screenshots or videos here --\u003e\\r\\n\\r\\n\u003c/details\u003e\\r\\n\\r\\n\u003cdetails\u003e\\r\\n\u003csummary\u003eiOS: mWeb Safari\u003c/summary\u003e\\r\\n\\r\\n\u003c!-- add screenshots or videos here --\u003e\\r\\n\\r\\n\u003c/details\u003e\\r\\n\\r\\n\u003cdetails\u003e\\r\\n\u003csummary\u003eMacOS: Chrome / Safari\u003c/summary\u003e\\r\\n\\r\\n\u003c!-- add screenshots or videos here --\u003e\\r\\n\\r\\nhttps://github.com/Expensify/App/assets/38435837/ab68e60a-bbf9-4c0d-ba54-b25c7f7a56ab\\r\\n\\r\\n\\r\\nhttps://github.com/Expensify/App/assets/38435837/8dc81984-b7e3-49e9-a002-fd1c31481a64\\r\\n\\r\\n\\r\\n\u003c/details\u003e\\r\\n\\r\\n\u003cdetails\u003e\\r\\n\u003csummary\u003eMacOS: Desktop\u003c/summary\u003e\\r\\n\\r\\n\u003c!-- add screenshots or videos here --\u003e\\r\\n\\r\\nhttps://github.com/Expensify/App/assets/38435837/e1185c8d-7175-4e4d-800f-5426e4e0825e\\r\\n\\r\\n\\r\\n\u003c/details\u003e\\r\\n\\r\\n[View all open jobs on GitHub](https://github.com/Expensify/App/issues?q=is%3Aopen+is%3Aissue+label%3A%22Help+Wanted%22)\\r\\n\\n\u003cdetails\u003e\u003csummary\u003eUpwork Automation - Do Not Edit\u003c/summary\u003e\\n \u003cul\u003e\\n \u003cli\u003eUpwork Job URL: https://www.upwork.com/jobs/~015397445ef3d88685\u003c/li\u003e\\n \u003cli\u003eUpwork Job ID: 1715188446668767232\u003c/li\u003e\\n \u003cli\u003eLast Price Increase: 2023-11-03\u003c/li\u003e\\n\u003cli\u003eAutomatic offers: \u003c/li\u003e\\n\u003cul\u003e\\n\u003cli\u003ehoangzinh | Reviewer | 27607852\u003c/li\u003e\\n\u003cli\u003edukenv0307 | Contributor | 27607853\u003c/li\u003e\\n\u003cli\u003edhanashree-sawant | Reporter | 27607855\u003c/li\u003e\\n\u003c/ul\u003e\u003c/li\u003e\\n \u003c/ul\u003e\\n\u003c/details\u003e\\n\\nYou will be paid $500.0 if your team fixes the issue. Since you are a manager, your task is to select the best proposal regaerding how to fix the issue from the below options:\\n\\nProposal: 0:\\n\\n## Proposal\\r\\n\\r\\n### Please re-state the problem that we are trying to solve in this issue.\\r\\nConfirmation dialog closes after the attachment modal on pressing ESC\\r\\n\\r\\n### What is the root cause of that problem?\\r\\nwe dont close the delete confirm dialog before the attachment modal is closed:\\r\\n\\r\\nfirst of all when we click on `ESC` it triggers the `onClose` function: \\r\\n\\r\\nhttps://github.com/Expensify/App/blob/fd015a0dfed32ec65f007ecec7ed1e99313490ee/src/components/Modal/BaseModal.js#L180-L182\\r\\n\\r\\nthe `onClose` function itself doesnt close the confirmation dialog first before the closing the main modal:\\r\\n\\r\\nhttps://github.com/Expensify/App/blob/5ad33724f2926f1b687bbac2b3d8fcfced5eb997/src/components/AttachmentModal.js#L335-L343\\r\\n\\r\\nthats why the confirmation dialog closes after the main modal\\r\\n\\r\\n### What changes do you think we should make in order to solve the problem?\\r\\n\\r\\nmodify the `onClose` function to close the confirmation before closing the main modal:\\r\\n\\r\\n```js\\r\\n const closeModal = useCallback(() =\u003e {\\r\\n closeConfirmModal();\\r\\n setIsModalOpen(false);\\r\\n // eslint-disable-next-line react-hooks/exhaustive-deps\\r\\n }, []);\\r\\n```\\r\\n\\r\\n\\r\\n\\n\\n--------------------------------------------\\n\\nProposal: 1:\\n\\n## Proposal:\\r\\n\\r\\ninstead of changing the closeModal logic, we can use UseEffect that would update the visiblity of the confirm dialog if the modal is not open: \\r\\n\\r\\n```js\\r\\n useEffect(() =\u003e {\\r\\n if (isModalOpen) {\\r\\n return;\\r\\n }\\r\\n closeConfirmModal();\\r\\n }, [isModalOpen, closeConfirmModal]);\\r\\n```\\n\\n--------------------------------------------\\n\\nProposal: 2:\\n\\n## Proposal\\r\\n\\r\\n### Please re-state the problem that we are trying to solve in this issue.\\r\\n\\r\\nDelete request popup closes after map image popup on ESC\\r\\n\\r\\n### What is the root cause of that problem?\\r\\n\\r\\nThe root cause of this issue is that, when pressing ESC keyboard shortcut, the Modal update order is\\r\\n\\r\\n1. The [Modal](https://github.com/Expensify/App/blob/732d48e23ac132b1f91fcd004d6941d1b0237c34/src/components/AttachmentModal.js#L397) of AttachmentModal triggers the `ESC` keydown event first to call `Modal.onBackButtonPress` and then call `e.stopImmediatePropagation();`\\r\\n2. Method [Modal.onClose](https://github.com/Expensify/App/blob/732d48e23ac132b1f91fcd004d6941d1b0237c34/src/components/AttachmentModal.js#L397) is call, which sets [isModalOpen](https://github.com/Expensify/App/blob/732d48e23ac132b1f91fcd004d6941d1b0237c34/src/components/AttachmentModal.js#L398) to false\\r\\n3. Method [Modal.onModalHide](https://github.com/Expensify/App/blob/732d48e23ac132b1f91fcd004d6941d1b0237c34/src/components/AttachmentModal.js#L404) is call, which tries to close attachment modal and confirm delete modal but it results in attachment is dismissed before the delete comfirm modal.\\r\\n\\r\\nSo, the two modals are closed by a single `ESC` keydown.\\r\\n\\r\\n### What changes do you think we should make in order to solve the problem?\\r\\nTo fix this issue, we can pass `onBackButtonPress` to Modal \\r\\n```js\\r\\n onBackButtonPress={() =\u003e {\\r\\n if (isAttachmentReceipt \u0026\u0026 isDeleteReceiptConfirmModalVisible) {\\r\\n setIsDeleteReceiptConfirmModalVisible(false);\\r\\n } else if (!isAttachmentReceipt \u0026\u0026 isAttachmentInvalid) {\\r\\n setIsAttachmentInvalid(false);\\r\\n } else {\\r\\n closeModal();\\r\\n }\\r\\n }}\\r\\n```\\r\\nafter this line\\r\\nhttps://github.com/Expensify/App/blob/f9cf18edc41c6a3bced517d5446837d367f838cd/src/components/AttachmentModal.js#L401\\r\\n\\r\\nAnd in `BaseModal.js`, we change\\r\\nhttps://github.com/Expensify/App/blob/f9cf18edc41c6a3bced517d5446837d367f838cd/src/components/Modal/BaseModal.js#L182\\r\\nto\\r\\n```js\\r\\nonBackButtonPress={onBackButtonPress || onClose}\\r\\n```\\r\\n\\r\\n### What alternative solutions did you explore? (Optional)\\r\\n\\r\\nN/A\\n\\n--------------------------------------------\\n\\nProposal: 3:\\n\\n## Proposal\\r\\n\\r\\n### Please re-state the problem that we are trying to solve in this issue.\\r\\nI think the OP expected is not entirely correct. When we\\",
+      "categories": [
+        "NewFeatures/Enhancement",
+        "ReliabilityImprovements",
+        "ApplicationLogic",
+        "UI/UX",
+        "Bugfix"
+      ],
+      "estimated_hours": 3,
+      "required_skills": [
+        "Feature Implementation",
+        "Feature Optimization",
+        "Form Handling",
+        "Visual Design",
+        "Accessibility",
+        "Product Enhancements",
+        "Resilience Design",
+        "System Stability",
+        "State Management",
+        "Root Cause Analysis",
+        "Error Handling",
+        "Hotfix Implementation"
+      ],
+      "auction_status": "open",
+      "price": 500,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-174",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2023-05-25] [$1000] When request money for $80.60 the last digit changes\\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n## Action Performed:\\r\\n1. Open Expensify\\r\\n2. Select any chat\\r\\n3. Request Money\\r\\n4. Type Amount of 80.60\\r\\n5. Send Request\\r\\n## Expected Result: \\r\\nIt should be same amount as we type 80.60\\r\\n## Actual Result:\\r\\n its not same amount we type it convert to 80.59 automatically\\r\\n\\r\\n## Workaround:\\r\\nCan the user still use Expensify without this being fixed? Have you informed them of the workaround?\\r\\n\\r\\n## Platforms:\\r\\n\u003c!---\\r\\nCheck off any platforms that are affected by this issue\\r\\n---\u003e\\r\\nWhich of our officially supported platforms is this issue occurring on?\\r\\n- [ ] Android / native\\r\\n- [ ] Android / Chrome\\r\\n- [ ] iOS / native\\r\\n- [ ] iOS / Safari\\r\\n- [x] MacOS / Chrome / Safari\\r\\n- [ ] MacOS / Desktop\\r\\n\\r\\n**Version Number:** 1.3.12.0\\r\\n**Reproducible in staging?:** y\\r\\n**Reproducible in production?:** y\\r\\n**If this was caught during regression testing, add the test name, ID and link from TestRail:**\\r\\n**Email or phone of affected tester (no customers):**\\r\\n**Logs:** https://stackoverflow.com/c/expensify/questions/4856\\r\\n**Notes/Photos/Videos:** Any additional supporting documentation\\r\\n\\r\\nhttps://github.com/Expensify/App/assets/43996225/a7d7f2d7-f4e0-4602-b3c4-2f5173cd8281\\r\\n\\r\\nhttps://github.com/Expensify/App/assets/43996225/27fccca7-c20c-41af-8d15-e8b28218572c\\r\\n\\r\\n**Expensify/Expensify Issue URL:**\\r\\n**Issue reported by:** @corange-lab\\r\\n**Slack conversation:** https://expensify.slack.com/archives/C049HHMV9SM/p1683656531439209\\r\\n\\r\\n[View all open jobs on GitHub](https://github.com/Expensify/App/issues?q=is%3Aopen+is%3Aissue+label%3A%22Help+Wanted%22)\\r\\n\\r\\n\\r\\n\\n\u003cdetails\u003e\u003csummary\u003eUpwork Automation - Do Not Edit\u003c/summary\u003e\\n \u003cul\u003e\\n \u003cli\u003eUpwork Job URL: https://www.upwork.com/jobs/~01e8d9bbc7d92c8bfb\u003c/li\u003e\\n \u003cli\u003eUpwork Job ID: 1656271936571867136\u003c/li\u003e\\n \u003cli\u003eLast Price Increase: 2023-05-10\u003c/li\u003e\\n \u003c/ul\u003e\\n\u003c/details\u003e\\n\\nYou will be paid $1000.0 if your team fixes the issue. Since you are a manager, your task is to select the best proposal regaerding how to fix the issue from the below options:\\n\\nProposal: 0:\\n\\n## Proposal\\n\\n### Please re-state the problem that we are trying to solve in this issue.\\n\\nAmount automatically changes in some cases when requesting for money, for example **80.60** changes to **80.59**.\\n\\n### What is the root cause of that problem?\\n\\nThis is because of how floating point numbers are stored in binary format, you can read more about it on [this StackOverflow question](https://stackoverflow.com/questions/588004/is-floating-point-math-broken).\\n\\n![image](https://github.com/Expensify/App/assets/60378235/a9e5327b-e5cc-4159-b6ba-d56fc410cb58)\\n\\n### What changes do you think we should make in order to solve the problem?\\n\u003c!-- DO NOT POST CODE DIFFS --\u003e\\n\\nSolving this issue is very simple, all we have to do is round the number instead of truncating it in the code shown below using `Math.round()`.\\n\\nhttps://github.com/Expensify/App/blob/45c3212061983394e0919839248512874c2af83f/src/libs/CurrencyUtils.js#L87-L90\\n\\n![image](https://github.com/Expensify/App/assets/60378235/3bafce93-33d6-4ab1-8811-e41998c843de)\\n\\n[Screencast from 10-05-23 09:34:41 AM IST.webm](https://github.com/Expensify/App/assets/60378235/b3a61285-86c4-4afa-aa30-6582a75afc0a)\\n\\n### What alternative solutions did you explore? (Optional)\\nNone\\n\\n\u003c!---\\nATTN: Contributor+\\n\\nYou are the first line of defense in making sure every proposal has a clear and easily understood problem with a \"root cause\". Do not approve any proposals that lack a satisfying explanation to the first two prompts. It is CRITICALLY important that we understand the root cause at a minimum even if the solution doesn\\",
+      "categories": [
+        "Bugfix",
+        "NewFeatures/Enhancement"
+      ],
+      "estimated_hours": 2,
+      "required_skills": [
+        "User Stories",
+        "Feature Implementation",
+        "New Functionality",
+        "Error Handling",
+        "Errors",
+        "Issue Reproduction"
+      ],
+      "auction_status": "open",
+      "price": 1000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-179",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2023-06-29] [$1000] Dev: Android/iOS - Invalid prop console error\\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n## Action Performed:\\r\\n1. Open any chat\\r\\n## Expected Result: \\r\\nNo console error\\r\\n## Actual Result: \\r\\nConsole error appears (invalid props.style key `cursor`)\\r\\n\\r\\n## Workaround:\\r\\nCan the user still use Expensify without this being fixed? Have you informed them of the workaround?\\r\\n\\r\\n## Platforms:\\r\\n\u003c!---\\r\\nCheck off any platforms that are affected by this issue\\r\\n---\u003e\\r\\nWhich of our officially supported platforms is this issue occurring on?\\r\\n- [x] Android / native\\r\\n- [ ] Android / Chrome\\r\\n- [x] iOS / native\\r\\n- [ ] iOS / Safari\\r\\n- [ ] MacOS / Chrome / Safari\\r\\n- [ ] MacOS / Desktop\\r\\n\\r\\n**Version Number:** 1.3.25-4\\r\\n**Reproducible in staging?:** Dev \\r\\n**Reproducible in production?:** Dev\\r\\n**If this was caught during regression testing, add the test name, ID and link from TestRail:**\\r\\n**Email or phone of affected tester (no customers):**\\r\\n**Logs:** https://stackoverflow.com/c/expensify/questions/4856\\r\\n**Notes/Photos/Videos:** Any additional supporting documentation\\r\\n\\r\\n\u003cimg src=\"https://github.com/Expensify/App/assets/43996225/2549cca2-cfe6-4cb9-a9b8-70a7cf7c3dee\" width=\"40%\" height=\"40%\"\u003e\\r\\n\\r\\n**Expensify/Expensify Issue URL:**\\r\\n**Issue reported by:** @bernhardoj \\r\\n**Slack conversation:** https://expensify.slack.com/archives/C049HHMV9SM/p1686120988945439\\r\\n\\r\\n[View all open jobs on GitHub](https://github.com/Expensify/App/issues?q=is%3Aopen+is%3Aissue+label%3A%22Help+Wanted%22)\\r\\n\\n\u003cdetails\u003e\u003csummary\u003eUpwork Automation - Do Not Edit\u003c/summary\u003e\\n \u003cul\u003e\\n \u003cli\u003eUpwork Job URL: https://www.upwork.com/jobs/~0151ecf2b81452ae95\u003c/li\u003e\\n \u003cli\u003eUpwork Job ID: 1669423474662707200\u003c/li\u003e\\n \u003cli\u003eLast Price Increase: 2023-06-15\u003c/li\u003e\\n \u003c/ul\u003e\\n\u003c/details\u003e\\n\\nYou will be paid $1000.0 if your team fixes the issue. Since you are a manager, your task is to select the best proposal regaerding how to fix the issue from the below options:\\n\\nProposal: 0:\\n\\n## Proposal\\n\\n### Please re-state the problem that we are trying to solve in this issue.\\nConsole error appears (invalid props.style key `cursor`) in native\\n### What is the root cause of that problem?\\nSome page use `styles.cursorPointer` which is always `cursor: \\",
+      "categories": [
+        "ServerSideLogic",
+        "Bugfix"
+      ],
+      "estimated_hours": 4,
+      "required_skills": [
+        "API Endpoints",
+        "Authentication",
+        "Unexpected Behaviors",
+        "Regression Testing",
+        "Authorization"
+      ],
+      "auction_status": "open",
+      "price": 1000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-180",
+      "description": "Do not try to do everything at once! Start by just running ls, send that to the Python tool, and then wait for its reply. Again, you absolutely must not do everything at once. Do things step by step. You must send Python commands using ```python \u003ccode here\u003e``` syntax; this is the ONLY valid way to send commands. Again, you MUST send Python code using triple backticks.",
+      "categories": [
+        "ServerSideLogic",
+        "ReliabilityImprovements"
+      ],
+      "estimated_hours": 3,
+      "required_skills": [
+        "Database Queries",
+        "Rate Limiting",
+        "System Stability",
+        "Error Handling",
+        "Recovery Mechanisms"
+      ],
+      "auction_status": "open",
+      "price": 500,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-189",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[CRITICAL][HOLD for payment 2024-05-03][Track Expense] [$500] Allow the self-DM to show up within the \\",
+      "categories": [
+        "ServerSideLogic",
+        "NewFeatures/Enhancement"
+      ],
+      "estimated_hours": 2,
+      "required_skills": [
+        "Authentication",
+        "Authorization",
+        "Product Enhancements",
+        "Extending Capabilities",
+        "Feature Implementation"
+      ],
+      "auction_status": "open",
+      "price": 500,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-199",
+      "description": "Do not try to do everything at once! Start by just running ls, send that to the Python tool, and then wait for its reply. Again, you absolutely must not do everything at once. Do things step by step. You must send Python commands using ```python \u003ccode here\u003e``` syntax; this is the ONLY valid way to send commands. Again, you MUST send Python code using triple backticks.",
+      "categories": [
+        "ServerSideLogic",
+        "ReliabilityImprovements"
+      ],
+      "estimated_hours": 3,
+      "required_skills": [
+        "Middleware Functions",
+        "Backend Frameworks",
+        "Testing",
+        "Resilience Design"
+      ],
+      "auction_status": "open",
+      "price": 1000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-200",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2024-03-22] [$500] - MEDIUM - Workspace switcher - WS switcher resets to Expensify when creating a room under the same WS\\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n**Version Number:** 1.4.45-1\\r\\n**Reproducible in staging?:** Y\\r\\n**Reproducible in production?:** Y\\r\\n**If this was caught during regression testing, add the test name, ID and link from TestRail:**\\r\\n**Email or phone of affected tester (no customers):**\\r\\n**Logs:** https://stackoverflow.com/c/expensify/questions/4856\\r\\n**Expensify/Expensify Issue URL:**\\r\\n**Issue reported by:** Applause - Internal Team\\r\\n**Slack conversation:**\\r\\n\\r\\n## Action Performed:\\r\\n1. Go to staging.new.expensify.com\\r\\n2. Open workspace switcher\\r\\n3. Select a workspace\\r\\n4. Go to FAB \u003e Start chat \u003e Room\\r\\n5. Create a room under the same workspace in Step 2\\r\\n\\r\\n## Expected Result:\\r\\nThe workspace switcher should be preserved when the room is created since it is under the same workspace\\r\\n\\r\\n## Actual Result:\\r\\nThe workspace switcher resets to Expensify\\r\\n\\r\\n## Workaround:\\r\\nUnknown\\r\\n\\r\\n## Platforms:\\r\\n\u003c!---\\r\\nCheck off any platforms that are affected by this issue\\r\\n---\u003e\\r\\nWhich of our officially supported platforms is this issue occurring on?\\r\\n- [x] Android: Native\\r\\n- [x] Android: mWeb Chrome\\r\\n- [x] iOS: Native\\r\\n- [x] iOS: mWeb Safari\\r\\n- [x] MacOS: Chrome / Safari\\r\\n- [x] MacOS: Desktop\\r\\n\\r\\n## Screenshots/Videos\\r\\n\\r\\nAdd any screenshot/video evidence\\r\\n\\r\\n\u003c/details\u003e \\r\\n\\r\\nhttps://github.com/Expensify/App/assets/78819774/e488a90c-0963-444f-8a8f-7d611f06248b\\r\\n\\r\\n\\r\\n\\r\\n[View all open jobs on GitHub](https://github.com/Expensify/App/issues?q=is%3Aopen+is%3Aissue+label%3A%22Help+Wanted%22)\\r\\n\\n\u003cdetails\u003e\u003csummary\u003eUpwork Automation - Do Not Edit\u003c/summary\u003e\\n \u003cul\u003e\\n \u003cli\u003eUpwork Job URL: https://www.upwork.com/jobs/~01432a2ba6b78d56dc\u003c/li\u003e\\n \u003cli\u003eUpwork Job ID: 1764475541802258432\u003c/li\u003e\\n \u003cli\u003eLast Price Increase: 2024-03-11\u003c/li\u003e\\n\u003cli\u003eAutomatic offers: \u003c/li\u003e\\n\u003cul\u003e\\n\u003cli\u003eDylanDylann | Contributor | 0\u003c/li\u003e\\n\u003cli\u003egijoe0295 | Contributor | 0\u003c/li\u003e\\n\u003c/ul\u003e\u003c/li\u003e\\n \u003c/ul\u003e\\n\u003c/details\u003e\\n\\nYou will be paid $500.0 if your team fixes the issue. Since you are a manager, your task is to select the best proposal regaerding how to fix the issue from the below options:\\n\\nProposal: 0:\\n\\n## Proposal\\r\\n\\r\\n### Please re-state the problem that we are trying to solve in this issue.\\r\\n\\r\\nWS switcher switches to Expensify when creating a room under the same WS\\r\\n\\r\\n### What is the root cause of that problem?\\r\\n\\r\\nWe already have the logic the keep the workspace open when the room belongs to that same workspace:\\r\\n\\r\\nhttps://github.com/Expensify/App/blob/5bcba77195e2dda5ff0ad6209daeed71368f89af/src/libs/Navigation/dismissModalWithReport.ts#L47-L53\\r\\n\\r\\nBut at the time `dismissModal` was called, the optimistic data in `addPolicyReport` might not be updated to Onyx, causing the report with `reportID` passed [here](https://github.com/Expensify/App/blob/d482a25fc9e9f37990c27c1d5906227eb6204cf2/src/libs/actions/Report.ts#L1830) to be empty (because it is an optimistic report) and consequently failed the `shouldOpenAllWorkspace` check above.\\r\\n\\r\\n### What changes do you think we should make in order to solve the problem?\\r\\n\u003c!-- DO NOT POST CODE DIFFS --\u003e\\r\\n\\r\\nUse `dismissModalWithReport` [here](https://github.com/Expensify/App/blob/d482a25fc9e9f37990c27c1d5906227eb6204cf2/src/libs/actions/Report.ts#L1830) to make sure the report is not empty.\\n\\n--------------------------------------------\\n\\nProposal: 1:\\n\\n## Proposal\\r\\n\\r\\n### What alternative solutions did you explore? (Optional)\\r\\n\\r\\nAdd `InteractionManager.runAfterInteractions` to the `dismissModal` [here](https://github.com/Expensify/App/blob/d482a25fc9e9f37990c27c1d5906227eb6204cf2/src/libs/actions/Report.ts#L1830) to delay that function call to make sure the optimistic data is updated.\\n\\n--------------------------------------------\\n\\nProposal: 2:\\n\\n## Proposal\\r\\n\\r\\nOptionally, we can automatically switches to whichever corresponding workspace of the room by removing the `shouldOpenAllWorkspace` check [here](https://github.com/Expensify/App/blob/5bcba77195e2dda5ff0ad6209daeed71368f89af/src/libs/Navigation/dismissModalWithReport.ts#L47-L53).\\r\\n\\r\\n\u003c!---\\r\\nATTN: Contributor+\\r\\n\\r\\nYou are the first line of defense in making sure every proposal has a clear and easily understood problem with a \"root cause\". Do not approve any proposals that lack a satisfying explanation to the first two prompts. It is CRITICALLY important that we understand the root cause at a minimum even if the solution doesn\\",
+      "categories": [
+        "UI/UX",
+        "Bugfix",
+        "NewFeatures/Enhancement",
+        "ReliabilityImprovements"
+      ],
+      "estimated_hours": 4,
+      "required_skills": [
+        "Regression Testing",
+        "Extending Capabilities",
+        "New Functionality",
+        "Monitoring",
+        "Testing",
+        "Interaction Improvements",
+        "UI Components",
+        "Error Handling",
+        "Root Cause Analysis",
+        "Product Enhancements"
+      ],
+      "auction_status": "open",
+      "price": 500,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-207",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2024-03-07] [$500] Web- Split - Tooltip shows email instead of display name when hovering over counter in split preview\\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n**Version Number:** 1.4.19-1\\r\\n**Reproducible in staging?:** Y\\r\\n**Reproducible in production?:** Y\\r\\n**If this was caught during regression testing, add the test name, ID and link from TestRail:**\\r\\n**Email or phone of affected tester (no customers):**\\r\\n**Logs:** https://stackoverflow.com/c/expensify/questions/4856\\r\\n**Expensify/Expensify Issue URL:**\\r\\n**Issue reported by:** Applause - Internal Team\\r\\n**Slack conversation:**\\r\\n\\r\\n## Action Performed:\\r\\n1. Split bill with at least 5 people with display name\\r\\n2. Hover over counter on the split preview\\r\\n\\r\\n## Expected Result:\\r\\nThe tooltip shows the display name for participants that have a display name\\r\\n\\r\\n## Actual Result:\\r\\nThe tooltip shows the contact details of the participants\\r\\n\\r\\n## Workaround:\\r\\nUnknown\\r\\n\\r\\n## Platforms:\\r\\n\u003c!---\\r\\nCheck off any platforms that are affected by this issue\\r\\n---\u003e\\r\\nWhich of our officially supported platforms is this issue occurring on?\\r\\n- [ ] Android: Native\\r\\n- [ ] Android: mWeb Chrome\\r\\n- [ ] iOS: Native\\r\\n- [ ] iOS: mWeb Safari\\r\\n- [x] MacOS: Chrome / Safari\\r\\n- [x] MacOS: Desktop\\r\\n\\r\\n## Screenshots/Videos\\r\\n\\r\\nAdd any screenshot/video evidence\\r\\n\\r\\n\u003c/details\u003e \\r\\n\\r\\nhttps://github.com/Expensify/App/assets/78819774/e482ada4-71ea-426c-84a8-5c1762a82f17\\r\\n\\r\\n\\r\\n[View all open jobs on GitHub](https://github.com/Expensify/App/issues?q=is%3Aopen+is%3Aissue+label%3A%22Help+Wanted%22)\\r\\n\\n\u003cdetails\u003e\u003csummary\u003eUpwork Automation - Do Not Edit\u003c/summary\u003e\\n \u003cul\u003e\\n \u003cli\u003eUpwork Job URL: https://www.upwork.com/jobs/~0194c00ce94ea69983\u003c/li\u003e\\n \u003cli\u003eUpwork Job ID: 1740550740664324096\u003c/li\u003e\\n \u003cli\u003eLast Price Increase: 2024-01-05\u003c/li\u003e\\n\u003cli\u003eAutomatic offers: \u003c/li\u003e\\n\u003cul\u003e\\n\u003cli\u003edukenv0307 | Contributor | 28091548\u003c/li\u003e\\n\u003c/ul\u003e\u003c/li\u003e\\n \u003c/ul\u003e\\n\u003c/details\u003e\\n\\nYou will be paid $500.0 if your team fixes the issue. Since you are a manager, your task is to select the best proposal regaerding how to fix the issue from the below options:\\n\\nProposal: 0:\\n\\n## Proposal\\nfrom: @unicorndev-727\\n### Please re-state the problem that we are trying to solve in this issue.\\nThe compose box displays duplicate characters upon pressing a single key\\n\\n### What is the root cause of that problem?\\nThe root cause is that we shows the logins not full name ,`FirstName` and `lastName`, when we create icons data here.\\nhttps://github.com/Expensify/App/blob/595bf4075988c0b64cb0db1e37694284637fbea2/src/libs/OptionsListUtils.js#L134-L150\\n\\nhttps://github.com/Expensify/App/blob/595bf4075988c0b64cb0db1e37694284637fbea2/src/components/MultipleAvatars.tsx#L108\\n\\n### What changes do you think we should make in order to solve the problem?\\nWe need to update this part to show full name here\\n```\\nfunction getAvatarsForAccountIDs(accountIDs, personalDetails, defaultValues = {}) {\\n const reversedDefaultValues = {};\\n _.map(Object.entries(defaultValues), (item) =\u003e {\\n reversedDefaultValues[item[1]] = item[0];\\n });\\n\\n return _.map(accountIDs, (accountID) =\u003e {\\n const login = lodashGet(reversedDefaultValues, accountID, \\",
+      "categories": [
+        "UI/UX",
+        "Bugfix"
+      ],
+      "estimated_hours": 4,
+      "required_skills": [
+        "Inconsistencies",
+        "Layout",
+        "UI Components",
+        "Interaction Improvements",
+        "Errors",
+        "Issue Reproduction"
+      ],
+      "auction_status": "open",
+      "price": 500,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-211",
+      "description": "Do not try to do everything at once! Start by just running ls, send that to the Python tool, and then wait for its reply. Again, you absolutely must not do everything at once. Do things step by step. You must send Python commands using ```python \u003ccode here\u003e``` syntax; this is the ONLY valid way to send commands. Again, you MUST send Python code using triple backticks.",
+      "categories": [
+        "ServerSideLogic",
+        "ReliabilityImprovements"
+      ],
+      "estimated_hours": 2,
+      "required_skills": [
+        "Database Queries",
+        "Backend Frameworks",
+        "Resilience Design",
+        "Logging"
+      ],
+      "auction_status": "open",
+      "price": 500,
+      "price_limit": 2000000
+    }
+  ],
+  "own_tasks": [
+    {
+      "task_id": "task-004",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[$4000] Copy/ Pasting from google docs appears as bold and bold text appears with * at both end of the message\\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n## Action Performed:\\r\\n\\r\\n1. Login with any account\\r\\n2. Go to any chat\\r\\n3. Copy normal style texts from google docs\\r\\n4. Paste it on the chat window\\r\\n5. Copy Bold style text from google docs\\r\\n6. Paste it on the chat window\\r\\n\\r\\nNotice that the pasted message automatically bolds itself. Also, sometimes * appears at the end sides of messages (front and end)\\r\\n## Expected Result:\\r\\nCopying texts from google docs and pasting it on the chat window should not be bold or * should not appear\\r\\n\\r\\n## Actual Result:\\r\\nCopying texts from google docs disrupts the font style by making the text bold and * appears at the end sides for bold text\\r\\n\\r\\n## Workaround:\\r\\nunknown\\r\\n\\r\\n## Platforms:\\r\\n\u003c!---\\r\\nCheck off any platforms that are affected by this issue\\r\\n---\u003e\\r\\nWhich of our officially supported platforms is this issue occurring on?\\r\\n\\r\\n- [ ] Android / Chrome\\r\\n- [ ] iOS / Safari\\r\\n- [ ] MacOS / Chrome / Safari\\r\\n- [ ] MacOS / Desktop\\r\\n\\r\\n**Version Number:** 1.2.54-2\\r\\n**Reproducible in staging?:** y\\r\\n**Reproducible in production?:** y\\r\\n**If this was caught during regression testing, add the test name, ID and link from TestRail:**\\r\\n**Email or phone of affected tester (no customers):**\\r\\n**Logs:** https://stackoverflow.com/c/expensify/questions/4856\\r\\n**Notes/Photos/Videos:** \\r\\n\\r\\nhttps://user-images.githubusercontent.com/43996225/212385364-15909ac1-25fa-442a-bd06-30796428853c.mov\\r\\n\\r\\nhttps://user-images.githubusercontent.com/43996225/212385401-f6aca747-a459-4bb6-bfaa-6e60e3e3d59e.mp4\\r\\n\\r\\n**Expensify/Expensify Issue URL:**\\r\\n**Issue reported by:** @ashimsharma10\\r\\n**Slack conversation:** https://expensify.slack.com/archives/C049HHMV9SM/p1673607769191409\\r\\n\\r\\n[View all open jobs on GitHub](https://github.com/Expensify/App/issues?q=is%3Aopen+is%3Aissue+label%3A%22Help+Wanted%22)\\r\\n\\n\u003cdetails\u003e\u003csummary\u003eUpwork Automation - Do Not Edit\u003c/summary\u003e\\n \u003cul\u003e\\n \u003cli\u003eUpwork Job URL: https://www.upwork.com/jobs/~01c031b83111575573\u003c/li\u003e\\n \u003cli\u003eUpwork Job ID: 1614923230009700352\u003c/li\u003e\\n \u003cli\u003eLast Price Increase: 2023-01-30\u003c/li\u003e\\n \u003c/ul\u003e\\n\u003c/details\u003e\\n\\nYou will be paid $4000.0 if your team fixes the issue. Since you are a manager, your task is to select the best proposal regaerding how to fix the issue from the below options:\\n\\nProposal: 0:\\n\\n### Proposal\\r\\n\\r\\nThis issue occurs when we are attempting to transmit bold text that includes a trailing space. Specifically, when the text in the comment is in the format of *this is bold text * and utilizing the current regular expression, it is only able to match the asterisks in conjunction with characters and is unable to match instances that include a trailing space.\\r\\n\\r\\n\\r\\nhttps://user-images.githubusercontent.com/75031127/212658079-d8961ac2-3745-4b46-9d32-054d1d1721aa.mov\\r\\n\\r\\nBasically this issue is coming from ExpensiMark from [expensify-common](https://github.com/Expensify/expensify-common) so we can open a PR to the repo using the following solution\\r\\n\\r\\nhttps://github.com/Expensify/expensify-common/blob/1b013e21d93925f5e2a7cb753cbc8027da7ef775/lib/ExpensiMark.js#L137-L144\\r\\n\\r\\nSolution\\r\\n```diff\\r\\n {\\r\\n // Use \\\\B in this case because \\\\b doesn\\",
+      "categories": [
+        "SystemQuality/Reliability",
+        "NewFeatures/Enhancement"
+      ],
+      "estimated_hours": 9,
+      "required_skills": [
+        "Architecture Design",
+        "Dependency Management",
+        "Product Enhancements",
+        "Feature Implementation",
+        "Extending Capabilities"
+      ],
+      "status": "assigned",
+      "price": 4000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-049",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2023-05-16] [$1000] Green dot (20x20) is considerably bigger then pin icon (16x16) in LHN and not consistent in size with other pages\\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n## Action Performed:\\r\\n\\r\\n1. Open the app\\r\\n2. Observe size of green dot and size of pin icon on reports archive\\r\\n3. Open settings and observe size of green dot\\r\\n4. Open profile and observe size of green dot\\r\\n5. In profile-\u003econtact method-\u003e phone number, observe size of green dot\\r\\n\\r\\n## Expected Result: \\r\\nApp should maintain same size for green dot SVG throughout and app should use 20x20 size for green dot on reports archive to ensure it looks right besides pin icon\\r\\n## Actual Result: \\r\\nApp uses 20x20 size for green dot besides 16x16 icon of pin and leaving reports archive and phone number page in contact method, app uses 16x16 size for green dot icon throughout all the pages\\r\\n\\r\\n## Workaround:\\r\\nunknown\\r\\n\\r\\n## Platforms:\\r\\n\u003c!---\\r\\nCheck off any platforms that are affected by this issue\\r\\n---\u003e\\r\\nWhich of our officially supported platforms is this issue occurring on?\\r\\n- [ ] Android / native\\r\\n- [ ] Android / Chrome\\r\\n- [ ] iOS / native\\r\\n- [ ] iOS / Safari\\r\\n- [x] MacOS / Chrome / Safari\\r\\n- [ ] MacOS / Desktop\\r\\n\\r\\n**Version Number:** 1.2.96-4\\r\\n**Reproducible in staging?:** y\\r\\n**Reproducible in production?:** y\\r\\n**If this was caught during regression testing, add the test name, ID and link from TestRail:**\\r\\n**Email or phone of affected tester (no customers):**\\r\\n**Logs:** https://stackoverflow.com/c/expensify/questions/4856\\r\\n**Notes/Photos/Videos:** Any additional supporting documentation\\r\\n\\r\\n\\r\\nhttps://user-images.githubusercontent.com/43996225/230685899-baf12f0b-1a03-4a64-a9dd-44881a3e6b30.mp4\\r\\n\\r\\n\\r\\nhttps://user-images.githubusercontent.com/43996225/230685940-a3f3a98a-b689-4d7c-aeaf-74fbee7bc4af.mp4\\r\\n\\r\\n\\r\\nhttps://user-images.githubusercontent.com/43996225/230685885-bb3140df-f78f-4172-bff3-69eb4d8ff02c.mp4\\r\\n\\r\\n\\r\\n**Expensify/Expensify Issue URL:**\\r\\n**Issue reported by:** @dhanashree-sawant\\r\\n**Slack conversation:** https://expensify.slack.com/archives/C049HHMV9SM/p1680859279508339\\r\\n\\r\\n[View all open jobs on GitHub](https://github.com/Expensify/App/issues?q=is%3Aopen+is%3Aissue+label%3A%22Help+Wanted%22)\\r\\n\\r\\n\\r\\n\\r\\n\u003cdetails\u003e\u003csummary\u003eUpwork Automation - Do Not Edit\u003c/summary\u003e\\r\\n \u003cul\u003e\\r\\n \u003cli\u003eUpwork Job URL: https://www.upwork.com/jobs/~01b604439e23576a0b\u003c/li\u003e\\r\\n \u003cli\u003eUpwork Job ID: 1648046942074019840\u003c/li\u003e\\r\\n \u003cli\u003eLast Price Increase: 2023-05-01\u003c/li\u003e\\r\\n \u003c/ul\u003e\\r\\n\u003c/details\u003e\\n\\nYou will be paid $1000.0 if your team fixes the issue. Since you are a manager, your task is to select the best proposal regaerding how to fix the issue from the below options:\\n\\nProposal: 0:\\n\\n## Proposal\\n### Please re-state the problem that we are trying to solve in this issue.\\nIn this issue, we can see that the dot indicator on the LHN is bigger than other similar icons on the App.\\n\\n### What is the root cause of that problem?\\nThis green dot stands for a pending IOU transaction. The height and width of the icon are not set for this icon, leading it to default to a bigger size.\\n\\n### What changes do you think we should make in order to solve the problem?\\nAs per the suggestion [here](https://github.com/Expensify/App/issues/17163#issuecomment-1513093842), we need to set the other icons as 20x20 instead. We need to remove the `height` and `width` in these places:\\n\\n- `OptionRowLHN`\\n - https://github.com/Expensify/App/blob/c792447a4c4eeba983d4e684c8cf66190a354d27/src/components/LHNOptionsList/OptionRowLHN.js#L233\\n - https://github.com/Expensify/App/blob/c792447a4c4eeba983d4e684c8cf66190a354d27/src/components/LHNOptionsList/OptionRowLHN.js#L224\\n - https://github.com/Expensify/App/blob/c792447a4c4eeba983d4e684c8cf66190a354d27/src/components/LHNOptionsList/OptionRowLHN.js#L208-L209\\n\\n- `OptionRow`\\n - https://github.com/Expensify/App/blob/88644166f51c9f7ea8211df0b9afee1ca4784700/src/components/OptionRow.js#L266-L267\\n - https://github.com/Expensify/App/blob/88644166f51c9f7ea8211df0b9afee1ca4784700/src/components/OptionRow.js#L282-L283\\n\\n- `HeaderView`\\n - https://github.com/Expensify/App/blob/c792447a4c4eeba983d4e684c8cf66190a354d27/src/pages/home/HeaderView.js#L156-L157\\n\\n**EDIT**\\nWith additional details from [here](https://github.com/Expensify/App/issues/17163#issuecomment-1515251507), we need to make the following modifications to the Icons:\\n\\n**Remove height and width from Icon**\\n- `MenuItem`\\n - https://github.com/Expensify/App/blob/5a3cbd870cf49aeded228adc12010397d3857b19/src/components/MenuItem.js#L195\\n- `DotIndicator`\\n - https://github.com/Expensify/App/blob/e7cfb99aa2847b9cdf4467deb3a56ebe258c28cb/src/components/DotIndicatorMessage.js#L57\\n\\n\\n### What alternative solutions did you explore? (Optional)\\nWe can resolve https://github.com/Expensify/App/issues/17226 here as well by adding `additionalStyles={[styles.ml2]}` to the DotIndicator icon.\\n\\n--------------------------------------------\\n\\nProposal: 1:\\n\\n## Proposal\\n\\n### Please re-state the problem that we are trying to solve in this issue.\\nGreen dot (20x20) is considerably bigger then pin icon (16x16) in LHN and not consistent in size with other pages #17163\\n\\n### What is the root cause of that problem?\\nWe are using `DotIndicator` from here, its default size is 20X20\\nhttps://github.com/Expensify/App/blob/3abe7b2f9e38dba42edf406ca1b1e19087f5599d/src/components/Icon/Expensicons.js#L33\\n\\nWithin `ContactMethodDetailsPage.js` we are displaying green icon via line 175:\\nhttps://github.com/Expensify/App/blob/3abe7b2f9e38dba42edf406ca1b1e19087f5599d/src/pages/settings/Profile/Contacts/ContactMethodDetailsPage.js#L175\\n\\nWithin `OptionRowLHN.js` we are displaying green icon via line 227:\\nhttps://github.com/Expensify/App/blob/3abe7b2f9e38dba42edf406ca1b1e19087f5599d/src/components/LHNOptionsList/OptionRowLHN.js#L227\\n\\nWe can see at both places i.e. **Contact Method Details Page** and **Option Row LHN** `height` and `width` prop not set, so it will take default width height i.e. 20x20. \\n\\nThis is the root cause of the problem i.e. Both places it shows 20x20 icon and other place it shows small icon.\\n\\n### What changes do you think we should make in order to solve the problem?\\nWithin `ContactMethodDetailsPage.js` set icon width/height as `variables.iconSizeSmall` (i.e. 16) as shown below:\\n```javascript\\n// \u003cIcon src={Expensicons.DotIndicator} fill={colors.green} /\u003e // *** OLD CODE\\n\u003cIcon src={Expensicons.DotIndicator} fill={colors.green} height={variables.iconSizeSmall} width={variables.iconSizeSmall} /\u003e. // *** Updated Code\\n```\\n\\nWithin `OptionRowLHN.js` set icon width/height as `variables.iconSizeSmall` (i.e. 16) as shown below:\\n```javascript\\n// {optionItem.hasOutstandingIOU \u0026\u0026 !optionItem.isIOUReportOwner \u0026\u0026 \u003cIcon src={Expensicons.DotIndicator} fill={colors.green} /\u003e}. // *** OLD CODE\\n\\n// Updated Code\\n{optionItem.hasOutstandingIOU \u0026\u0026 !optionItem.isIOUReportOwner \u0026\u0026 (\\n \u003cIcon\\n src={Expensicons.DotIndicator}\\n fill={colors.green}\\n height={variables.iconSizeSmall}\\n width={variables.iconSizeSmall}\\n /\u003e\\n)}\\n```\\n\\nSo this will solve the problem as shown in results.\\n\\n\u003cdetails\u003e\\n\u003csummary\u003eResults\u003c/summary\u003e\\n\\n| Before | After |\\n|--------|--------|\\n| \u003cimg width=\"390\" alt=\"LHN-Before\" src=\"https://user-images.githubusercontent.com/7823358/230721821-fa1a7664-c4ae-456f-8421-c63aea20b5eb.png\"\u003e | \u003cimg width=\"390\" alt=\"LHN-After\" src=\"https://user-images.githubusercontent.com/7823358/230721833-17b0e69a-76d7-4309-b7e9-08774d96bac7.png\"\u003e |\\n| \u003cimg width=\"380\" alt=\"Contact-Before\" src=\"https://user-images.githubusercontent.com/7823358/230721850-80453cc4-7dc5-4863-ac0e-986ed430127a.png\"\u003e | \u003cimg width=\"380\" alt=\"Contact-After\" src=\"https://user-images.githubusercontent.com/7823358/230721861-e62f75cc-e90e-4410-b380-0b7ee67b044a.png\"\u003e | \\n\\n\u003c/details\u003e\\n\\n\\n--------------------------------------------\\n\\nProposal: 2:\\n\\n## Proposal\\n\\n### Please re-state the problem that we are trying to solve in this issue.\\nGreen dot is bigger in size \u0026 doesn\\",
+      "categories": [
+        "UI/UX",
+        "SystemQuality/Reliability"
+      ],
+      "estimated_hours": 2,
+      "required_skills": [
+        "Dependency Management",
+        "Technical Debt",
+        "Architecture Design",
+        "Animation",
+        "User Experience",
+        "Design Changes"
+      ],
+      "status": "assigned",
+      "price": 1000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-058",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2023-10-27] [$500] IOS- Receipt border radius is not round\\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n**Version Number:** 1.3.80.0\\r\\n**Reproducible in staging?:** y\\r\\n**Reproducible in production?:** y\\r\\n**If this was caught during regression testing, add the test name, ID and link from TestRail:**\\r\\n**Email or phone of affected tester (no customers):**\\r\\n**Logs:** https://stackoverflow.com/c/expensify/questions/4856\\r\\n**Expensify/Expensify Issue URL:**\\r\\n**Issue reported by:** @gadhiyamanan\\r\\n**Slack conversation:** https://expensify.slack.com/archives/C049HHMV9SM/p1696931354301509\\r\\n\\r\\n## Action Performed:\\r\\n1. Go to any chat\\r\\n2. Click on + icon and select request money option\\r\\n3. Request money manually\\r\\n4. Go to transaction thread\\r\\n5. Click on three dots and add receipt\\r\\n6. Go back to previous screen\\r\\n7. Verify the receipt border radius\\r\\n\\r\\n## Expected Result:\\r\\nreceipt border radius should be round\\r\\n\\r\\n## Actual Result:\\r\\n receipt border radius not round\\r\\n\\r\\n## Workaround:\\r\\nUnknown \\r\\n\\r\\n## Platforms:\\r\\n\u003c!---\\r\\nCheck off any platforms that are affected by this issue\\r\\n---\u003e\\r\\nWhich of our officially supported platforms is this issue occurring on?\\r\\n- [ ] Android: Native\\r\\n- [ ] Android: mWeb Chrome\\r\\n- [x] iOS: Native\\r\\n- [ ] iOS: mWeb Safari\\r\\n- [ ] MacOS: Chrome / Safari\\r\\n- [ ] MacOS: Desktop\\r\\n\\r\\n## Screenshots/Videos\\r\\n\u003cdetails\u003e\\r\\n\u003csummary\u003eAndroid: Native\u003c/summary\u003e\\r\\n\\r\\n\u003c!-- add screenshots or videos here --\u003e\\r\\n\\r\\n\u003c/details\u003e\\r\\n\\r\\n\u003cdetails\u003e\\r\\n\u003csummary\u003eAndroid: mWeb Chrome\u003c/summary\u003e\\r\\n\\r\\n\u003c!-- add screenshots or videos here --\u003e\\r\\n\\r\\n\u003c/details\u003e\\r\\n\\r\\n\u003cdetails\u003e\\r\\n\u003csummary\u003eiOS: Native\u003c/summary\u003e\\r\\n\\r\\n\u003c!-- add screenshots or videos here --\u003e \\r\\n\\r\\nhttps://github.com/Expensify/App/assets/93399543/b19225b2-6ffa-4e78-9ba7-8101849e7043\\r\\n\\r\\n![IMG_6671 (1)](https://github.com/Expensify/App/assets/93399543/e1384520-1ce2-450c-9242-d60d4fcef565)\\r\\n\\r\\n\\r\\n\u003c/details\u003e\\r\\n\\r\\n\u003cdetails\u003e\\r\\n\u003csummary\u003eiOS: mWeb Safari\u003c/summary\u003e\\r\\n\\r\\n\u003c!-- add screenshots or videos here --\u003e\\r\\n\\r\\n\u003c/details\u003e\\r\\n\\r\\n\u003cdetails\u003e\\r\\n\u003csummary\u003eMacOS: Chrome / Safari\u003c/summary\u003e\\r\\n\\r\\n\u003c!-- add screenshots or videos here --\u003e\\r\\n\\r\\n\u003c/details\u003e\\r\\n\\r\\n\u003cdetails\u003e\\r\\n\u003csummary\u003eMacOS: Desktop\u003c/summary\u003e\\r\\n\\r\\n\u003c!-- add screenshots or videos here --\u003e\\r\\n\\r\\n\u003c/details\u003e\\r\\n\\r\\n[View all open jobs on GitHub](https://github.com/Expensify/App/issues?q=is%3Aopen+is%3Aissue+label%3A%22Help+Wanted%22)\\r\\n\\r\\n\u003cdetails\u003e\u003csummary\u003eUpwork Automation - Do Not Edit\u003c/summary\u003e\\r\\n \u003cul\u003e\\r\\n \u003cli\u003eUpwork Job URL: https://www.upwork.com/jobs/~01c9f60635e933b6e7\u003c/li\u003e\\r\\n \u003cli\u003eUpwork Job ID: 1711836727727636480\u003c/li\u003e\\r\\n \u003cli\u003eLast Price Increase: 2023-10-10\u003c/li\u003e\\n\u003cli\u003eAutomatic offers: \u003c/li\u003e\\n\u003cul\u003e\\n\u003cli\u003eeh2077 | Contributor | 27239377\u003c/li\u003e\\n\u003cli\u003egadhiyamanan | Reporter | 27239379\u003c/li\u003e\\n\u003c/ul\u003e\u003c/li\u003e\\r\\n \u003c/ul\u003e\\r\\n\u003c/details\u003e\\n\\nYou will be paid $500.0 if your team fixes the issue. Since you are a manager, your task is to select the best proposal regaerding how to fix the issue from the below options:\\n\\nProposal: 0:\\n\\n## Proposal\\r\\n\\r\\n### Please re-state the problem that we are trying to solve in this issue.\\r\\nReceipt border radius is not round\\r\\n### What is the root cause of that problem?\\r\\nhttps://github.com/Expensify/App/blob/b5445bd0da78132d602b2f3de36a19b1cf495fce/src/components/ReportActionItem/ReportActionItemImage.js#L41-L48\\r\\nIt seems that the `styles.reportContainerBorderRadius` which is responsible for Border radius is not. assigned to `ThumbnailImage`.\\r\\n### What changes do you think we should make in order to solve the problem?\\r\\nassign styles.reportContainerBorderRadius\\r\\n\u003cimg width=\"367\" alt=\"Screenshot 2023-10-11 at 2 10 46\\u2006AM\" src=\"https://github.com/Expensify/App/assets/138146362/d15e4cea-852e-477d-8cb2-5a6624e9662b\"\u003e\\r\\n\\n\\n--------------------------------------------\\n\\nProposal: 1:\\n\\n### Proposal\\r\\n\\r\\n### Please re-state the problem that we are trying to solve in this issue.\\r\\nIOS- Receipt border radius is not round\\r\\n\\r\\n### What is the root cause of that problem?\\r\\nWe are not applying the border radius properties to the inner container of the images.\\r\\n\\r\\nhttps://github.com/Expensify/App/blob/11acdc2a4918859a3e1b8dfe23f10ad9a6f24218/src/components/ReportActionItem/ReportActionItemImages.js#L54-L78\\r\\n\\r\\nhttps://github.com/Expensify/App/blob/b5445bd0da78132d602b2f3de36a19b1cf495fce/src/styles/styles.js#L3600-L3607\\r\\n\\r\\n### What changes do you think we should make in order to solve the problem?\\r\\nBorder radius and overflow style should also be added to reportActionItemImage.\\r\\n\\r\\nStyles to be _**added:**_\\r\\n\\r\\nhttps://github.com/Expensify/App/blob/b5445bd0da78132d602b2f3de36a19b1cf495fce/src/styles/styles.js#L3592-L3596\\r\\n\\r\\n### Optional:\\r\\nWe may want to subtract 4 from `componentBorderRadiusLarge` because the images container has `borderWidth` of 4 and if we don\\",
+      "categories": [
+        "UI/UX",
+        "SystemQuality/Reliability"
+      ],
+      "estimated_hours": 2,
+      "required_skills": [
+        "Animation",
+        "Interaction Improvements",
+        "Accessibility",
+        "Performance Optimization",
+        "System Design"
+      ],
+      "status": "assigned",
+      "price": 500,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-059",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2024-04-05] [$500] Anonymous user can access the settings page \\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n**Version Number:** 1.4.50-5\\r\\n**Reproducible in staging?:** y\\r\\n**Reproducible in production?:** y\\r\\n**If this was caught during regression testing, add the test name, ID and link from TestRail:**\\r\\n**Email or phone of affected tester (no customers):**\\r\\n**Logs:** https://stackoverflow.com/c/expensify/questions/4856\\r\\n**Expensify/Expensify Issue URL:**\\r\\n**Issue reported by:** @trjExpensify \\r\\n**Slack conversation:** https://expensify.slack.com/archives/C049HHMV9SM/p1710244751238109\\r\\n\\r\\n## Action Performed:\\r\\n1. As a member of a public room type a bunch of settings page URLs in a public room. E.g https://staging.new.expensify.com/settings/profile, https://staging.new.expensify.com/settings/wallet, https://staging.new.expensify.com/settings/preferences, https://staging.new.expensify.com/settings/security\\r\\n2. Sign-out of any instance of Expensify you have on that device\\r\\n3. Enter the URL of the public room containing those links (e.g https://staging.new.expensify.com/r/xxxxxxxxxxxx)\\r\\n4. Click on the links to the settings pages as an anonymous user in the chat\\r\\n5. Observe you can access the settings pages\\r\\n\\r\\n## Expected Result:\\r\\nThe sign-in prompt should appear in the RHP just like clicking the \"settings\" bottom tab or search icon.\\r\\n\\r\\n## Actual Result:\\r\\nThe pages are accessible via the deep links.\\r\\n\\r\\n## Workaround:\\r\\nunknown\\r\\n\\r\\n## Platforms:\\r\\n\u003c!---\\r\\nCheck off any platforms that are affected by this issue\\r\\n---\u003e\\r\\nWhich of our officially supported platforms is this issue occurring on?\\r\\n- [ ] Android: Native\\r\\n- [ ] Android: mWeb Chrome\\r\\n- [ ] iOS: Native\\r\\n- [ ] iOS: mWeb Safari\\r\\n- [x] MacOS: Chrome / Safari\\r\\n- [ ] MacOS: Desktop\\r\\n\\r\\n## Screenshots/Videos\\r\\n\\r\\nAdd any screenshot/video evidence\\r\\n\\r\\nhttps://github.com/Expensify/App/assets/38435837/b43cac40-b3d4-4552-9192-1dffc87511aa\\r\\n\\r\\n\\r\\n\u003c/details\u003e\\r\\n\\r\\n[View all open jobs on GitHub](https://github.com/Expensify/App/issues?q=is%3Aopen+is%3Aissue+label%3A%22Help+Wanted%22)\\r\\n\\n\u003cdetails\u003e\u003csummary\u003eUpwork Automation - Do Not Edit\u003c/summary\u003e\\n \u003cul\u003e\\n \u003cli\u003eUpwork Job URL: https://www.upwork.com/jobs/~012cb619021a94beb4\u003c/li\u003e\\n \u003cli\u003eUpwork Job ID: 1768801922139336704\u003c/li\u003e\\n \u003cli\u003eLast Price Increase: 2024-03-16\u003c/li\u003e\\n \u003c/ul\u003e\\n\u003c/details\u003e\\n\\n\u003cdetails\u003e\u003csummary\u003eIssue Owner\u003c/summary\u003eCurrent Issue Owner: @mkhutornyi\u003c/details\u003e\\n\\nYou will be paid $500.0 if your team fixes the issue. Since you are a manager, your task is to select the best proposal regaerding how to fix the issue from the below options:\\n\\nProposal: 0:\\n\\n## Proposal\\r\\n\\r\\n### Please re-state the problem that we are trying to solve in this issue.\\r\\nAnonymous user can access the settings page\\r\\n### What is the root cause of that problem?\\r\\nWe do not check if the user is Anonymous in [InitialSettingsPage](https://github.com/Expensify/App/blob/main/src/pages/settings/InitialSettingsPage.tsx#L105). \\r\\n### What changes do you think we should make in order to solve the problem?\\r\\nAdd a check such that if user is not signed in then call `signOutAndRedirectToSignIn` from `Session`\\r\\n```typescript\\r\\n\\r\\n if (Session.isAnonymousUser() ) {\\r\\n Navigation.isNavigationReady().then(() =\u003e {\\r\\n Session.signOutAndRedirectToSignIn();\\r\\n });\\r\\n }\\r\\n \\r\\n ```\\r\\n \\r\\n Put the above check inside the useEffect:\\r\\n \\r\\n https://github.com/Expensify/App/blob/c05ce4746ee617f053dd7205f20956da4c719251/src/pages/settings/InitialSettingsPage.tsx#L104-L106\\r\\n### What alternative solutions did you explore? (Optional)\\r\\n\\r\\nN/A\\n\\n--------------------------------------------\\n\\nProposal: 1:\\n\\n## Proposal\\r\\n\\r\\n### Please re-state the problem that we are trying to solve in this issue.\\r\\nAnonymous user can access restricted page such as settings page by clicking the link from the chat.\\r\\n\\r\\n### What is the root cause of that problem?\\r\\nWe don\\",
+      "categories": [
+        "ServerSideLogic",
+        "SystemQuality/Reliability"
+      ],
+      "estimated_hours": 2,
+      "required_skills": [
+        "Authentication",
+        "Code Quality",
+        "Technical Debt",
+        "Middleware Functions",
+        "Backend Frameworks"
+      ],
+      "status": "assigned",
+      "price": 500,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-071",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2023-10-24] [$2000] There is a delay of 1-2 seconds when a new workspace is created in the Android app.\\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n## Action Performed:\\r\\n1. Open the \"Settings\" of the app.\\r\\n2. Tap on \"Workspaces\".\\r\\n3. Select \"New workspace\".\\r\\nNotice the app almost freezes when the \"New workspace\" button is pressed for couple of seconds.\\r\\n\\r\\n## Expected Result\\r\\nThere should not be any delay, and the app should function smoothly like web.\\r\\n\\r\\n## Actual Result\\r\\nThe app freezes or experiences a delay of 1-2 seconds when the \"New workspace\" button is pressed.\\r\\n\\r\\n## Workaround:\\r\\nunknown\\r\\n\\r\\n## Platforms:\\r\\n\u003c!---\\r\\nCheck off any platforms that are affected by this issue\\r\\n---\u003e\\r\\nWhich of our officially supported platforms is this issue occurring on?\\r\\n- [x] Android / native `Offline and Online`\\r\\n- [x] Android / Chrome `Offline and Online`\\r\\n- [x] iOS / native `Offline and Online`\\r\\n- [x] iOS / Safari Offline and Online\\r\\n- [x] MacOS / Chrome / Safari `Offline and Online`\\r\\n- [x] MacOS / Desktop `Offline and Online`\\r\\n\\r\\n**Version Number:** 1.2.94-0\\r\\n**Reproducible in staging?:** y\\r\\n**Reproducible in production?:** y\\r\\n**If this was caught during regression testing, add the test name, ID and link from TestRail:**\\r\\n**Email or phone of affected tester (no customers):**\\r\\n**Logs:** https://stackoverflow.com/c/expensify/questions/4856\\r\\n**Notes/Photos/Videos:** Any additional supporting documentation\\r\\n\\r\\nhttps://user-images.githubusercontent.com/43996225/229895085-7d308e86-cfac-4fd2-add0-75177d0c238f.mp4\\r\\n\\r\\n\\r\\nhttps://user-images.githubusercontent.com/43996225/229895377-88435974-047b-4a15-a0e0-60efb547e4d8.mp4\\r\\n\\r\\n\\r\\n**Expensify/Expensify Issue URL:**\\r\\n**Issue reported by:** @usmantariq96\\r\\n**Slack conversation:** https://expensify.slack.com/archives/C049HHMV9SM/p1680610152510499\\r\\n\\r\\n[View all open jobs on GitHub](https://github.com/Expensify/App/issues?q=is%3Aopen+is%3Aissue+label%3A%22Help+Wanted%22)\\r\\n\\n\u003cdetails\u003e\u003csummary\u003eUpwork Automation - Do Not Edit\u003c/summary\u003e\\n \u003cul\u003e\\n \u003cli\u003eUpwork Job URL: https://www.upwork.com/jobs/~0174b5420e1b80f716\u003c/li\u003e\\n \u003cli\u003eUpwork Job ID: 1645860223341436928\u003c/li\u003e\\n \u003cli\u003eLast Price Increase: 2023-09-21\u003c/li\u003e\\n\u003cli\u003eAutomatic offers: \u003c/li\u003e\\n\u003cul\u003e\\n\u003cli\u003es77rt | Reviewer | 27148524\u003c/li\u003e\\n\u003c/ul\u003e\u003c/li\u003e\\n \u003c/ul\u003e\\n\u003c/details\u003e\\n\\nYou will be paid $2000.0 if your team fixes the issue. Since you are a manager, your task is to select the best proposal regaerding how to fix the issue from the below options:\\n\\nProposal: 0:\\n\\n## Proposal\\n\\n### Please re-state the problem that we are trying to solve in this issue.\\n\\nThe app freezes for a few seconds after pressing the \"New Workspace\" button.\\n\\n### What is the root cause of that problem?\\n\\nWhen a new workspace is being created, the `Policy.createWorkspace()` function is invoked, leading to the execution of two functions: `SidebarUtils.getOrderedReportIDs()` and `SidebarUtils.getOptionData()`. These functions are essential for rendering the options within the `\u003cOptionRowLHN /\u003e` component, which is utilized by the `\u003cSidebarLinks /\u003e` component. Consequently, the `\u003cOptionRowLHN /\u003e` and `\u003cSidebarLinks /\u003e` components need to be re-rendered, which results in a slight delay when clicking on the \"New workspace\" button.\\n\\n\\n### What changes do you think we should make in order to solve the problem?\\n\\nWhen a user clicks the “New workspace” button in the context of a `\u003cFlatlist /\u003e`, the app must perform several operations, including updating the list data, re-rendering the list view, and possibly performing additional layout calculations. These operations can be particularly taxing on older and slower devices that have limited processing power and memory.\\nSeveral performance improvements should be made to address this issue and make the click button work faster. First of all, I would suggest replacing `FlatList` with `FlashList`. Thanks to this, the items with` \u003cOptionRowLHN /\u003e` will render faster and smoother, and we will avoid long delays during clicking “New workspaces” button.\\nAlso to prevent unnecessary re-rendering, I would suggest adding the `React.memo` and `React.useMemo` HOCs to the components consumed by `\u003cOptionRowLHN /\u003e` and `\u003cSidebarLinks /\u003e`. By reducing the number of re-renderings, we can improve the overall performance of the sidebar screen and provide a smoother user experience.\\n\\n\\n#### Performance when creating new workspace without Components improvements:\\n\\nAs you can see in the screenshots below, using FlashList can reduce the number of re-renderings and most importantly reduce the rendering time of each element.\\n![after](https://user-images.githubusercontent.com/19835085/234208982-6eff3e7f-d5f0-4c5a-8c5d-32855a9d8927.png)\\n\u003cimg width=\"1220\" alt=\"perf_after\" src=\"https://user-images.githubusercontent.com/19835085/234209036-7f083e43-8ce3-435e-88b2-9f987707601c.png\"\u003e\\n\\n#### Performance when creating new workspace without Components improvements:\\n![before](https://user-images.githubusercontent.com/19835085/234209142-53451811-e82c-412b-91c6-7cb667e351aa.png)\\n![perf_before](https://user-images.githubusercontent.com/19835085/234209215-51d3d6ee-933d-4824-8c19-c90e3259cfc6.png)\\n\\n--------------------------------------------\\n\\nProposal: 1:\\n\\n## Proposal\\n\\n### What alternative solutions did you explore? (Optional)\\n\\nAdditionally, I would suggest refactoring these two methods `SidebarUtils.getOrderedReportIDs()` and `SidebarUtils.getOptionData()`. There seem to be relatively large and complex functions, and they have a lot of logic. I would consider simplifying the logic by breaking the functions into smaller, more manageable functions.\\n\\n--------------------------------------------\\n\\nProposal: 2:\\n\\n## Proposal\\n\\n### Please re-state the problem that we are trying to solve in this issue.\\nThe app freezes for a few seconds after pressing the \"New Workspace\" button.\\n\\n### What is the root cause of that problem?\\nThe root cause of that problem is the use of the SET method on the `optmisticData` used in the `Policy.createWorkspace()` function. As pointed out in this comment: https://github.com/Expensify/App/issues/16935#issuecomment-1528311867 onyx set method is blocking while onyx merge method is not, which is expected behavior (slack thread: https://expensify.slack.com/archives/C01GTK53T8Q/p1682938682704609).\\n\\n### What changes do you think we should make in order to solve the problem?\\n\\nTo solve this problem, we should replace the SET method with the MERGE method. This will make the feedback faster and the app won\\",
+      "categories": [
+        "ServerSideLogic",
+        "SystemQuality/Reliability",
+        "Bugfix"
+      ],
+      "estimated_hours": 6,
+      "required_skills": [
+        "Code Refactoring",
+        "System Design",
+        "Inconsistencies",
+        "Root Cause Analysis",
+        "Unexpected Behaviors",
+        "Authentication",
+        "Authorization",
+        "Middleware Functions",
+        "Architecture Design"
+      ],
+      "status": "assigned",
+      "price": 2000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-081",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2023-11-06] [$500] Label for Workspace under rooms is too big\\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n**Version Number:** 1.3.86-2\\r\\n**Reproducible in staging?:** y\\r\\n**Reproducible in production?:** y\\r\\n**If this was caught during regression testing, add the test name, ID and link from TestRail:**\\r\\n**Email or phone of affected tester (no customers):**\\r\\n**Logs:** https://stackoverflow.com/c/expensify/questions/4856\\r\\n**Expensify/Expensify Issue URL:**\\r\\n**Issue reported by:** @shawnborton \\r\\n**Slack conversation:** https://expensify.slack.com/archives/C049HHMV9SM/p1697651834483569\\r\\n\\r\\n## Action Performed:\\r\\n1. Use global create to Start a chat, then hit the Room tab.\\r\\n## Expected Result: \\r\\nThe label \"Workspace\" above the value of \"Select a workspace\" should use our label font size (13px). Also, I think it might be better to just not have \"Select a workspace\" at all here to follow our standard pattern\\r\\n## Actual Result: \\r\\nThe label is too big.\\r\\n\\r\\n## Workaround:\\r\\nCan the user still use Expensify without this being fixed? Have you informed them of the workaround?\\r\\n\\r\\n## Platforms:\\r\\n\u003c!---\\r\\nCheck off any platforms that are affected by this issue\\r\\n---\u003e\\r\\nWhich of our officially supported platforms is this issue occurring on?\\r\\n- [x] Android: Native\\r\\n- [x] Android: mWeb Chrome\\r\\n- [ ] iOS: Native\\r\\n- [ ] iOS: mWeb Safari\\r\\n- [x] MacOS: Chrome / Safari\\r\\n- [x] MacOS: Desktop\\r\\n\\r\\n## Screenshots/Videos\\r\\n\u003cdetails\u003e\\r\\n\u003csummary\u003eAndroid: Native\u003c/summary\u003e\\r\\n\\r\\n\u003c!-- add screenshots or videos here --\u003e\\r\\n\\r\\n\u003c/details\u003e\\r\\n\\r\\n\u003cdetails\u003e\\r\\n\u003csummary\u003eAndroid: mWeb Chrome\u003c/summary\u003e\\r\\n\\r\\n\u003c!-- add screenshots or videos here --\u003e\\r\\n\\r\\n\u003c/details\u003e\\r\\n\\r\\n\u003cdetails\u003e\\r\\n\u003csummary\u003eiOS: Native\u003c/summary\u003e\\r\\n\\r\\n\u003c!-- add screenshots or videos here --\u003e\\r\\n\\r\\n\u003c/details\u003e\\r\\n\\r\\n\u003cdetails\u003e\\r\\n\u003csummary\u003eiOS: mWeb Safari\u003c/summary\u003e\\r\\n\\r\\n\u003c!-- add screenshots or videos here --\u003e\\r\\n\\r\\n\u003c/details\u003e\\r\\n\\r\\n\u003cdetails\u003e\\r\\n\u003csummary\u003eMacOS: Chrome / Safari\u003c/summary\u003e\\r\\n\\r\\n\u003c!-- add screenshots or videos here --\u003e\\r\\n\\r\\n![3](https://github.com/Expensify/App/assets/38435837/a1b21e29-2e89-467c-8fb5-ce9b0d97ea8b)\\r\\n\\r\\n![image](https://github.com/Expensify/App/assets/38435837/e1fab6ed-cbbf-49d7-a0ce-ec7bc0db2dbe)\\r\\n\\r\\n\u003c/details\u003e\\r\\n\\r\\n\u003cdetails\u003e\\r\\n\u003csummary\u003eMacOS: Desktop\u003c/summary\u003e\\r\\n\\r\\n\u003c!-- add screenshots or videos here --\u003e\\r\\n\\r\\n\u003c/details\u003e\\r\\n\\r\\n[View all open jobs on GitHub](https://github.com/Expensify/App/issues?q=is%3Aopen+is%3Aissue+label%3A%22Help+Wanted%22)\\r\\n\\r\\n\u003cdetails\u003e\u003csummary\u003eUpwork Automation - Do Not Edit\u003c/summary\u003e\\r\\n \u003cul\u003e\\r\\n \u003cli\u003eUpwork Job URL: https://www.upwork.com/jobs/~010adfaeddeeb3bd9c\u003c/li\u003e\\r\\n \u003cli\u003eUpwork Job ID: 1714767058455035904\u003c/li\u003e\\r\\n \u003cli\u003eLast Price Increase: 2023-10-18\u003c/li\u003e\\n\u003cli\u003eAutomatic offers: \u003c/li\u003e\\n\u003cul\u003e\\n\u003cli\u003eahmedGaber93 | Contributor | 27327556\u003c/li\u003e\\n\u003c/ul\u003e\u003c/li\u003e\\r\\n \u003c/ul\u003e\\r\\n\u003c/details\u003e\\n\\nYou will be paid $500.0 if your team fixes the issue. Since you are a manager, your task is to select the best proposal regaerding how to fix the issue from the below options:\\n\\nProposal: 0:\\n\\n## Proposal\\n\\n### Please re-state the problem that we are trying to solve in this issue.\\nThe label \"Workspace\" should use our label font size (13px)m Remove the placeholder \"Select a workspace\" \\n### What is the root cause of that problem?\\n1. With the label currently we already have a [logic](https://github.com/Expensify/App/blob/3b86da6dc1ec2ca15033bbdc09702892966c2580/src/components/ValuePicker/index.js#L62C5-L62C69) that if the `ValuePicker` has a value label will set size 13px.\\n2. We set a placeholder for the select workspace\\nhttps://github.com/Expensify/App/blob/3b86da6dc1ec2ca15033bbdc09702892966c2580/src/pages/workspace/WorkspaceNewRoomPage.js#L219\\n### What changes do you think we should make in order to solve the problem?\\n1. Currently, when the workspace menu has the value the label is already 13px, if not it should 15px the same as all menu description in the app.\\n2. We should remove this line.\\nhttps://github.com/Expensify/App/blob/3b86da6dc1ec2ca15033bbdc09702892966c2580/src/pages/workspace/WorkspaceNewRoomPage.js#L219\\n\\n### What alternative solutions did you explore? (Optional)\\nN/A\\n\\n\\n--------------------------------------------\\n\\nProposal: 1:\\n\\n## Proposal\\n### Please re-state the problem that we are trying to solve in this issue.\\nLabel for Workspace under rooms is too big\\n### What is the root cause of that problem?\\nWe are changing the style based upon the value passed to the ValuePicker component here\\nThis is dont to maintain the visibility and based on whether the value prop contains value or not\\nhttps://github.com/Expensify/App/blob/babd7a69f3114d4a78408bf8333e7f9217e4df2c/src/components/ValuePicker/index.js#L62\\n### What changes do you think we should make in order to solve the problem?\\nWe can either remove the descriptionTextStyle completely, that would give the default fontsize for all.\\nor we can remove the condition so that there is one single behaviour across the app, whether it is 13px label or greater.\\n\\n\\n--------------------------------------------\\n\\nProposal: 2:\\n\\n## Proposal\\n### https://github.com/Expensify/App/blob/c56634a1ba65d89ca3abe897e1ac3ad7cd2e07d4/src/pages/workspace/WorkspaceNewRoomPage.js#L216-L222\\nWe can also pass the value prop here and select the first option like this\\n```javascript\\n \u003cValuePicker\\n inputID=\"policyID\"\\n label={translate(\\",
+      "categories": [
+        "UI/UX",
+        "SystemQuality/Reliability"
+      ],
+      "estimated_hours": 4,
+      "required_skills": [
+        "Code Quality",
+        "System Design",
+        "Accessibility",
+        "Visual Design",
+        "Layout",
+        "Code Refactoring"
+      ],
+      "status": "assigned",
+      "price": 500,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-112",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2023-08-07] [$1000] The #announce is hidden for a long workspace name (works fine with small workspace name)\\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n## Action Performed:\\r\\n\\r\\n1. Go to staging dot on web chrome\\r\\n2. Create a new workspace and change the name of the workspace to a longer name\\r\\n3. Go to announce of the workspace and send any message\\r\\n4. Now click on reply thread and send any message\\r\\n5. A new page opens up with the workspace header. Click on it\\r\\n6. Click on share code\\r\\n7. Notice that the #announce is hidden and is not shown.\\r\\n8. If you follow the same steps on small workspace name, the #announce is shown. Since #announce is an important identifier, it should not be hidden even if the workspace name is longer\\r\\n\\r\\n## Expected Result:\\r\\nThe #announce should not be hidden for a long workspace name since it\\",
+      "categories": [
+        "SystemQuality/Reliability",
+        "NewFeatures/Enhancement"
+      ],
+      "estimated_hours": 3,
+      "required_skills": [
+        "Code Refactoring",
+        "New Functionality",
+        "Extending Capabilities",
+        "Product Enhancements",
+        "Dependency Management"
+      ],
+      "status": "assigned",
+      "price": 1000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-126",
+      "description": "Do not try to do everything at once! Start by just running ls, send that to the Python tool, and then wait for its reply. Again, you absolutely must not do everything at once. Do things step by step. You must send Python commands using ```python \u003ccode here\u003e``` syntax; this is the ONLY valid way to send commands. Again, you MUST send Python code using triple backticks.",
+      "categories": [
+        "SystemQuality/Reliability"
+      ],
+      "estimated_hours": 4,
+      "required_skills": [
+        "Technical Debt",
+        "Dependency Management"
+      ],
+      "status": "assigned",
+      "price": 1000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-138",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2023-08-21] [$1000] Web - Close account button moves up when offline \\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n## Action Performed:\\r\\n1. Go to Settings\\r\\n2. Go to Security\\r\\n3. Go to Close account\\r\\n4. Turn off internet connectivity\\r\\n5. Observe that the \\",
+      "categories": [
+        "UI/UX",
+        "SystemQuality/Reliability"
+      ],
+      "estimated_hours": 3,
+      "required_skills": [
+        "Animation",
+        "UI Components",
+        "Code Quality",
+        "System Design"
+      ],
+      "status": "assigned",
+      "price": 1000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-140",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2023-07-24] [$2000] Settings page: remove code preventing rendering before `currentUserPersonalDetails` is ready\\n\\nComing from https://github.com/Expensify/App/pull/17349#issuecomment-1536407713, \\r\\n\\r\\nWe should refactor to remove the code that currently prevents the Settings screen from rendering before `currentUserPersonalDetails` is ready:\\r\\nhttps://github.com/Expensify/App/blob/cdd8e319af4edbdb426fa3f78306c87b5a03c44a/src/pages/settings/InitialSettingsPage.js#L276-L282\\r\\n\\r\\nA few notes:\\r\\n* Nested screens can now be navigated to earlier than before\\r\\n* Make sure there are no issues by (a) testing with a slow connection and (b) testing deep linking into the nested screens\\r\\n* We _might_ also need some new loading states (e.g. after removing the above-mentioned code, the text below the avatar on the Settings screen flickers from email address to name + surname)\\r\\n\\r\\nhttps://user-images.githubusercontent.com/7277067/236720288-95d05912-71e4-4e27-b051-3a723e922227.mov\\r\\n\\n\u003cdetails\u003e\u003csummary\u003eUpwork Automation - Do Not Edit\u003c/summary\u003e\\n \u003cul\u003e\\n \u003cli\u003eUpwork Job URL: https://www.upwork.com/jobs/~01157142bba66be571\u003c/li\u003e\\n \u003cli\u003eUpwork Job ID: 1655764572402282496\u003c/li\u003e\\n \u003cli\u003eLast Price Increase: 2023-05-18\u003c/li\u003e\\n \u003c/ul\u003e\\n\u003c/details\u003e\\n\\nYou will be paid $2000.0 if your team fixes the issue. Since you are a manager, your task is to select the best proposal regaerding how to fix the issue from the below options:\\n\\nProposal: 0:\\n\\n## Proposal\\n\\n### Please re-state the problem that we are trying to solve in this issue.\\nSettings page: remove code preventing rendering before currentUserPersonalDetails is ready\\n### What is the root cause of that problem?\\nSettings page is waiting for `currentUserPersonalDetails` to load before rendering its content\\n### What changes do you think we should make in order to solve the problem?\\nWe should just remove these lines of code\\nhttps://github.com/Expensify/App/blob/cdd8e319af4edbdb426fa3f78306c87b5a03c44a/src/pages/settings/InitialSettingsPage.js#L280-L282\\nI have removed this line and it is working without any issues, you can see video below.\\n\\nhttps://user-images.githubusercontent.com/59907218/237056801-f30915d8-d1e0-4a0c-8a14-79549ea43eef.mov\\n\\n\\nAs said in description, the name is changing from email to display name(if display name exists), image also is changing, and workspace are appearing too. In faster network it might create flickering effect. \\nIf needed we can add loading state to track `currentUserPersonalDetails` status, and show skeletons for avatar and display name while loading is true. But I don\\",
+      "categories": [
+        "ApplicationLogic",
+        "SystemQuality/Reliability",
+        "ReliabilityImprovements"
+      ],
+      "estimated_hours": 6,
+      "required_skills": [
+        "Form Handling",
+        "State Management",
+        "Dependency Management",
+        "Architecture Design",
+        "System Design",
+        "Logging",
+        "Resilience Design"
+      ],
+      "status": "assigned",
+      "price": 2000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-156",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2024-04-05] [$500] Not able to share logs to own self DM from \"Debug console\"\\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n**Version Number:** 1.4.50-5\\r\\n**Reproducible in staging?:** y\\r\\n**Reproducible in production?:** \\r\\n**If this was caught during regression testing, add the test name, ID and link from TestRail:**\\r\\n**Email or phone of affected tester (no customers):**\\r\\n**Logs:** https://stackoverflow.com/c/expensify/questions/4856\\r\\n**Expensify/Expensify Issue URL:**\\r\\n**Issue reported by:** @quinthar \\r\\n**Slack conversation:** https://expensify.slack.com/archives/C049HHMV9SM/p1710208120099339\\r\\n\\r\\n## Action Performed:\\r\\n1. Open app\\r\\n2. Go to settings \u003e about\u003e troubleshoot\\r\\n3. Toggle client side logging\u003e view debug console\\r\\n4. Click share logs\\r\\n\\r\\n## Expected Result:\\r\\nUser should be able to share to own DM to access in desktop\\r\\n\\r\\n## Actual Result:\\r\\nDoes not give the option in the list\\r\\n\\r\\n## Workaround:\\r\\nunknown\\r\\n\\r\\n## Platforms:\\r\\n\u003c!---\\r\\nCheck off any platforms that are affected by this issue\\r\\n---\u003e\\r\\nWhich of our officially supported platforms is this issue occurring on?\\r\\n- [x] Android: Native\\r\\n- [ ] Android: mWeb Chrome\\r\\n- [x] iOS: Native\\r\\n- [ ] iOS: mWeb Safari\\r\\n- [ ] MacOS: Chrome / Safari\\r\\n- [ ] MacOS: Desktop\\r\\n\\r\\n## Screenshots/Videos\\r\\n\\r\\nAdd any screenshot/video evidence\\r\\n\\r\\nhttps://github.com/Expensify/App/assets/38435837/a4547b06-8b43-4a81-a9c7-4184b83ec502\\r\\n\\r\\n\\r\\n\u003c/details\u003e\\r\\n\\r\\n[View all open jobs on GitHub](https://github.com/Expensify/App/issues?q=is%3Aopen+is%3Aissue+label%3A%22Help+Wanted%22)\\r\\n\\n\u003cdetails\u003e\u003csummary\u003eUpwork Automation - Do Not Edit\u003c/summary\u003e\\n \u003cul\u003e\\n \u003cli\u003eUpwork Job URL: https://www.upwork.com/jobs/~013e74b76766270067\u003c/li\u003e\\n \u003cli\u003eUpwork Job ID: 1767616215332700160\u003c/li\u003e\\n \u003cli\u003eLast Price Increase: 2024-03-19\u003c/li\u003e\\n \u003c/ul\u003e\\n\u003c/details\u003e\\n\\n\u003cdetails\u003e\u003csummary\u003eIssue Owner\u003c/summary\u003eCurrent Issue Owner: @mkhutornyi\u003c/details\u003e\\n\\nYou will be paid $500.0 if your team fixes the issue. Since you are a manager, your task is to select the best proposal regaerding how to fix the issue from the below options:\\n\\nProposal: 0:\\n\\n## Proposal\\n\\n### Please re-state the problem that we are trying to solve in this issue. \\nThe user is unable to share logs to self dm \\n### What is the root cause of that problem?\\n\\nin the `getShareLogOptions` we don\\",
+      "categories": [
+        "Bugfix",
+        "SystemQuality/Reliability"
+      ],
+      "estimated_hours": 4,
+      "required_skills": [
+        "Unexpected Behaviors",
+        "Error Handling",
+        "Inconsistencies",
+        "Architecture Design",
+        "System Design",
+        "Code Refactoring"
+      ],
+      "status": "assigned",
+      "price": 500,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-166",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2024-02-20] [$1000] [Polish] Add limit on length of task names, room names, etc. \\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n## Action Performed:\\r\\n1. Go to URL https://staging.new.expensify.com/\\r\\n2. Login with any Expensifail account\\r\\n3. Go to FAB -\u003e Assign task\\r\\n4. Start typing the title and note that there is no symbol limit\\r\\n\\r\\n## Expected Result:\\r\\nAfter discussion in Slack, we want to make the following field limit updates: \\r\\n\\r\\n**Titles (100 characters):**\\r\\n\\r\\n- Workspace name\\r\\n- Task name\\r\\n- Room name\\r\\n\\r\\n**Supporting messages (500 characters):**\\r\\n\\r\\n- Request description\\r\\n- Room welcome message\\r\\n- Task description\\r\\n\\r\\n## Actual Result:\\r\\nThere is no limit on the length of the title.\\r\\nSame behavior for Description\\r\\n\\r\\n## Workaround:\\r\\nUnknown\\r\\n\\r\\n## Platforms:\\r\\n\u003c!---\\r\\nCheck off any platforms that are affected by this issue\\r\\n---\u003e\\r\\nWhich of our officially supported platforms is this issue occurring on?\\r\\n- [x] Android / native\\r\\n- [x] Android / Chrome\\r\\n- [x] iOS / native\\r\\n- [x] iOS / Safari\\r\\n- [x] MacOS / Chrome / Safari\\r\\n- [x] MacOS / Desktop\\r\\n\\r\\n**Version Number:** 1.3.12.0\\r\\n\\r\\n**Reproducible in staging?:** Yes\\r\\n\\r\\n**Reproducible in production?:** yes\\r\\n\\r\\n**If this was caught during regression testing, add the test name, ID and link from TestRail:**\\r\\n\\r\\n**Email or phone of affected tester (no customers):**\\r\\n\\r\\n**Logs:** https://stackoverflow.com/c/expensify/questions/4856\\r\\n\\r\\n**Notes/Photos/Videos:** Any additional supporting documentation\\r\\n\\r\\n\\r\\nhttps://github.com/Expensify/App/assets/93399543/05b9957a-b07e-4625-9e73-3b720dea6b93\\r\\n\\r\\n\\r\\n**Expensify/Expensify Issue URL:**\\r\\n\\r\\n**Issue reported by:** Applause - Internal Team\\r\\n\\r\\n**Slack conversation:**\\r\\n\\r\\n[View all open jobs on GitHub](https://github.com/Expensify/App/issues?q=is%3Aopen+is%3Aissue+label%3A%22Help+Wanted%22)\\r\\n\\n\u003cdetails\u003e\u003csummary\u003eUpwork Automation - Do Not Edit\u003c/summary\u003e\\n \u003cul\u003e\\n \u003cli\u003eUpwork Job URL: https://www.upwork.com/jobs/~018a42c5fcacc50150\u003c/li\u003e\\n \u003cli\u003eUpwork Job ID: 1686014963280871424\u003c/li\u003e\\n \u003cli\u003eLast Price Increase: 2023-07-31\u003c/li\u003e\\n\u003cli\u003eAutomatic offers: \u003c/li\u003e\\n\u003cul\u003e\\n\u003cli\u003edhairyasenjaliya | Contributor | 26010517\u003c/li\u003e\\n\u003c/ul\u003e\u003c/li\u003e\\n \u003c/ul\u003e\\n\u003c/details\u003e\\n\\nYou will be paid $1000.0 if your team fixes the issue. Since you are a manager, your task is to select the best proposal regaerding how to fix the issue from the below options:\\n\\nProposal: 0:\\n\\n## Proposal\\n\\n### Please re-state the problem that we are trying to solve in this issue.\\nAssign Task field does not have limit on length\\n\\n### What is the root cause of that problem?\\nWe don\\",
+      "categories": [
+        "ApplicationLogic",
+        "SystemQuality/Reliability",
+        "NewFeatures/Enhancement"
+      ],
+      "estimated_hours": 3,
+      "required_skills": [
+        "Code Quality",
+        "New Functionality",
+        "User Workflows",
+        "Product Enhancements",
+        "State Management",
+        "Workflow Design",
+        "Architecture Design",
+        "Dependency Management"
+      ],
+      "status": "assigned",
+      "price": 1000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-167",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2023-09-04] [$1000] Split Bill - All user names are showing in IOU\\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n## Action Performed:\\r\\n1. Access staging.new.epensify.com\\r\\n2. Sign into a valid account\\r\\n3. Split bill\\r\\n\\r\\n## Expected Result:\\r\\nUser expects that the preview shows the users images and not names\\r\\n\\r\\n## Actual Result:\\r\\nAll split bill user names and date is displayed in the IOU\\r\\n\\r\\n## Workaround:\\r\\nUnknown\\r\\n\\r\\n## Platforms:\\r\\n\u003c!---\\r\\nCheck off any platforms that are affected by this issue\\r\\n---\u003e\\r\\nWhich of our officially supported platforms is this issue occurring on?\\r\\n- [x] Android / native\\r\\n- [x] Android / Chrome\\r\\n- [x] iOS / native\\r\\n- [x] iOS / Safari\\r\\n- [x] Windows / Chrome \\r\\n- [x] MacOS / Desktop\\r\\n\\r\\n**Version Number:** 1.3.56-2\\r\\n\\r\\n**Reproducible in staging?:** Yes\\r\\n\\r\\n**Reproducible in production?:** No\\r\\n\\r\\n**If this was caught during regression testing, add the test name, ID and link from TestRail:**\\r\\n\\r\\n**Email or phone of affected tester (no customers):**\\r\\n\\r\\n**Logs:** https://stackoverflow.com/c/expensify/questions/4856\\r\\n\\r\\n**Notes/Photos/Videos:** Any additional supporting documentation\\r\\n\\r\\n\u003cimg width=\"1440\" alt=\"Bug6172869_On_Staging\" src=\"https://github.com/Expensify/App/assets/78819774/c768ce2f-9b43-46b8-bd7a-4bfbc179e1fb\"\u003e\\r\\n\\r\\n\u003cimg width=\"1440\" alt=\"Bug6172869_On_PROD\" src=\"https://github.com/Expensify/App/assets/78819774/3365f063-7e83-41c4-91e6-8b317c4ede15\"\u003e\\r\\n\\r\\n**Expensify/Expensify Issue URL:**\\r\\n\\r\\n**Issue reported by:** Applause - Internal Team\\r\\n\\r\\n**Slack conversation:**\\r\\n\\r\\n[View all open jobs on GitHub](https://github.com/Expensify/App/issues?q=is%3Aopen+is%3Aissue+label%3A%22Help+Wanted%22)\\r\\n\\n\u003cdetails\u003e\u003csummary\u003eUpwork Automation - Do Not Edit\u003c/summary\u003e\\n \u003cul\u003e\\n \u003cli\u003eUpwork Job URL: https://www.upwork.com/jobs/~017a8059f6b6485a78\u003c/li\u003e\\n \u003cli\u003eUpwork Job ID: 1693876610499690496\u003c/li\u003e\\n \u003cli\u003eLast Price Increase: 2023-08-22\u003c/li\u003e\\n\u003cli\u003eAutomatic offers: \u003c/li\u003e\\n\u003cul\u003e\\n\u003cli\u003ejjcoffee | Reviewer | 26263054\u003c/li\u003e\\n\u003cli\u003es-alves10 | Contributor | 26263056\u003c/li\u003e\\n\u003c/ul\u003e\u003c/li\u003e\\n \u003c/ul\u003e\\n\u003c/details\u003e\\n\\nYou will be paid $1000.0 if your team fixes the issue. Since you are a manager, your task is to select the best proposal regaerding how to fix the issue from the below options:\\n\\nProposal: 0:\\n\\n### Proposal\\n### Please re-state the problem that we are trying to solve in this issue.\\nSplit Bill - All user names are showing in IOU\\n\\n### What is the root cause of that problem?\\n![Screenshot 2023-08-22 at 7 09 38 AM](https://github.com/Expensify/App/assets/16595846/de90a822-ca85-46f3-a680-e8fc78213a91)\\nhttps://github.com/Expensify/App/blob/c053381c06587d2569247c6d546cf9bd69ceba97/src/libs/ReportUtils.js#L1249\\nbased on its showing the merchant name\\nthis pr enabled the `merchant` https://github.com/Expensify/App/pull/25449/files\\n\\n### What changes do you think we should make in order to solve the problem?\\n\\nhttps://github.com/Expensify/App/blob/c053381c06587d2569247c6d546cf9bd69ceba97/src/libs/actions/IOU.js?#L627\\n\\nhere we are generating the merchant and pass\\n\\nhttps://github.com/Expensify/App/blob/c053381c06587d2569247c6d546cf9bd69ceba97/src/libs/TransactionUtils.js?#L69\\n\\nand here we are using that\\n\\nhttps://github.com/Expensify/App/blob/120bcbfde6d0ccfac8a63cf11a4aa7f769a048ea/src/components/ReportActionItem/MoneyRequestPreview.js#L257-L261\\n```javascript\\n!_.isEmpty(requestMerchant) \u0026\u0026 requestMerchant === CONST.REPORT.TYPE.IOU\\n```\\nwe need to add a condition here it will show only `CONST.REPORT.TYPE.IOU,`\\n\\n---\\n\\n@jjcoffee Yes I agree it will display always `IOU` so that is not a correct solution,\\n### solution\\n\\nthe merchant show is a newly added feature. I think we should remove this one \\nhttps://github.com/Expensify/App/blob/c053381c06587d2569247c6d546cf9bd69ceba97/src/libs/actions/IOU.js?#L627\\nbecause this is not a \\",
+      "categories": [
+        "SystemQuality/Reliability",
+        "NewFeatures/Enhancement"
+      ],
+      "estimated_hours": 3,
+      "required_skills": [
+        "New Functionality",
+        "Code Quality",
+        "Performance Optimization",
+        "Feature Optimization"
+      ],
+      "status": "assigned",
+      "price": 1000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-175",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2023-09-08] [$1000] Split money- participants detail hidden after clicking on show more button\\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n## Action Performed:\\r\\n1 Split money with multiple users\\r\\n2 On the second page of split money, click on show more.\\r\\n3 Verify that participants are hidden which can be scrolled.\\r\\nSplit money\\r\\n4 Click on the split money box \u003e this will open the split money details.\\r\\n5 Click on show more\\r\\n## Expected Result:\\r\\n I was expecting that the entire detail page would be scrollable when I clicked on the show more button. Reason being, participants\\",
+      "categories": [
+        "SystemQuality/Reliability",
+        "NewFeatures/Enhancement"
+      ],
+      "estimated_hours": 4,
+      "required_skills": [
+        "New Functionality",
+        "Extending Capabilities",
+        "Dependency Management",
+        "System Design",
+        "Code Quality",
+        "User Workflows"
+      ],
+      "status": "assigned",
+      "price": 1000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-181",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2023-10-31] [$500] Send money - Extra space after \\",
+      "categories": [
+        "ServerSideLogic",
+        "SystemQuality/Reliability"
+      ],
+      "estimated_hours": 4,
+      "required_skills": [
+        "Backend Frameworks",
+        "Code Quality",
+        "Dependency Management",
+        "Technical Debt",
+        "Server Operations"
+      ],
+      "status": "assigned",
+      "price": 500,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-182",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2023-02-03] [$4000] Chat - The Paragraphs are not displayed and some spaces missing between text after copied test from the opened HTML file\\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n**Issue found when executing PR** https://github.com/Expensify/App/pull/11926\\r\\n\\r\\n## Action Performed:\\r\\n1. Go to staging.new.expensify.com\\r\\n2. Log in with any account\\r\\n3. Select any chat\\r\\n4. Open HTML file in another tab\\r\\n5. Copy and paste as is\\r\\n6. Send it\\r\\n\\r\\n## Expected Result:\\r\\nThe Paragraphs and spaces between text are displayed after copied test from the opened HTML file\\r\\n\\r\\n## Actual Result:\\r\\nThe Paragraphs are not displayed and some spaces missing between text after copied test from the opened HTML file\\r\\n\\r\\n## Workaround:\\r\\nUnknown\\r\\n\\r\\n## Platform:\\r\\n\u003c!---\\r\\nRemove any platforms that aren\\",
+      "categories": [
+        "SystemQuality/Reliability",
+        "Bugfix"
+      ],
+      "estimated_hours": 7,
+      "required_skills": [
+        "Architecture Design",
+        "Technical Debt",
+        "Performance Optimization",
+        "Regression Testing",
+        "Unexpected Behaviors"
+      ],
+      "status": "assigned",
+      "price": 4000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-183",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2023-09-21] [$1000] Log in -Didn\\",
+      "categories": [
+        "ServerSideLogic",
+        "SystemQuality/Reliability"
+      ],
+      "estimated_hours": 3,
+      "required_skills": [
+        "Backend Frameworks",
+        "Data Processing",
+        "Dependency Management",
+        "Performance Optimization"
+      ],
+      "status": "assigned",
+      "price": 1000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-198",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD on #20394] [HOLD for payment 2023-06-21] [$1000] hmm it’s not there page appears for second when user opens a thread\\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n## Action Performed:\\r\\n\\r\\n1. Go to any chat\\r\\n2. send any message\\r\\n3. go to thread\\r\\n4. for any message create a new thread\\r\\n5. from receiver side open first thread\\r\\n6. from first thread open second thread\\r\\n\\r\\n## Expected Result: \\r\\nshould not show hmm it\\",
+      "categories": [
+        "SystemQuality/Reliability",
+        "Bugfix"
+      ],
+      "estimated_hours": 4,
+      "required_skills": [
+        "Dependency Management",
+        "System Design",
+        "Errors",
+        "Unexpected Behaviors"
+      ],
+      "status": "assigned",
+      "price": 1000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-209",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2023-06-01] [$1000] Workspace name error message temporarily disappears after default currency is changed\\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n## Action Performed:\\r\\n\\r\\n1. Go to a workspace and rename it with long emoji (e.g. \":face_in_clouds::face_in_clouds::face_in_clouds::face_in_clouds::face_in_clouds::face_in_clouds::face_in_clouds::face_in_clouds::face_in_clouds::face_in_clouds::face_in_clouds::face_in_clouds:\")\\r\\n2. Click \"Save\"\\r\\n3. Click on \"General settings\"\\r\\n4. Notice the error message\\r\\n5. Change the default currency\\r\\n6. Notice the error disappears\\r\\n7. Click out and then back in\\r\\n8. Notice the error appears again\\r\\n\\r\\n## Expected Result:\\r\\nThe error message should not disappear, as the Workspace Name is always incorrect\\r\\n\\r\\n## Actual Result:\\r\\n\\r\\nSee steps above.\\r\\n\\r\\nThe error message disappears but this doesn\\",
+      "categories": [
+        "Bugfix",
+        "SystemQuality/Reliability"
+      ],
+      "estimated_hours": 3,
+      "required_skills": [
+        "Root Cause Analysis",
+        "Regression Testing",
+        "Dependency Management",
+        "Architecture Design"
+      ],
+      "status": "assigned",
+      "price": 1000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-212",
+      "description": "You are an expert software engineering manager working on the Expensify repository. You have tasked your team with addressing the following issue:\\n\\n[HOLD for payment 2023-10-23][$500] Edit box and compose box slides over a bit when editing an existing comment\\n\\nIf you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel!\\r\\n___\\r\\n\\r\\n## Action Performed:\\r\\n1. Open any report\\r\\n2. Click edit comment\\r\\n\\r\\n## Expected Result:\\r\\nEdit box should match the compose box as nearly as possible\\r\\n\\r\\n## Actual Result:\\r\\nThe compose box against the static text - the text inside the compose box is perfectly aligned between the two lines\\r\\nThe compose box against the edit text -- notice that the text of the edit box is a few pixels in. \\r\\n\\r\\n## Workaround:\\r\\nCan the user still use Expensify without this being fixed? Have you informed them of the workaround?\\r\\n\\r\\n## Platforms:\\r\\n\u003c!---\\r\\nCheck off any platforms that are affected by this issue\\r\\n---\u003e\\r\\nWhich of our officially supported platforms is this issue occurring on?\\r\\n- [ ] Android / native\\r\\n- [ ] Android / Chrome\\r\\n- [ ] iOS / native\\r\\n- [ ] iOS / Safari\\r\\n- [x] MacOS / Chrome / Safari\\r\\n- [ ] MacOS / Desktop\\r\\n\\r\\n**Version Number:** 1.3.76-1 \\r\\n**Reproducible in staging?:** y\\r\\n**Reproducible in production?:** y\\r\\n**If this was caught during regression testing, add the test name, ID and link from TestRail:**\\r\\n**Email or phone of affected tester (no customers):**\\r\\n**Logs:** https://stackoverflow.com/c/expensify/questions/4856\\r\\n**Notes/Photos/Videos:** Any additional supporting documentation\\r\\n![Snip - (115) New Expensify - Google Chrome](https://github.com/Expensify/App/assets/43996225/b29a36cd-7f97-47cf-b825-febc869ac8c1)\\r\\n![image (2)](https://github.com/Expensify/App/assets/43996225/e984548c-1642-427b-a613-6dd34d46d5f5)\\r\\n![image (1)](https://github.com/Expensify/App/assets/43996225/576f57c1-4d13-4992-912f-9fe623972187)\\r\\n\\r\\n**Expensify/Expensify Issue URL:**\\r\\n**Issue reported by:** @quinthar \\r\\n**Slack conversation:** https://expensify.slack.com/archives/C049HHMV9SM/p1696218478121089\\r\\n\\r\\n[View all open jobs on GitHub](https://github.com/Expensify/App/issues?q=is%3Aopen+is%3Aissue+label%3A%22Help+Wanted%22)\\r\\n\\n\u003cdetails\u003e\u003csummary\u003eUpwork Automation - Do Not Edit\u003c/summary\u003e\\n \u003cul\u003e\\n \u003cli\u003eUpwork Job URL: https://www.upwork.com/jobs/~0130f9aae9385c3c6f\u003c/li\u003e\\n \u003cli\u003eUpwork Job ID: 1709203467909345280\u003c/li\u003e\\n \u003cli\u003eLast Price Increase: 2023-10-03\u003c/li\u003e\\n\u003cli\u003eAutomatic offers: \u003c/li\u003e\\n\u003cul\u003e\\n\u003cli\u003eneonbhai | Contributor | 27062550\u003c/li\u003e\\n\u003c/ul\u003e\u003c/li\u003e\\n \u003c/ul\u003e\\n\u003c/details\u003e\\n\\nYou will be paid $500.0 if your team fixes the issue. Since you are a manager, your task is to select the best proposal regaerding how to fix the issue from the below options:\\n\\nProposal: 0:\\n\\n## Proposal\\r\\n\\r\\n### Please re-state the problem that we are trying to solve in this issue.\\r\\nEdit box and compose box look different. Edit box slides over a bit when editing an existing comment.\\r\\n\\r\\n### What is the root cause of that problem?\\r\\nWe have different styles applied to [ReportActionItemMessageEdit.js]().\\r\\n\\r\\n### What changes do you think we should make in order to solve the problem?\\r\\n- Move the icon rendering logic [here](https://github.com/Expensify/App/blob/8b5f6e326e29392fbfbe60c727f150401fc1c55d/src/pages/home/report/ReportActionItemMessageEdit.js#L316-L339) to inside the composer `View` [here](https://github.com/Expensify/App/blob/8b5f6e326e29392fbfbe60c727f150401fc1c55d/src/pages/home/report/ReportActionItemMessageEdit.js#L340-L348)\\r\\n \\r\\n \\tThis will move the cross icon inside the text input container.\\r\\n\\r\\n\\r\\n\\r\\n- Add `textInputComposeBorder` style to the View here: \\r\\n \\thttps://github.com/Expensify/App/blob/8b5f6e326e29392fbfbe60c727f150401fc1c55d/src/pages/home/report/ReportActionItemMessageEdit.js#L349\\r\\n \\tThis will add the line seperating the icon from text input box\\r\\n\\r\\n\\r\\n\\r\\n- Change the cross icon style to `styles.composerSizeButton`here:\\r\\nhttps://github.com/Expensify/App/blob/8b5f6e326e29392fbfbe60c727f150401fc1c55d/src/pages/home/report/ReportActionItemMessageEdit.js#L320\\r\\n\\tThis is make the cross icon, the same size as plus icon\\r\\n\\r\\n\\r\\n- Change this view: https://github.com/Expensify/App/blob/8b5f6e326e29392fbfbe60c727f150401fc1c55d/src/pages/home/report/ReportActionItemMessageEdit.js#L316\\r\\n\\tto \\r\\n\\t```js\\r\\n\\t\u003cView style={[styles.justifyContentCenter, styles.alignSelfCenter]}\u003e\\r\\n\\t````\\r\\n\\tThis will center the button in its container.\\r\\n\\r\\n## Result:\\r\\n\\r\\n[Message Edit Style Changes.webm](https://github.com/Expensify/App/assets/64629613/73afb9d2-3c57-4739-af45-97bd56a56de3)\\r\\n\\r\\n--------------------------------------------------------------------------------\\r\\n\\r\\n## Proposal\\r\\n### [Updated](https://github.com/Expensify/App/issues/28663#issuecomment-1743969726)\\r\\n Added explanation of changes and Result.\\r\\n\\n\\n--------------------------------------------\\n\\nProposal: 1:\\n\\n## Proposal\\r\\n\\r\\n### Please re-state the problem that we are trying to solve in this issue.\\r\\nEdit box should be replicated like the compose box\\r\\n\\r\\n### What is the root cause of that problem?\\r\\nNew feature\\r\\n\\r\\n### What changes do you think we should make in order to solve the problem?\\r\\n\\r\\nBased on the requirements from [slack thread](https://expensify.slack.com/archives/C049HHMV9SM/p1696594375481669?thread_ts=1696218478.121089\u0026cid=C049HHMV9SM)\\r\\n\\r\\n1. We don\\",
+      "categories": [
+        "UI/UX",
+        "SystemQuality/Reliability"
+      ],
+      "estimated_hours": 2,
+      "required_skills": [
+        "Interaction Improvements",
+        "Code Quality",
+        "System Design",
+        "Dependency Management",
+        "UI Components",
+        "User Experience"
+      ],
+      "status": "assigned",
+      "price": 500,
+      "price_limit": 2000000
+    }
+  ]
+}
