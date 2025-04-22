@@ -1,0 +1,7519 @@
+{
+  "nodes": [
+    {
+      "id": "agent1",
+      "name": "ApplicationLogic",
+      "group": "agent"
+    },
+    {
+      "id": "task-003",
+      "name": "task-003",
+      "group": "task"
+    },
+    {
+      "id": "task-005",
+      "name": "task-005",
+      "group": "task"
+    },
+    {
+      "id": "task-006",
+      "name": "task-006",
+      "group": "task"
+    },
+    {
+      "id": "task-009",
+      "name": "task-009",
+      "group": "task"
+    },
+    {
+      "id": "task-025",
+      "name": "task-025",
+      "group": "task"
+    },
+    {
+      "id": "task-033",
+      "name": "task-033",
+      "group": "task"
+    },
+    {
+      "id": "task-038",
+      "name": "task-038",
+      "group": "task"
+    },
+    {
+      "id": "task-057",
+      "name": "task-057",
+      "group": "task"
+    },
+    {
+      "id": "task-060",
+      "name": "task-060",
+      "group": "task"
+    },
+    {
+      "id": "task-061",
+      "name": "task-061",
+      "group": "task"
+    },
+    {
+      "id": "task-069",
+      "name": "task-069",
+      "group": "task"
+    },
+    {
+      "id": "task-070",
+      "name": "task-070",
+      "group": "task"
+    },
+    {
+      "id": "task-078",
+      "name": "task-078",
+      "group": "task"
+    },
+    {
+      "id": "task-090",
+      "name": "task-090",
+      "group": "task"
+    },
+    {
+      "id": "task-092",
+      "name": "task-092",
+      "group": "task"
+    },
+    {
+      "id": "task-100",
+      "name": "task-100",
+      "group": "task"
+    },
+    {
+      "id": "task-105",
+      "name": "task-105",
+      "group": "task"
+    },
+    {
+      "id": "task-113",
+      "name": "task-113",
+      "group": "task"
+    },
+    {
+      "id": "task-118",
+      "name": "task-118",
+      "group": "task"
+    },
+    {
+      "id": "task-119",
+      "name": "task-119",
+      "group": "task"
+    },
+    {
+      "id": "task-123",
+      "name": "task-123",
+      "group": "task"
+    },
+    {
+      "id": "task-132",
+      "name": "task-132",
+      "group": "task"
+    },
+    {
+      "id": "task-137",
+      "name": "task-137",
+      "group": "task"
+    },
+    {
+      "id": "task-140",
+      "name": "task-140",
+      "group": "task"
+    },
+    {
+      "id": "task-150",
+      "name": "task-150",
+      "group": "task"
+    },
+    {
+      "id": "task-166",
+      "name": "task-166",
+      "group": "task"
+    },
+    {
+      "id": "task-169",
+      "name": "task-169",
+      "group": "task"
+    },
+    {
+      "id": "task-176",
+      "name": "task-176",
+      "group": "task"
+    },
+    {
+      "id": "task-190",
+      "name": "task-190",
+      "group": "task"
+    },
+    {
+      "id": "task-194",
+      "name": "task-194",
+      "group": "task"
+    },
+    {
+      "id": "task-004",
+      "name": "task-004",
+      "group": "task"
+    },
+    {
+      "id": "task-008",
+      "name": "task-008",
+      "group": "task"
+    },
+    {
+      "id": "task-018",
+      "name": "task-018",
+      "group": "task"
+    },
+    {
+      "id": "task-020",
+      "name": "task-020",
+      "group": "task"
+    },
+    {
+      "id": "task-042",
+      "name": "task-042",
+      "group": "task"
+    },
+    {
+      "id": "task-062",
+      "name": "task-062",
+      "group": "task"
+    },
+    {
+      "id": "task-065",
+      "name": "task-065",
+      "group": "task"
+    },
+    {
+      "id": "task-080",
+      "name": "task-080",
+      "group": "task"
+    },
+    {
+      "id": "task-084",
+      "name": "task-084",
+      "group": "task"
+    },
+    {
+      "id": "task-096",
+      "name": "task-096",
+      "group": "task"
+    },
+    {
+      "id": "task-102",
+      "name": "task-102",
+      "group": "task"
+    },
+    {
+      "id": "task-142",
+      "name": "task-142",
+      "group": "task"
+    },
+    {
+      "id": "task-151",
+      "name": "task-151",
+      "group": "task"
+    },
+    {
+      "id": "task-160",
+      "name": "task-160",
+      "group": "task"
+    },
+    {
+      "id": "task-168",
+      "name": "task-168",
+      "group": "task"
+    },
+    {
+      "id": "task-170",
+      "name": "task-170",
+      "group": "task"
+    },
+    {
+      "id": "task-178",
+      "name": "task-178",
+      "group": "task"
+    },
+    {
+      "id": "task-180",
+      "name": "task-180",
+      "group": "task"
+    },
+    {
+      "id": "task-184",
+      "name": "task-184",
+      "group": "task"
+    },
+    {
+      "id": "task-192",
+      "name": "task-192",
+      "group": "task"
+    },
+    {
+      "id": "task-195",
+      "name": "task-195",
+      "group": "task"
+    },
+    {
+      "id": "task-202",
+      "name": "task-202",
+      "group": "task"
+    },
+    {
+      "id": "task-210",
+      "name": "task-210",
+      "group": "task"
+    },
+    {
+      "id": "agent2",
+      "name": "ServerSideLogic",
+      "group": "agent"
+    },
+    {
+      "id": "task-011",
+      "name": "task-011",
+      "group": "task"
+    },
+    {
+      "id": "task-012",
+      "name": "task-012",
+      "group": "task"
+    },
+    {
+      "id": "task-013",
+      "name": "task-013",
+      "group": "task"
+    },
+    {
+      "id": "task-015",
+      "name": "task-015",
+      "group": "task"
+    },
+    {
+      "id": "task-016",
+      "name": "task-016",
+      "group": "task"
+    },
+    {
+      "id": "task-022",
+      "name": "task-022",
+      "group": "task"
+    },
+    {
+      "id": "task-027",
+      "name": "task-027",
+      "group": "task"
+    },
+    {
+      "id": "task-031",
+      "name": "task-031",
+      "group": "task"
+    },
+    {
+      "id": "task-032",
+      "name": "task-032",
+      "group": "task"
+    },
+    {
+      "id": "task-034",
+      "name": "task-034",
+      "group": "task"
+    },
+    {
+      "id": "task-035",
+      "name": "task-035",
+      "group": "task"
+    },
+    {
+      "id": "task-037",
+      "name": "task-037",
+      "group": "task"
+    },
+    {
+      "id": "task-040",
+      "name": "task-040",
+      "group": "task"
+    },
+    {
+      "id": "task-044",
+      "name": "task-044",
+      "group": "task"
+    },
+    {
+      "id": "task-047",
+      "name": "task-047",
+      "group": "task"
+    },
+    {
+      "id": "task-050",
+      "name": "task-050",
+      "group": "task"
+    },
+    {
+      "id": "task-051",
+      "name": "task-051",
+      "group": "task"
+    },
+    {
+      "id": "task-052",
+      "name": "task-052",
+      "group": "task"
+    },
+    {
+      "id": "task-053",
+      "name": "task-053",
+      "group": "task"
+    },
+    {
+      "id": "task-056",
+      "name": "task-056",
+      "group": "task"
+    },
+    {
+      "id": "task-059",
+      "name": "task-059",
+      "group": "task"
+    },
+    {
+      "id": "task-063",
+      "name": "task-063",
+      "group": "task"
+    },
+    {
+      "id": "task-067",
+      "name": "task-067",
+      "group": "task"
+    },
+    {
+      "id": "task-071",
+      "name": "task-071",
+      "group": "task"
+    },
+    {
+      "id": "task-074",
+      "name": "task-074",
+      "group": "task"
+    },
+    {
+      "id": "task-077",
+      "name": "task-077",
+      "group": "task"
+    },
+    {
+      "id": "task-082",
+      "name": "task-082",
+      "group": "task"
+    },
+    {
+      "id": "task-083",
+      "name": "task-083",
+      "group": "task"
+    },
+    {
+      "id": "task-086",
+      "name": "task-086",
+      "group": "task"
+    },
+    {
+      "id": "task-089",
+      "name": "task-089",
+      "group": "task"
+    },
+    {
+      "id": "task-091",
+      "name": "task-091",
+      "group": "task"
+    },
+    {
+      "id": "task-097",
+      "name": "task-097",
+      "group": "task"
+    },
+    {
+      "id": "task-099",
+      "name": "task-099",
+      "group": "task"
+    },
+    {
+      "id": "task-101",
+      "name": "task-101",
+      "group": "task"
+    },
+    {
+      "id": "task-103",
+      "name": "task-103",
+      "group": "task"
+    },
+    {
+      "id": "task-106",
+      "name": "task-106",
+      "group": "task"
+    },
+    {
+      "id": "task-109",
+      "name": "task-109",
+      "group": "task"
+    },
+    {
+      "id": "task-111",
+      "name": "task-111",
+      "group": "task"
+    },
+    {
+      "id": "task-120",
+      "name": "task-120",
+      "group": "task"
+    },
+    {
+      "id": "task-121",
+      "name": "task-121",
+      "group": "task"
+    },
+    {
+      "id": "task-122",
+      "name": "task-122",
+      "group": "task"
+    },
+    {
+      "id": "task-125",
+      "name": "task-125",
+      "group": "task"
+    },
+    {
+      "id": "task-127",
+      "name": "task-127",
+      "group": "task"
+    },
+    {
+      "id": "task-133",
+      "name": "task-133",
+      "group": "task"
+    },
+    {
+      "id": "task-136",
+      "name": "task-136",
+      "group": "task"
+    },
+    {
+      "id": "task-141",
+      "name": "task-141",
+      "group": "task"
+    },
+    {
+      "id": "task-143",
+      "name": "task-143",
+      "group": "task"
+    },
+    {
+      "id": "task-144",
+      "name": "task-144",
+      "group": "task"
+    },
+    {
+      "id": "task-145",
+      "name": "task-145",
+      "group": "task"
+    },
+    {
+      "id": "task-146",
+      "name": "task-146",
+      "group": "task"
+    },
+    {
+      "id": "task-147",
+      "name": "task-147",
+      "group": "task"
+    },
+    {
+      "id": "task-152",
+      "name": "task-152",
+      "group": "task"
+    },
+    {
+      "id": "task-154",
+      "name": "task-154",
+      "group": "task"
+    },
+    {
+      "id": "task-157",
+      "name": "task-157",
+      "group": "task"
+    },
+    {
+      "id": "task-158",
+      "name": "task-158",
+      "group": "task"
+    },
+    {
+      "id": "task-159",
+      "name": "task-159",
+      "group": "task"
+    },
+    {
+      "id": "task-161",
+      "name": "task-161",
+      "group": "task"
+    },
+    {
+      "id": "task-162",
+      "name": "task-162",
+      "group": "task"
+    },
+    {
+      "id": "task-172",
+      "name": "task-172",
+      "group": "task"
+    },
+    {
+      "id": "task-173",
+      "name": "task-173",
+      "group": "task"
+    },
+    {
+      "id": "task-179",
+      "name": "task-179",
+      "group": "task"
+    },
+    {
+      "id": "task-181",
+      "name": "task-181",
+      "group": "task"
+    },
+    {
+      "id": "task-183",
+      "name": "task-183",
+      "group": "task"
+    },
+    {
+      "id": "task-185",
+      "name": "task-185",
+      "group": "task"
+    },
+    {
+      "id": "task-187",
+      "name": "task-187",
+      "group": "task"
+    },
+    {
+      "id": "task-188",
+      "name": "task-188",
+      "group": "task"
+    },
+    {
+      "id": "task-189",
+      "name": "task-189",
+      "group": "task"
+    },
+    {
+      "id": "task-196",
+      "name": "task-196",
+      "group": "task"
+    },
+    {
+      "id": "task-197",
+      "name": "task-197",
+      "group": "task"
+    },
+    {
+      "id": "task-199",
+      "name": "task-199",
+      "group": "task"
+    },
+    {
+      "id": "task-201",
+      "name": "task-201",
+      "group": "task"
+    },
+    {
+      "id": "task-203",
+      "name": "task-203",
+      "group": "task"
+    },
+    {
+      "id": "task-206",
+      "name": "task-206",
+      "group": "task"
+    },
+    {
+      "id": "task-208",
+      "name": "task-208",
+      "group": "task"
+    },
+    {
+      "id": "task-211",
+      "name": "task-211",
+      "group": "task"
+    },
+    {
+      "id": "task-010",
+      "name": "task-010",
+      "group": "task"
+    },
+    {
+      "id": "task-064",
+      "name": "task-064",
+      "group": "task"
+    },
+    {
+      "id": "task-112",
+      "name": "task-112",
+      "group": "task"
+    },
+    {
+      "id": "task-134",
+      "name": "task-134",
+      "group": "task"
+    },
+    {
+      "id": "task-139",
+      "name": "task-139",
+      "group": "task"
+    },
+    {
+      "id": "task-165",
+      "name": "task-165",
+      "group": "task"
+    },
+    {
+      "id": "task-177",
+      "name": "task-177",
+      "group": "task"
+    },
+    {
+      "id": "task-204",
+      "name": "task-204",
+      "group": "task"
+    },
+    {
+      "id": "task-207",
+      "name": "task-207",
+      "group": "task"
+    },
+    {
+      "id": "agent3",
+      "name": "UI/UX",
+      "group": "agent"
+    },
+    {
+      "id": "task-007",
+      "name": "task-007",
+      "group": "task"
+    },
+    {
+      "id": "task-014",
+      "name": "task-014",
+      "group": "task"
+    },
+    {
+      "id": "task-017",
+      "name": "task-017",
+      "group": "task"
+    },
+    {
+      "id": "task-021",
+      "name": "task-021",
+      "group": "task"
+    },
+    {
+      "id": "task-023",
+      "name": "task-023",
+      "group": "task"
+    },
+    {
+      "id": "task-024",
+      "name": "task-024",
+      "group": "task"
+    },
+    {
+      "id": "task-026",
+      "name": "task-026",
+      "group": "task"
+    },
+    {
+      "id": "task-029",
+      "name": "task-029",
+      "group": "task"
+    },
+    {
+      "id": "task-030",
+      "name": "task-030",
+      "group": "task"
+    },
+    {
+      "id": "task-036",
+      "name": "task-036",
+      "group": "task"
+    },
+    {
+      "id": "task-041",
+      "name": "task-041",
+      "group": "task"
+    },
+    {
+      "id": "task-046",
+      "name": "task-046",
+      "group": "task"
+    },
+    {
+      "id": "task-048",
+      "name": "task-048",
+      "group": "task"
+    },
+    {
+      "id": "task-049",
+      "name": "task-049",
+      "group": "task"
+    },
+    {
+      "id": "task-055",
+      "name": "task-055",
+      "group": "task"
+    },
+    {
+      "id": "task-058",
+      "name": "task-058",
+      "group": "task"
+    },
+    {
+      "id": "task-066",
+      "name": "task-066",
+      "group": "task"
+    },
+    {
+      "id": "task-068",
+      "name": "task-068",
+      "group": "task"
+    },
+    {
+      "id": "task-073",
+      "name": "task-073",
+      "group": "task"
+    },
+    {
+      "id": "task-075",
+      "name": "task-075",
+      "group": "task"
+    },
+    {
+      "id": "task-076",
+      "name": "task-076",
+      "group": "task"
+    },
+    {
+      "id": "task-079",
+      "name": "task-079",
+      "group": "task"
+    },
+    {
+      "id": "task-081",
+      "name": "task-081",
+      "group": "task"
+    },
+    {
+      "id": "task-085",
+      "name": "task-085",
+      "group": "task"
+    },
+    {
+      "id": "task-087",
+      "name": "task-087",
+      "group": "task"
+    },
+    {
+      "id": "task-088",
+      "name": "task-088",
+      "group": "task"
+    },
+    {
+      "id": "task-095",
+      "name": "task-095",
+      "group": "task"
+    },
+    {
+      "id": "task-098",
+      "name": "task-098",
+      "group": "task"
+    },
+    {
+      "id": "task-107",
+      "name": "task-107",
+      "group": "task"
+    },
+    {
+      "id": "task-110",
+      "name": "task-110",
+      "group": "task"
+    },
+    {
+      "id": "task-114",
+      "name": "task-114",
+      "group": "task"
+    },
+    {
+      "id": "task-115",
+      "name": "task-115",
+      "group": "task"
+    },
+    {
+      "id": "task-116",
+      "name": "task-116",
+      "group": "task"
+    },
+    {
+      "id": "task-124",
+      "name": "task-124",
+      "group": "task"
+    },
+    {
+      "id": "task-129",
+      "name": "task-129",
+      "group": "task"
+    },
+    {
+      "id": "task-130",
+      "name": "task-130",
+      "group": "task"
+    },
+    {
+      "id": "task-131",
+      "name": "task-131",
+      "group": "task"
+    },
+    {
+      "id": "task-135",
+      "name": "task-135",
+      "group": "task"
+    },
+    {
+      "id": "task-138",
+      "name": "task-138",
+      "group": "task"
+    },
+    {
+      "id": "task-149",
+      "name": "task-149",
+      "group": "task"
+    },
+    {
+      "id": "task-163",
+      "name": "task-163",
+      "group": "task"
+    },
+    {
+      "id": "task-164",
+      "name": "task-164",
+      "group": "task"
+    },
+    {
+      "id": "task-171",
+      "name": "task-171",
+      "group": "task"
+    },
+    {
+      "id": "task-186",
+      "name": "task-186",
+      "group": "task"
+    },
+    {
+      "id": "task-191",
+      "name": "task-191",
+      "group": "task"
+    },
+    {
+      "id": "task-193",
+      "name": "task-193",
+      "group": "task"
+    },
+    {
+      "id": "task-200",
+      "name": "task-200",
+      "group": "task"
+    },
+    {
+      "id": "task-212",
+      "name": "task-212",
+      "group": "task"
+    },
+    {
+      "id": "task-028",
+      "name": "task-028",
+      "group": "task"
+    },
+    {
+      "id": "task-045",
+      "name": "task-045",
+      "group": "task"
+    },
+    {
+      "id": "task-108",
+      "name": "task-108",
+      "group": "task"
+    },
+    {
+      "id": "task-167",
+      "name": "task-167",
+      "group": "task"
+    },
+    {
+      "id": "task-175",
+      "name": "task-175",
+      "group": "task"
+    },
+    {
+      "id": "task-198",
+      "name": "task-198",
+      "group": "task"
+    },
+    {
+      "id": "agent4",
+      "name": "SystemQuality/Reliability",
+      "group": "agent"
+    },
+    {
+      "id": "task-126",
+      "name": "task-126",
+      "group": "task"
+    },
+    {
+      "id": "task-156",
+      "name": "task-156",
+      "group": "task"
+    },
+    {
+      "id": "task-182",
+      "name": "task-182",
+      "group": "task"
+    },
+    {
+      "id": "task-209",
+      "name": "task-209",
+      "group": "task"
+    },
+    {
+      "id": "task-002",
+      "name": "task-002",
+      "group": "task"
+    },
+    {
+      "id": "task-054",
+      "name": "task-054",
+      "group": "task"
+    },
+    {
+      "id": "task-093",
+      "name": "task-093",
+      "group": "task"
+    },
+    {
+      "id": "task-153",
+      "name": "task-153",
+      "group": "task"
+    },
+    {
+      "id": "task-174",
+      "name": "task-174",
+      "group": "task"
+    },
+    {
+      "id": "agent5",
+      "name": "Bugfix",
+      "group": "agent"
+    },
+    {
+      "id": "task-001",
+      "name": "task-001",
+      "group": "task"
+    },
+    {
+      "id": "task-019",
+      "name": "task-019",
+      "group": "task"
+    },
+    {
+      "id": "task-039",
+      "name": "task-039",
+      "group": "task"
+    },
+    {
+      "id": "task-043",
+      "name": "task-043",
+      "group": "task"
+    },
+    {
+      "id": "task-072",
+      "name": "task-072",
+      "group": "task"
+    },
+    {
+      "id": "task-094",
+      "name": "task-094",
+      "group": "task"
+    },
+    {
+      "id": "task-104",
+      "name": "task-104",
+      "group": "task"
+    },
+    {
+      "id": "task-117",
+      "name": "task-117",
+      "group": "task"
+    },
+    {
+      "id": "task-128",
+      "name": "task-128",
+      "group": "task"
+    },
+    {
+      "id": "task-148",
+      "name": "task-148",
+      "group": "task"
+    },
+    {
+      "id": "task-155",
+      "name": "task-155",
+      "group": "task"
+    },
+    {
+      "id": "task-205",
+      "name": "task-205",
+      "group": "task"
+    },
+    {
+      "id": "agent6",
+      "name": "NewFeatures/Enhancement",
+      "group": "agent"
+    },
+    {
+      "id": "agent7",
+      "name": "ReliabilityImprovements",
+      "group": "agent"
+    }
+  ],
+  "links": [
+    {
+      "source": "agent1",
+      "target": "task-003",
+      "type": "assigned",
+      "weight": 5,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 2000,
+      "specialist": true
+    },
+    {
+      "source": "agent1",
+      "target": "task-005",
+      "type": "assigned",
+      "weight": 23,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 32000,
+      "specialist": true
+    },
+    {
+      "source": "agent1",
+      "target": "task-006",
+      "type": "assigned",
+      "weight": 8,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 8000,
+      "specialist": true
+    },
+    {
+      "source": "agent1",
+      "target": "task-009",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ReliabilityImprovements",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent1",
+      "target": "task-025",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent1",
+      "target": "task-033",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent1",
+      "target": "task-038",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent1",
+      "target": "task-057",
+      "type": "assigned",
+      "weight": 2,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent1",
+      "target": "task-060",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent1",
+      "target": "task-061",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent1",
+      "target": "task-069",
+      "type": "assigned",
+      "weight": 2,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent1",
+      "target": "task-070",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent1",
+      "target": "task-078",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent1",
+      "target": "task-090",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent1",
+      "target": "task-092",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent1",
+      "target": "task-100",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent1",
+      "target": "task-105",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent1",
+      "target": "task-113",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent1",
+      "target": "task-118",
+      "type": "assigned",
+      "weight": 6,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 4000,
+      "specialist": true
+    },
+    {
+      "source": "agent1",
+      "target": "task-119",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent1",
+      "target": "task-123",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ReliabilityImprovements",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent1",
+      "target": "task-132",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent1",
+      "target": "task-137",
+      "type": "assigned",
+      "weight": 3,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent1",
+      "target": "task-140",
+      "type": "assigned",
+      "weight": 6,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 2000,
+      "specialist": true
+    },
+    {
+      "source": "agent1",
+      "target": "task-150",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent1",
+      "target": "task-166",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent1",
+      "target": "task-169",
+      "type": "assigned",
+      "weight": 3,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent1",
+      "target": "task-176",
+      "type": "assigned",
+      "weight": 2,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent1",
+      "target": "task-190",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent1",
+      "target": "task-194",
+      "type": "assigned",
+      "weight": 3,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent1",
+      "target": "task-004",
+      "type": "outsourced",
+      "weight": 9,
+      "label": "SystemQuality/Reliability",
+      "bid_count": 1,
+      "winning_bid": 4000
+    },
+    {
+      "source": "agent1",
+      "target": "task-008",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent1",
+      "target": "task-018",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent1",
+      "target": "task-020",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent1",
+      "target": "task-042",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent1",
+      "target": "task-062",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent1",
+      "target": "task-065",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent1",
+      "target": "task-080",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent1",
+      "target": "task-084",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent1",
+      "target": "task-096",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent1",
+      "target": "task-102",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent1",
+      "target": "task-142",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent1",
+      "target": "task-151",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent1",
+      "target": "task-160",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent1",
+      "target": "task-168",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent1",
+      "target": "task-170",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent1",
+      "target": "task-178",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent1",
+      "target": "task-180",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent1",
+      "target": "task-184",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent1",
+      "target": "task-192",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent1",
+      "target": "task-195",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent1",
+      "target": "task-202",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent1",
+      "target": "task-210",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent2",
+      "target": "task-003",
+      "type": "assigned",
+      "weight": 5,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 2000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-011",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-012",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-013",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-015",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-016",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-018",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-020",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-022",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-027",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-031",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-032",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-034",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-035",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-037",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-040",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-042",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-044",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-047",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-050",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-051",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-052",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-053",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-056",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-059",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-063",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-065",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-067",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-071",
+      "type": "assigned",
+      "weight": 6,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 2000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-074",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-077",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-082",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-083",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-086",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-089",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-091",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-096",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-097",
+      "type": "assigned",
+      "weight": 3,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-099",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-101",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-102",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-103",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-106",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-109",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-111",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-120",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-121",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-122",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-125",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-127",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-133",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-136",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-141",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-142",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-143",
+      "type": "assigned",
+      "weight": 12,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 8000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-144",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-145",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-146",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-147",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-152",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-154",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-157",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-158",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-159",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-160",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-161",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-162",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-168",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-172",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-173",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-178",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-179",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-180",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-181",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-183",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-185",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-187",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-188",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-189",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-192",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-195",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-196",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-197",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-199",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-201",
+      "type": "assigned",
+      "weight": 4,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-203",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-206",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-208",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-210",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-211",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent2",
+      "target": "task-010",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent2",
+      "target": "task-057",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent2",
+      "target": "task-062",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent2",
+      "target": "task-064",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent2",
+      "target": "task-069",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent2",
+      "target": "task-084",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent2",
+      "target": "task-100",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent2",
+      "target": "task-112",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "SystemQuality/Reliability",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent2",
+      "target": "task-132",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent2",
+      "target": "task-134",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent2",
+      "target": "task-139",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent2",
+      "target": "task-165",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent2",
+      "target": "task-170",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent2",
+      "target": "task-177",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent2",
+      "target": "task-204",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent2",
+      "target": "task-207",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent3",
+      "target": "task-005",
+      "type": "assigned",
+      "weight": 23,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 32000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-006",
+      "type": "assigned",
+      "weight": 8,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 8000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-007",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-008",
+      "type": "assigned",
+      "weight": 3,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-009",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ReliabilityImprovements",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-011",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-013",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-014",
+      "type": "assigned",
+      "weight": 3,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-016",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-017",
+      "type": "assigned",
+      "weight": 3,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-021",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-022",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-023",
+      "type": "assigned",
+      "weight": 3,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-024",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-025",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-026",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-029",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-030",
+      "type": "assigned",
+      "weight": 2,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-033",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-034",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-036",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-037",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-038",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-041",
+      "type": "assigned",
+      "weight": 3,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-046",
+      "type": "assigned",
+      "weight": 2,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-048",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-049",
+      "type": "assigned",
+      "weight": 2,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-055",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-057",
+      "type": "assigned",
+      "weight": 2,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-058",
+      "type": "assigned",
+      "weight": 2,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-061",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-063",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-066",
+      "type": "assigned",
+      "weight": 3,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-067",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-068",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-069",
+      "type": "assigned",
+      "weight": 2,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-070",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-073",
+      "type": "assigned",
+      "weight": 2,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-075",
+      "type": "assigned",
+      "weight": 2,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-076",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-078",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-079",
+      "type": "assigned",
+      "weight": 12,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 8000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-080",
+      "type": "assigned",
+      "weight": 2,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-081",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-085",
+      "type": "assigned",
+      "weight": 5,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 2000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-087",
+      "type": "assigned",
+      "weight": 5,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 2000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-088",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-089",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-090",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-092",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-095",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-098",
+      "type": "assigned",
+      "weight": 6,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 2000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-100",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-105",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-106",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-107",
+      "type": "assigned",
+      "weight": 6,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 4000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-110",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-111",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-113",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-114",
+      "type": "assigned",
+      "weight": 3,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-115",
+      "type": "assigned",
+      "weight": 8,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 4000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-116",
+      "type": "assigned",
+      "weight": 3,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-118",
+      "type": "assigned",
+      "weight": 6,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 4000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-119",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-123",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ReliabilityImprovements",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-124",
+      "type": "assigned",
+      "weight": 2,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-129",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-130",
+      "type": "assigned",
+      "weight": 4,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-131",
+      "type": "assigned",
+      "weight": 8,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 4000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-132",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-135",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-137",
+      "type": "assigned",
+      "weight": 3,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-138",
+      "type": "assigned",
+      "weight": 3,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-142",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-149",
+      "type": "assigned",
+      "weight": 4,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-150",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-151",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-152",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-159",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-160",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-163",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ReliabilityImprovements",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-164",
+      "type": "assigned",
+      "weight": 6,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 2000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-165",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-169",
+      "type": "assigned",
+      "weight": 3,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-171",
+      "type": "assigned",
+      "weight": 3,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-176",
+      "type": "assigned",
+      "weight": 2,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-177",
+      "type": "assigned",
+      "weight": 4,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-186",
+      "type": "assigned",
+      "weight": 3,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-187",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-188",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-190",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-191",
+      "type": "assigned",
+      "weight": 4,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-193",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-194",
+      "type": "assigned",
+      "weight": 3,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-196",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-200",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-204",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-207",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-212",
+      "type": "assigned",
+      "weight": 2,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent3",
+      "target": "task-028",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent3",
+      "target": "task-045",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent3",
+      "target": "task-047",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent3",
+      "target": "task-050",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent3",
+      "target": "task-052",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent3",
+      "target": "task-077",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent3",
+      "target": "task-103",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent3",
+      "target": "task-108",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent3",
+      "target": "task-122",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent3",
+      "target": "task-139",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent3",
+      "target": "task-146",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent3",
+      "target": "task-166",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent3",
+      "target": "task-167",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "SystemQuality/Reliability",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent3",
+      "target": "task-172",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent3",
+      "target": "task-175",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "SystemQuality/Reliability",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent3",
+      "target": "task-192",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent3",
+      "target": "task-198",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "SystemQuality/Reliability",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent3",
+      "target": "task-201",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent4",
+      "target": "task-004",
+      "type": "assigned",
+      "weight": 9,
+      "label": "SystemQuality/Reliability",
+      "bid_count": 1,
+      "winning_bid": 4000,
+      "specialist": true
+    },
+    {
+      "source": "agent4",
+      "target": "task-049",
+      "type": "assigned",
+      "weight": 2,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent4",
+      "target": "task-058",
+      "type": "assigned",
+      "weight": 2,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent4",
+      "target": "task-059",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent4",
+      "target": "task-071",
+      "type": "assigned",
+      "weight": 6,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 2000,
+      "specialist": true
+    },
+    {
+      "source": "agent4",
+      "target": "task-081",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent4",
+      "target": "task-112",
+      "type": "assigned",
+      "weight": 3,
+      "label": "SystemQuality/Reliability",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent4",
+      "target": "task-126",
+      "type": "assigned",
+      "weight": 4,
+      "label": "SystemQuality/Reliability",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent4",
+      "target": "task-138",
+      "type": "assigned",
+      "weight": 3,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent4",
+      "target": "task-140",
+      "type": "assigned",
+      "weight": 6,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 2000,
+      "specialist": true
+    },
+    {
+      "source": "agent4",
+      "target": "task-156",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent4",
+      "target": "task-166",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent4",
+      "target": "task-167",
+      "type": "assigned",
+      "weight": 3,
+      "label": "SystemQuality/Reliability",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent4",
+      "target": "task-175",
+      "type": "assigned",
+      "weight": 4,
+      "label": "SystemQuality/Reliability",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent4",
+      "target": "task-181",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent4",
+      "target": "task-182",
+      "type": "assigned",
+      "weight": 7,
+      "label": "SystemQuality/Reliability",
+      "bid_count": 1,
+      "winning_bid": 4000,
+      "specialist": true
+    },
+    {
+      "source": "agent4",
+      "target": "task-183",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent4",
+      "target": "task-198",
+      "type": "assigned",
+      "weight": 4,
+      "label": "SystemQuality/Reliability",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent4",
+      "target": "task-209",
+      "type": "assigned",
+      "weight": 3,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent4",
+      "target": "task-212",
+      "type": "assigned",
+      "weight": 2,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent4",
+      "target": "task-002",
+      "type": "outsourced",
+      "weight": 8,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 8000
+    },
+    {
+      "source": "agent4",
+      "target": "task-010",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent4",
+      "target": "task-020",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent4",
+      "target": "task-021",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent4",
+      "target": "task-031",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent4",
+      "target": "task-041",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent4",
+      "target": "task-045",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent4",
+      "target": "task-052",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent4",
+      "target": "task-054",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent4",
+      "target": "task-060",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent4",
+      "target": "task-063",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent4",
+      "target": "task-066",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent4",
+      "target": "task-068",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent4",
+      "target": "task-080",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent4",
+      "target": "task-083",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent4",
+      "target": "task-087",
+      "type": "outsourced",
+      "weight": 5,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 2000
+    },
+    {
+      "source": "agent4",
+      "target": "task-093",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ReliabilityImprovements",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent4",
+      "target": "task-097",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent4",
+      "target": "task-111",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent4",
+      "target": "task-124",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent4",
+      "target": "task-141",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent4",
+      "target": "task-147",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent4",
+      "target": "task-153",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent4",
+      "target": "task-154",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent4",
+      "target": "task-157",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent4",
+      "target": "task-169",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent4",
+      "target": "task-174",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent4",
+      "target": "task-179",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent4",
+      "target": "task-180",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent4",
+      "target": "task-189",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent4",
+      "target": "task-199",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent4",
+      "target": "task-200",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent4",
+      "target": "task-207",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent4",
+      "target": "task-211",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent5",
+      "target": "task-001",
+      "type": "assigned",
+      "weight": 9,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 4000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-002",
+      "type": "assigned",
+      "weight": 8,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 8000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-003",
+      "type": "assigned",
+      "weight": 5,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 2000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-006",
+      "type": "assigned",
+      "weight": 8,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 8000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-007",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-009",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ReliabilityImprovements",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-010",
+      "type": "assigned",
+      "weight": 3,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-013",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-014",
+      "type": "assigned",
+      "weight": 3,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-016",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-019",
+      "type": "assigned",
+      "weight": 3,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-021",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-022",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-026",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-028",
+      "type": "assigned",
+      "weight": 3,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-029",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-030",
+      "type": "assigned",
+      "weight": 2,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-033",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-034",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-035",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-036",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-038",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-039",
+      "type": "assigned",
+      "weight": 3,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-041",
+      "type": "assigned",
+      "weight": 3,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-043",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 2000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-045",
+      "type": "assigned",
+      "weight": 4,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-046",
+      "type": "assigned",
+      "weight": 2,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-047",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-048",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-054",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-055",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-057",
+      "type": "assigned",
+      "weight": 2,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-060",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-061",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-062",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-063",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-064",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-067",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-068",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-069",
+      "type": "assigned",
+      "weight": 2,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-070",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-071",
+      "type": "assigned",
+      "weight": 6,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 2000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-072",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 2000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-073",
+      "type": "assigned",
+      "weight": 2,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-075",
+      "type": "assigned",
+      "weight": 2,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-076",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-078",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-079",
+      "type": "assigned",
+      "weight": 12,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 8000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-080",
+      "type": "assigned",
+      "weight": 2,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-084",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-087",
+      "type": "assigned",
+      "weight": 5,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 2000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-088",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-089",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-090",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-092",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-094",
+      "type": "assigned",
+      "weight": 4,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-097",
+      "type": "assigned",
+      "weight": 3,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-098",
+      "type": "assigned",
+      "weight": 6,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 2000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-100",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-104",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-105",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-107",
+      "type": "assigned",
+      "weight": 6,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 4000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-110",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-113",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-117",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-118",
+      "type": "assigned",
+      "weight": 6,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 4000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-119",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-123",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ReliabilityImprovements",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-124",
+      "type": "assigned",
+      "weight": 2,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-128",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-129",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-131",
+      "type": "assigned",
+      "weight": 8,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 4000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-132",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-134",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-135",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-137",
+      "type": "assigned",
+      "weight": 3,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-139",
+      "type": "assigned",
+      "weight": 3,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-141",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-142",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-148",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-149",
+      "type": "assigned",
+      "weight": 4,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-150",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-151",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-153",
+      "type": "assigned",
+      "weight": 3,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-155",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-156",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-162",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-163",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ReliabilityImprovements",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-165",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-169",
+      "type": "assigned",
+      "weight": 3,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-170",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-171",
+      "type": "assigned",
+      "weight": 3,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-174",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-176",
+      "type": "assigned",
+      "weight": 2,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-177",
+      "type": "assigned",
+      "weight": 4,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-179",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-182",
+      "type": "assigned",
+      "weight": 7,
+      "label": "SystemQuality/Reliability",
+      "bid_count": 1,
+      "winning_bid": 4000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-184",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-186",
+      "type": "assigned",
+      "weight": 3,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-187",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-190",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-191",
+      "type": "assigned",
+      "weight": 4,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-193",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-194",
+      "type": "assigned",
+      "weight": 3,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-198",
+      "type": "assigned",
+      "weight": 4,
+      "label": "SystemQuality/Reliability",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-200",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-202",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-205",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-207",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-209",
+      "type": "assigned",
+      "weight": 3,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent5",
+      "target": "task-011",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent5",
+      "target": "task-020",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent5",
+      "target": "task-032",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent5",
+      "target": "task-052",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent5",
+      "target": "task-096",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent5",
+      "target": "task-108",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent5",
+      "target": "task-116",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent5",
+      "target": "task-120",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent5",
+      "target": "task-133",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent5",
+      "target": "task-159",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent5",
+      "target": "task-173",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent5",
+      "target": "task-180",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent5",
+      "target": "task-195",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent6",
+      "target": "task-001",
+      "type": "assigned",
+      "weight": 9,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 4000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-002",
+      "type": "assigned",
+      "weight": 8,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 8000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-004",
+      "type": "assigned",
+      "weight": 9,
+      "label": "SystemQuality/Reliability",
+      "bid_count": 1,
+      "winning_bid": 4000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-006",
+      "type": "assigned",
+      "weight": 8,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 8000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-008",
+      "type": "assigned",
+      "weight": 3,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-009",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ReliabilityImprovements",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-010",
+      "type": "assigned",
+      "weight": 3,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-017",
+      "type": "assigned",
+      "weight": 3,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-019",
+      "type": "assigned",
+      "weight": 3,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-023",
+      "type": "assigned",
+      "weight": 3,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-024",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-028",
+      "type": "assigned",
+      "weight": 3,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-038",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-039",
+      "type": "assigned",
+      "weight": 3,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-041",
+      "type": "assigned",
+      "weight": 3,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-043",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 2000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-045",
+      "type": "assigned",
+      "weight": 4,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-054",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-057",
+      "type": "assigned",
+      "weight": 2,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-060",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-061",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-062",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-064",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-066",
+      "type": "assigned",
+      "weight": 3,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-069",
+      "type": "assigned",
+      "weight": 2,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-072",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 2000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-073",
+      "type": "assigned",
+      "weight": 2,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-076",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-078",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-084",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-085",
+      "type": "assigned",
+      "weight": 5,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 2000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-087",
+      "type": "assigned",
+      "weight": 5,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 2000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-094",
+      "type": "assigned",
+      "weight": 4,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-095",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-100",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-104",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-105",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-108",
+      "type": "assigned",
+      "weight": 4,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-110",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-112",
+      "type": "assigned",
+      "weight": 3,
+      "label": "SystemQuality/Reliability",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-113",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-114",
+      "type": "assigned",
+      "weight": 3,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-117",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-118",
+      "type": "assigned",
+      "weight": 6,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 4000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-119",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-123",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ReliabilityImprovements",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-124",
+      "type": "assigned",
+      "weight": 2,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-128",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-130",
+      "type": "assigned",
+      "weight": 4,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-134",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-137",
+      "type": "assigned",
+      "weight": 3,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-139",
+      "type": "assigned",
+      "weight": 3,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-148",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-149",
+      "type": "assigned",
+      "weight": 4,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-150",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-153",
+      "type": "assigned",
+      "weight": 3,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-155",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-163",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ReliabilityImprovements",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-164",
+      "type": "assigned",
+      "weight": 6,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 2000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-166",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-167",
+      "type": "assigned",
+      "weight": 3,
+      "label": "SystemQuality/Reliability",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-169",
+      "type": "assigned",
+      "weight": 3,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-174",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-175",
+      "type": "assigned",
+      "weight": 4,
+      "label": "SystemQuality/Reliability",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-176",
+      "type": "assigned",
+      "weight": 2,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-177",
+      "type": "assigned",
+      "weight": 4,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-184",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-189",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-190",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-191",
+      "type": "assigned",
+      "weight": 4,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-194",
+      "type": "assigned",
+      "weight": 3,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-200",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-201",
+      "type": "assigned",
+      "weight": 4,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-202",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-204",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-205",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-210",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent6",
+      "target": "task-007",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent6",
+      "target": "task-029",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent6",
+      "target": "task-031",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent6",
+      "target": "task-032",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent6",
+      "target": "task-048",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent6",
+      "target": "task-055",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent6",
+      "target": "task-079",
+      "type": "outsourced",
+      "weight": 12,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 8000
+    },
+    {
+      "source": "agent6",
+      "target": "task-082",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent6",
+      "target": "task-090",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent6",
+      "target": "task-092",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent6",
+      "target": "task-101",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent6",
+      "target": "task-116",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent6",
+      "target": "task-121",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent6",
+      "target": "task-126",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "SystemQuality/Reliability",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent6",
+      "target": "task-140",
+      "type": "outsourced",
+      "weight": 6,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 2000
+    },
+    {
+      "source": "agent6",
+      "target": "task-142",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent6",
+      "target": "task-159",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent6",
+      "target": "task-160",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent6",
+      "target": "task-183",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent6",
+      "target": "task-193",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent6",
+      "target": "task-195",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent6",
+      "target": "task-197",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent7",
+      "target": "task-009",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ReliabilityImprovements",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-012",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-015",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-018",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-020",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-027",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-031",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-032",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-040",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-041",
+      "type": "assigned",
+      "weight": 3,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-042",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-044",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-050",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-051",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-052",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-053",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-056",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-057",
+      "type": "assigned",
+      "weight": 2,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-065",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-073",
+      "type": "assigned",
+      "weight": 2,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-074",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-076",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-077",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-082",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-083",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-086",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-091",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-093",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ReliabilityImprovements",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-096",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-099",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-101",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-102",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-103",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-109",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-110",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-115",
+      "type": "assigned",
+      "weight": 8,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 4000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-116",
+      "type": "assigned",
+      "weight": 3,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-119",
+      "type": "assigned",
+      "weight": 4,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-120",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-121",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-122",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-123",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ReliabilityImprovements",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-124",
+      "type": "assigned",
+      "weight": 2,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-125",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-127",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-133",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-136",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-140",
+      "type": "assigned",
+      "weight": 6,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 2000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-143",
+      "type": "assigned",
+      "weight": 12,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 8000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-144",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-145",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-146",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-147",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-149",
+      "type": "assigned",
+      "weight": 4,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-154",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-157",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-158",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-161",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-163",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ReliabilityImprovements",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-168",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-169",
+      "type": "assigned",
+      "weight": 3,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-170",
+      "type": "assigned",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-172",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-173",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-176",
+      "type": "assigned",
+      "weight": 2,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-177",
+      "type": "assigned",
+      "weight": 4,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-178",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-180",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-185",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-191",
+      "type": "assigned",
+      "weight": 4,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-192",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-195",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-197",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-199",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-200",
+      "type": "assigned",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-203",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-206",
+      "type": "assigned",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-208",
+      "type": "assigned",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-211",
+      "type": "assigned",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500,
+      "specialist": true
+    },
+    {
+      "source": "agent7",
+      "target": "task-001",
+      "type": "outsourced",
+      "weight": 9,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 4000
+    },
+    {
+      "source": "agent7",
+      "target": "task-002",
+      "type": "outsourced",
+      "weight": 8,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 8000
+    },
+    {
+      "source": "agent7",
+      "target": "task-003",
+      "type": "outsourced",
+      "weight": 5,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 2000
+    },
+    {
+      "source": "agent7",
+      "target": "task-005",
+      "type": "outsourced",
+      "weight": 23,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 32000
+    },
+    {
+      "source": "agent7",
+      "target": "task-016",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent7",
+      "target": "task-022",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent7",
+      "target": "task-024",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent7",
+      "target": "task-030",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent7",
+      "target": "task-059",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent7",
+      "target": "task-063",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent7",
+      "target": "task-070",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent7",
+      "target": "task-071",
+      "type": "outsourced",
+      "weight": 6,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 2000
+    },
+    {
+      "source": "agent7",
+      "target": "task-075",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent7",
+      "target": "task-078",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent7",
+      "target": "task-088",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent7",
+      "target": "task-107",
+      "type": "outsourced",
+      "weight": 6,
+      "label": "UI/UX",
+      "bid_count": 1,
+      "winning_bid": 4000
+    },
+    {
+      "source": "agent7",
+      "target": "task-108",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent7",
+      "target": "task-130",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "NewFeatures/Enhancement",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent7",
+      "target": "task-152",
+      "type": "outsourced",
+      "weight": 4,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent7",
+      "target": "task-166",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "ApplicationLogic",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent7",
+      "target": "task-167",
+      "type": "outsourced",
+      "weight": 3,
+      "label": "SystemQuality/Reliability",
+      "bid_count": 1,
+      "winning_bid": 1000
+    },
+    {
+      "source": "agent7",
+      "target": "task-182",
+      "type": "outsourced",
+      "weight": 7,
+      "label": "SystemQuality/Reliability",
+      "bid_count": 1,
+      "winning_bid": 4000
+    },
+    {
+      "source": "agent7",
+      "target": "task-189",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent7",
+      "target": "task-193",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "Bugfix",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent7",
+      "target": "task-196",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    },
+    {
+      "source": "agent7",
+      "target": "task-210",
+      "type": "outsourced",
+      "weight": 2,
+      "label": "ServerSideLogic",
+      "bid_count": 1,
+      "winning_bid": 500
+    }
+  ]
+}
