@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/csv"
 	"encoding/json"
+	"flag"
 	"fmt"
 	"io"
 	"log"
@@ -872,6 +873,153 @@ func main() {
 	log.SetFlags(log.Ldate | log.Ltime | log.Lmicroseconds)
 	log.Printf("%sSTARTUP: SWE Manager Task Distribution System initializing%s", ColorStats, ColorReset)
 
+	// --- NEW: Command-line flag for total number of issues ---
+	numIssuesPtr := flag.Int("num_issues", 0, "Total number of SWE Manager issues/tasks to use (random subset if less than available)")
+	flag.Parse()
+
+	// Configuration
+	ollamaAPIURL := "http://localhost:11434/api/generate"
+	modelToUse := "granite3.3:8b"
+	inputFilePath := "data.csv"
+
+	log.Printf("%sCONFIG: Using Ollama API at %s with model %s%s", ColorInfo, ollamaAPIURL, modelToUse, ColorReset)
+	log.Printf("CONFIG: Reading task data from %s", inputFilePath)
+
+	// Read and filter tasks from CSV
+	taskData, err := readTasksFromCSV(inputFilePath)
+	if err != nil {
+		log.Fatalf("%sFATAL: Failed to read tasks from CSV: %v%s", ColorBugfix, err, ColorReset)
+	}
+
+	if len(taskData) == 0 {
+		log.Fatalf("%sFATAL: No SWE Manager tasks found in the CSV file%s", ColorBugfix, ColorReset)
+	}
+
+	// --- NEW: Randomly sample tasks if a maximum number is set ---
+	totalTasks := len(taskData)
+	if *numIssuesPtr > 0 && *numIssuesPtr < totalTasks {
+		rand.Seed(time.Now().UnixNano())
+		perm := rand.Perm(totalTasks)
+		sampled := make([]TaskData, 0, *numIssuesPtr)
+		for i := 0; i < *numIssuesPtr; i++ {
+			sampled = append(sampled, taskData[perm[i]])
+		}
+		taskData = sampled
+		log.Printf("%sCONFIG: Randomly selected %d tasks from %d available%s", ColorInfo, *numIssuesPtr, totalTasks, ColorReset)
+	}
+
+	log.Printf("%sTASKS: Successfully loaded %d SWE Manager tasks for processing%s", ColorStats, len(taskData), ColorReset)
+
+	// Process and categorize each task
+	var categorizedTasks []Task
+	totalCategorizationTime := 0.0
+	log.Printf("%sCATEGORIZATION: Starting task categorization using %s model%s", ColorInfo, modelToUse, ColorReset)
+
+	// Process tasks in batches to reduce memory pressure
+	batchSize := 10
+	for i := 0; i < len(taskData); i += batchSize {
+		endIdx := min(i+batchSize, len(taskData))
+		log.Printf("%sBATCH: Processing tasks %d to %d of %d%s", ColorInfo, i+1, endIdx, len(taskData), ColorReset)
+
+		// Process current batch
+		for j := i; j < endIdx; j++ {
+			task := taskData[j]
+			startTime := time.Now()
+			log.Printf("TASK %d/%d: %s (Price: $%.2f)", j+1, len(taskData), truncateString(task.Description, 50), task.Price)
+
+			// Use smart categorization to reduce API calls
+			categories, err := categorizeTaskSmartly(task.Description, modelToUse, ollamaAPIURL)
+			taskTime := time.Since(startTime).Seconds()
+			totalCategorizationTime += taskTime
+
+			if err != nil {
+				log.Printf("%sERROR: Failed to categorize task %d: %v%s", ColorBugfix, j+1, err, ColorReset)
+				// Fallback based on context
+				taskText := strings.ToLower(task.Description)
+				if strings.Contains(taskText, "api") || strings.Contains(taskText, "server") {
+					categories = []string{"ServerSideLogic", "ReliabilityImprovements"}
+				} else if strings.Contains(taskText, "user") || strings.Contains(taskText, "interface") {
+					categories = []string{"UI/UX"}
+				} else if strings.Contains(taskText, "bug") || strings.Contains(taskText, "issue") {
+					categories = []string{"Bugfix"}
+				} else {
+					categories = []string{"ApplicationLogic"}
+				}
+
+				categoryColors := make([]string, len(categories))
+				for k, cat := range categories {
+					catColor := colorForCategory(cat)
+					categoryColors[k] = colorize(cat, catColor)
+				}
+
+				log.Printf("%sRECOVERY: Using context-based categories: %s%s", ColorWarning, strings.Join(categoryColors, ", "), ColorReset)
+			}
+
+			// Create a new task with the determined categories
+			estimatedHours := getEstimatedHours(task.Price)
+
+			newTask := Task{
+				TaskID:         fmt.Sprintf("task-%03d", j+1),
+				Description:    extractTaskContent(task.Description), // Extract clean content
+				Categories:     categories,
+				EstimatedHours: estimatedHours,
+				RequiredSkills: getSkillsForTask(categories),
+				Status:         "",
+				Price:          task.Price,
+				PriceLimit:     task.PriceLimit,
+			}
+
+			categorizedTasks = append(categorizedTasks, newTask)
+		}
+
+		// Small pause between batches
+		if endIdx < len(taskData) {
+			time.Sleep(500 * time.Millisecond)
+		}
+	}
+
+	avgCatTime := totalCategorizationTime / float64(len(taskData))
+	log.Printf("%sCATEGORIZATION: Complete - %d tasks categorized in %.2f seconds (avg %.2f sec/task)%s",
+		ColorStats, len(categorizedTasks), totalCategorizationTime, avgCatTime, ColorReset)
+
+	// Count tasks per category
+	catCounts := make(map[string]int)
+	for _, task := range categorizedTasks {
+		for _, category := range task.Categories {
+			catCounts[category]++
+		}
+	}
+
+	log.Printf("%sSTATS: Category Distribution Summary%s", ColorStats, ColorReset)
+	for cat, count := range catCounts {
+		percentage := float64(count) / float64(len(categorizedTasks)) * 100
+		categoryColor := colorForCategory(cat)
+		log.Printf("STATS: Category %s%s%s: %d tasks (%.1f%%)",
+			categoryColor, cat, ColorReset, count, percentage)
+	}
+
+	// Create agents and distribute tasks
+	log.Printf("%sDISTRIBUTION: Creating agents and distributing %d tasks%s", ColorInfo, len(categorizedTasks), ColorReset)
+	agents := createAgents(categorizedTasks)
+
+	// Write agent data to JSON files
+	log.Printf("%sOUTPUT: Writing agent data to JSON files%s", ColorInfo, ColorReset)
+	for _, agent := range agents {
+		err := writeAgentToJSON(agent)
+		if err != nil {
+			log.Printf("%sERROR: Failed to write agent file for %s: %v%s",
+				ColorBugfix, agent.AgentID, err, ColorReset)
+		}
+	}
+
+	log.Printf("%sCOMPLETE: Task categorization and distribution process finished successfully%s", ColorStats, ColorReset)
+}
+
+/*
+func main() {
+	log.SetFlags(log.Ldate | log.Ltime | log.Lmicroseconds)
+	log.Printf("%sSTARTUP: SWE Manager Task Distribution System initializing%s", ColorStats, ColorReset)
+
 	// Get current time for random seed
 	now := time.Now()
 	rand.Seed(now.UnixNano())
@@ -1009,3 +1157,4 @@ func main() {
 	log.Printf("%sCOMPLETE: Task categorization and distribution process finished successfully%s",
 		ColorStats, ColorReset)
 }
+*/

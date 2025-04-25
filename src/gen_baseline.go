@@ -8,23 +8,24 @@ import (
 	"path/filepath"
 )
 
-// Node represents an entity (agent or task)
+// Node represents an entity (agent or task) following the required schema
 type Node struct {
-	ID    string `json:"id"`
-	Name  string `json:"name"`
-	Group string `json:"group"`
+	ID         string `json:"id"`
+	Name       string `json:"name"`
+	Role       string `json:"role"`       // "task" or "agent"
+	Specialist bool   `json:"specialist"` // true for agents, false for tasks
+	Group      string `json:"group"`      // same as role, or can be used for further grouping
+	Degree     int    `json:"degree"`     // count of links connected to this node
 }
 
-// Link represents an edge between nodes
+// Link represents an edge between nodes following the required schema
 type Link struct {
 	Source     string  `json:"source"`
 	Target     string  `json:"target"`
-	Type       string  `json:"type"`
+	Type       string  `json:"type"` // "bidded", "assigned", "outsourced"
 	Weight     int     `json:"weight"`
-	Label      string  `json:"label"`
+	WinningBid float64 `json:"WinningBid"`
 	BidCount   int     `json:"bid_count"`
-	WinningBid float64 `json:"winning_bid"`
-	Specialist bool    `json:"specialist,omitempty"`
 }
 
 // Graph holds the full schema
@@ -62,12 +63,12 @@ type Agent struct {
 }
 
 func main() {
-	// Initialize graph with empty slices
 	g := Graph{
 		Nodes: make([]Node, 0),
 		Links: make([]Link, 0),
 	}
-	seen := make(map[string]bool)
+	seenNodes := make(map[string]*Node)
+	degree := make(map[string]int)
 
 	// Read all agent JSON files under agent_data/
 	files, err := filepath.Glob("agent_data/*.json")
@@ -91,61 +92,81 @@ func main() {
 		}
 
 		// Add agent node
-		if !seen[agent.AgentID] {
-			g.Nodes = append(g.Nodes, Node{
-				ID:    agent.AgentID,
-				Name:  agent.Specialty,
-				Group: "agent",
-			})
-			seen[agent.AgentID] = true
+		if _, ok := seenNodes[agent.AgentID]; !ok {
+			node := Node{
+				ID:         agent.AgentID,
+				Name:       agent.Specialty,
+				Role:       "agent",
+				Specialist: true,
+				Group:      "agent",
+				Degree:     0, // will be updated later
+			}
+			g.Nodes = append(g.Nodes, node)
+			seenNodes[agent.AgentID] = &g.Nodes[len(g.Nodes)-1]
 		}
 
 		// Process own tasks
 		for _, t := range agent.OwnTasks {
-			if !seen[t.TaskID] {
-				g.Nodes = append(g.Nodes, Node{
-					ID:    t.TaskID,
-					Name:  t.TaskID, // use task ID as node name
-					Group: "task",
-				})
-				seen[t.TaskID] = true
+			if _, ok := seenNodes[t.TaskID]; !ok {
+				node := Node{
+					ID:         t.TaskID,
+					Name:       t.TaskID,
+					Role:       "task",
+					Specialist: false,
+					Group:      "task",
+					Degree:     0,
+				}
+				g.Nodes = append(g.Nodes, node)
+				seenNodes[t.TaskID] = &g.Nodes[len(g.Nodes)-1]
 			}
-			g.Links = append(g.Links, Link{
+			link := Link{
 				Source:     agent.AgentID,
 				Target:     t.TaskID,
 				Type:       "assigned",
 				Weight:     t.EstimatedHours,
-				Label:      t.Categories[0],
-				BidCount:   1,
 				WinningBid: t.Price,
-				Specialist: true,
-			})
+				BidCount:   1,
+			}
+			g.Links = append(g.Links, link)
+			degree[agent.AgentID]++
+			degree[t.TaskID]++
 		}
 
 		// Process outsourced tasks
 		for _, t := range agent.TasksToOutsource {
-			if !seen[t.TaskID] {
-				g.Nodes = append(g.Nodes, Node{
-					ID:    t.TaskID,
-					Name:  t.TaskID, // use task ID as node name
-					Group: "task",
-				})
-				seen[t.TaskID] = true
+			if _, ok := seenNodes[t.TaskID]; !ok {
+				node := Node{
+					ID:         t.TaskID,
+					Name:       t.TaskID,
+					Role:       "task",
+					Specialist: false,
+					Group:      "task",
+					Degree:     0,
+				}
+				g.Nodes = append(g.Nodes, node)
+				seenNodes[t.TaskID] = &g.Nodes[len(g.Nodes)-1]
 			}
-			g.Links = append(g.Links, Link{
+			link := Link{
 				Source:     agent.AgentID,
 				Target:     t.TaskID,
 				Type:       "outsourced",
 				Weight:     t.EstimatedHours,
-				Label:      t.Categories[0],
-				BidCount:   1,
 				WinningBid: t.Price,
-			})
+				BidCount:   1,
+			}
+			g.Links = append(g.Links, link)
+			degree[agent.AgentID]++
+			degree[t.TaskID]++
 		}
 	}
 
-	// Write graph to truth.json
-	outFile := "truth.json"
+	// Set degree for each node
+	for i := range g.Nodes {
+		g.Nodes[i].Degree = degree[g.Nodes[i].ID]
+	}
+
+	// Write graph to baseline.json
+	outFile := "baseline_network.json"
 	f, err := os.Create(outFile)
 	if err != nil {
 		log.Fatalf("failed to create %s: %v", outFile, err)
