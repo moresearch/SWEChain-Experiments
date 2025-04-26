@@ -1,1232 +1,253 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Economic Network Analysis</title>
-    <style>
-        :root {
-            --task-color: #4285F4;
-            --agent-color: #AA46BC;
-            --specialist-color: #EA4335;
-            --out-color: #EA4335;
-            --bid-color: #34A853;
-            --assign-color: #FBBC05;
-            --accent-color: #1A73E8;
-            --text-color: #202124;
-            --border-color: #DADCE0;
-            --bg-color: #FFFFFF;
-            --panel-color: #F8F9FA;
-            --header-color: #1A73E8;
-            --chart-bg: #F8F9FA;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.5;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        header h1 {
-            color: var(--header-color);
-            font-size: 24px;
-        }
-
-        .timestamp-container {
-            font-size: 12px;
-            color: #5F6368;
-            text-align: right;
-        }
-
-        .controls {
-            background-color: var(--panel-color);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 16px;
-            margin-bottom: 20px;
-        }
-
-        .controls h3 {
-            margin-top: 0;
-            margin-bottom: 12px;
-            font-size: 16px;
-        }
-
-        .controls-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-        }
-
-        .control-group {
-            margin-bottom: 8px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 4px;
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        select, input[type="range"] {
-            width: 100%;
-            padding: 8px;
-            border-radius: 4px;
-            border: 1px solid var(--border-color);
-            background-color: var(--bg-color);
-            font-size: 14px;
-        }
-
-        .chart-container {
-            position: relative;
-            background-color: var(--bg-color);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            margin-bottom: 20px;
-            overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-
-        .chart-container h3 {
-            padding: 16px;
-            margin: 0;
-            font-size: 18px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        #network-container {
-            height: 600px;
-        }
-
-        .graph-container {
-            width: 100%;
-            height: 300px;
-            background-color: var(--chart-bg);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .chart-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 16px;
-            padding: 16px;
-        }
-
-        .sub-chart h4 {
-            margin-top: 0;
-            margin-bottom: 10px;
-            font-size: 14px;
-            font-weight: 600;
-            text-align: center;
-        }
-
-        .metrics-panel {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 16px;
-            padding: 16px;
-        }
-
-        .metrics-card {
-            background-color: var(--chart-bg);
-            border-radius: 8px;
-            padding: 12px;
-            text-align: center;
-        }
-
-        .metrics-card h5 {
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .metric-value {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--accent-color);
-            margin-bottom: 4px;
-        }
-
-        .metric-description {
-            font-size: 12px;
-            color: #5F6368;
-        }
-
-        .visualization-panel {
-            display: none;
-        }
-
-        #tooltip {
-            position: absolute;
-            display: none;
-            background-color: rgba(255, 255, 255, 0.9);
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            padding: 10px;
-            font-size: 12px;
-            pointer-events: none;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .legend {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background-color: rgba(255, 255, 255, 0.9);
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            padding: 10px;
-            font-size: 12px;
-            z-index: 100;
-        }
-
-        .legend-title {
-            font-weight: 600;
-            margin-bottom: 8px;
-            padding-bottom: 4px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .legend-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 6px;
-        }
-
-        .legend-color {
-            width: 12px;
-            height: 12px;
-            margin-right: 8px;
-            border-radius: 50%;
-        }
-
-        .legend-line {
-            width: 20px;
-            height: 2px;
-            margin-right: 8px;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 2000;
-        }
-
-        .modal-content {
-            background-color: var(--bg-color);
-            margin: 10% auto;
-            padding: 20px;
-            width: 60%;
-            max-width: 600px;
-            border-radius: 8px;
-            position: relative;
-        }
-
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        #modal-title {
-            margin-top: 0;
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .error-message {
-            text-align: center;
-            padding: 40px;
-        }
-        
-        .tab-container {
-            display: flex;
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 20px;
-        }
-        
-        .tab-button {
-            padding: 10px 20px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--text-color);
-            border-bottom: 2px solid transparent;
-        }
-        
-        .tab-button.active {
-            color: var(--accent-color);
-            border-bottom: 2px solid var(--accent-color);
-        }
-        
-        .tab-button:hover {
-            background-color: var(--panel-color);
-        }
-        
-        .tab-content {
-            display: none;
-        }
-        
-        .tab-content.active {
-            display: block;
-        }
-        
-        /* Additions for specific visualizations */
-        .node {
-            stroke: var(--bg-color);
-            stroke-width: 1.5px;
-            cursor: pointer;
-        }
-        
-        .node:hover {
-            stroke-width: 2.5px;
-            stroke: #000;
-        }
-        
-        .link {
-            stroke-opacity: 0.7;
-        }
-        
-        .link:hover {
-            stroke-opacity: 1;
-            stroke-width: 2px;
-        }
-        
-        .boxplot rect {
-            fill-opacity: 0.7;
-        }
-        
-        .boxplot rect:hover {
-            fill-opacity: 1;
-        }
-        
-        .violin-path {
-            opacity: 0.7;
-        }
-        
-        .violin-path:hover {
-            opacity: 1;
-        }
-        
-        .heatmap-cell:hover {
-            stroke: #000;
-            stroke-width: 1px;
-        }
-        
-        .cdf-line {
-            fill: none;
-            stroke-width: 2px;
-        }
-        
-        .lorenz-line {
-            fill: none;
-            stroke-width: 2px;
-        }
-        
-        .bar-chart rect {
-            fill-opacity: 0.8;
-        }
-        
-        .bar-chart rect:hover {
-            fill-opacity: 1;
-        }
-        
-        /* Styles for error bars */
-        .error-bar {
-            stroke: #555;
-            stroke-width: 1.5px;
-        }
-        
-        .error-cap {
-            stroke: #555;
-            stroke-width: 1.5px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>SWEChain Experimentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="static/styles.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: #f6f8fa;
+    }
+    body {
+      min-height: 100vh;
+      font-family: 'Inter', Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0;
+    }
+    #dashboard-panel {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 6px 32px rgba(32,42,60,0.08);
+      max-width: 1440px;
+      width: 90vw;
+      padding: 38px 40px 34px 40px;
+      margin: 42px 0 42px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 340px;
+      border: 1px solid #e8e9ed;
+      transition: box-shadow 0.2s;
+    }
+    #dashboard-title {
+      font-size: 2.3rem;
+      font-weight: 700;
+      color: #223354;
+      margin-bottom: 8px;
+      letter-spacing: 0.01em;
+      text-align: center;
+      font-family: "Inter", Arial, Helvetica, sans-serif;
+    }
+    #dashboard-subtitle {
+      font-size: 1.12rem;
+      color: #6d7b93;
+      margin-bottom: 26px;
+      text-align: center;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+    }
+    /* Grouped legend styling */
+    #legend-agents {
+      margin: 12px 0 18px 0;
+      font-size: 15px;
+      line-height: 1.8;
+      border-radius: 10px;
+      background: #f4f8fb;
+      padding: 10px 24px;
+      border: 1px solid #eef0f4;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px 48px;
+      justify-content: flex-start;
+      max-width: 1050px;
+    }
+    .legend-group {
+      min-width: 140px;
+      margin-bottom: 4px;
+    }
+    .legend-group-title {
+      font-weight: 600;
+      color: #3853a6;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2px;
+      font-size: 14px;
+      color: #223354;
+      gap: 6px;
+    }
+    .legend-color {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      border-radius: 3px;
+      margin-right: 7px;
+      vertical-align: middle;
+    }
+    #metrics-panel {
+      margin-bottom: 18px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 12px 22px;
+    }
+    .metrics-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      padding: 11px 23px 13px 23px;
+      background: #f8fafc;
+      border-radius: 10px;
+      font-size: 14.2px;
+      min-width: 100px;
+      min-height: 48px;
+      border: 1px solid #ececec;
+      box-shadow: 0 1.5px 7px rgba(220,225,240,0.07);
+    }
+    .metrics-card h5 { margin: 0; font-size: 13.4px; color: #355089; font-weight: 500; }
+    .metric-value { font-size: 1.14rem; color: #223354; font-weight: bold; margin-top: 2px; }
+    #network-container {
+      width: 100%;
+      min-width: 340px;
+      height: 390px;
+      border-radius: 10px;
+      border: 1px solid #e3e7ef;
+      background: #fafbfc;
+      margin: 0 auto 28px auto;
+      position: relative;
+      box-shadow: 0 2px 9px rgba(180,195,230,0.07);
+      transition: border-color 0.15s;
+    }
+    .charts-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px 28px;
+      margin-bottom: 10px;
+      justify-content: center;
+      width: 100%;
+      max-width: 1200px;
+    }
+    .mini-chart {
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid #ececec;
+      flex: 1 1 200px;
+      min-width: 160px;
+      max-width: 230px;
+      height: 140px;
+      padding: 6px 3px 2px 7px;
+      position: relative;
+      margin-bottom: 2px;
+      box-shadow: 0 0.5px 5px rgba(180,195,230,0.04);
+      transition: box-shadow 0.15s;
+    }
+    .mini-chart:hover {
+      box-shadow: 0 4px 12px rgba(160,180,245,0.10);
+      border: 1.5px solid #c8e1fe;
+    }
+    #tooltip {
+      position: absolute;
+      pointer-events: none;
+      z-index: 1000;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(30,30,80,0.11);
+      padding: 7px 13px;
+      font-size: 12.6px;
+      border-radius: 6px;
+      color: #222;
+      border: 1px solid #ececec;
+      display: none;
+      min-width: 80px;
+      max-width: 240px;
+    }
+    #modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0; top: 0; width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.08);
+    }
+    #modal-content {
+      background: #fff;
+      margin: 80px auto;
+      padding: 16px 18px;
+      border-radius: 8px;
+      border: 1px solid #ececec;
+      width: 310px;
+      position: relative;
+      box-shadow: 0 2px 8px rgba(60,80,120,0.09);
+    }
+    .close {
+      position: absolute; right: 12px; top: 4px;
+      color: #aaa; font-size: 23px; cursor: pointer;
+    }
+    .close:hover { color: #000; }
+    :root {
+      --assign-color: #4f8ffb;
+      --bid-color: #e06a00;
+      --out-color: #3cb371;
+      --task-color: #f8c471;
+    }
+    @media (max-width: 1100px) {
+      #dashboard-panel { padding: 24px 6vw; }
+      .charts-row { gap: 10px 12px; }
+      .mini-chart { min-width: 120px; height: 90px;}
+      #network-container { height: 220px; }
+      #legend-agents { gap: 18px 18px; }
+    }
+    @media (max-width: 700px) {
+      #dashboard-panel { padding: 3vw 1vw; }
+      #dashboard-title { font-size: 1.2rem;}
+      .mini-chart { min-width: 70px; height: 50px;}
+      #network-container { height: 110px; }
+      #legend-agents { gap: 8px 8px; padding: 4px 5px;}
+    }
+    @media (max-width: 500px) {
+      #dashboard-panel { padding: 2vw 0.5vw;}
+      #dashboard-title { font-size: .9rem;}
+      .mini-chart { min-width: 40px; height: 30px;}
+      #network-container { height: 70px; }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Economic Network Analysis</h1>
-            <div class="timestamp-container">
-                <div>Generated: <span id="current-time"></span></div>
-                <div>Session ID: <span id="session-id"></span></div>
-            </div>
-        </header>
-        
-        <div class="tab-container">
-            <button class="tab-button active" data-tab="overview">Network Overview</button>
-            <button class="tab-button" data-tab="liquidity">Market Liquidity</button>
-            <button class="tab-button" data-tab="competition">Competition</button>
-            <button class="tab-button" data-tab="efficiency">Efficiency</button>
-            <button class="tab-button" data-tab="equity">Equity</button>
-            <button class="tab-button" data-tab="friction">Strategic Friction</button>
-            <button class="tab-button" data-tab="robustness">Robustness</button>
-        </div>
-        
-        <!-- Network Controls -->
-        <div class="controls">
-            <h3>Analysis Controls</h3>
-            <div class="controls-grid">
-                <div class="control-group">
-                    <label for="filter-type">Filter by Relationship</label>
-                    <select id="filter-type">
-                        <option value="all">All Relationships</option>
-                        <option value="bidded">Bidding Only</option>
-                        <option value="assigned">Assignments Only</option>
-                        <option value="outsourced">Outsourcing Only</option>
-                    </select>
-                </div>
-                <div class="control-group">
-                    <label for="filter-agent">Filter by Node Type</label>
-                    <select id="filter-agent">
-                        <option value="all">All Nodes</option>
-                        <option value="task">Tasks Only</option>
-                        <option value="agent">Agents Only</option>
-                        <option value="specialist">Specialists Only</option>
-                    </select>
-                </div>
-                <div class="control-group">
-                    <label for="layout-type">Network Layout</label>
-                    <select id="layout-type">
-                        <option value="force">Force-Directed</option>
-                        <option value="bipartite">Bipartite</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Tab Content: Overview -->
-        <div id="overview-tab" class="tab-content active">
-            <!-- Main Network Visualization -->
-            <div id="network-container" class="chart-container">
-                <div id="tooltip"></div>
-                <div class="legend">
-                    <div class="legend-title">Network Legend</div>
-                    <div class="legend-item"><div class="legend-color" style="background:var(--task-color);"></div><span>Task</span></div>
-                    <div class="legend-item"><div class="legend-color" style="background:var(--agent-color);"></div><span>Agent</span></div>
-                    <div class="legend-item"><div class="legend-color" style="background:var(--specialist-color);"></div><span>Specialist Agent</span></div>
-                    <div class="legend-item"><div class="legend-line" style="background:var(--out-color);"></div><span>Outsourced</span></div>
-                    <div class="legend-item"><div class="legend-line" style="background:var(--bid-color);border-top:2px dashed var(--bid-color);height:0;"></div><span>Bidded</span></div>
-                    <div class="legend-item"><div class="legend-line" style="background:var(--assign-color);"></div><span>Assigned</span></div>
-                </div>
-            </div>
-            
-            <!-- Network Summary Metrics -->
-            <div class="chart-container">
-                <h3>Network Summary Metrics</h3>
-                <div class="metrics-panel">
-                    <div class="metrics-card">
-                        <h5>Network Density</h5>
-                        <div class="metric-value" id="network-density">{{.NetworkDensity}}</div>
-                        <div class="metric-description">Agent-Task connectivity</div>
-                    </div>
-                    <div class="metrics-card">
-                        <h5>Bidding Ratio</h5>
-                        <div class="metric-value" id="bidding-ratio">{{.BiddingRatio}}</div>
-                        <div class="metric-description">% of competitive bidding</div>
-                    </div>
-                    <div class="metrics-card">
-                        <h5>Specialist Win Rate</h5>
-                        <div class="metric-value" id="specialist-win-rate">{{.SpecialistWinRate}}</div>
-                        <div class="metric-description">% of tasks won by specialists</div>
-                    </div>
-                    <div class="metrics-card">
-                        <h5>Avg. Task Cost</h5>
-                        <div class="metric-value" id="avg-task-cost">{{.AvgTaskCost}}</div>
-                        <div class="metric-description">Average price of completed tasks</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Tab Content: Market Liquidity -->
-        <div id="liquidity-tab" class="tab-content">
-            <div id="market-liquidity" class="chart-container">
-                <h3>Market Liquidity Analysis</h3>
-                <div class="metrics-panel">
-                    <div class="metrics-card">
-                        <h5>Network Density</h5>
-                        <div class="metric-value" id="liquidity-density">{{.NetworkDensity}}</div>
-                        <div class="metric-description">Agent-Task connectivity</div>
-                    </div>
-                    <div class="metrics-card">
-                        <h5>Average Degree</h5>
-                        <div class="metric-value" id="avg-degree">--</div>
-                        <div class="metric-description">Average connections per node</div>
-                    </div>
-                </div>
-                <div class="chart-grid">
-                    <div class="sub-chart">
-                        <h4>Degree Distribution</h4>
-                        <div id="degree-distribution" class="graph-container"></div>
-                    </div>
-                    <div class="sub-chart">
-                        <h4>Bipartite Structural Comparison</h4>
-                        <div id="bipartite-comparison" class="graph-container"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Tab Content: Competition -->
-        <div id="competition-tab" class="tab-content">
-            <div id="competition-dashboard" class="chart-container">
-                <h3>Competition Analysis</h3>
-                <div class="metrics-panel">
-                    <div class="metrics-card">
-                        <h5>Bid Volume</h5>
-                        <div class="metric-value" id="bid-volume">--</div>
-                        <div class="metric-description">Total bids placed</div>
-                    </div>
-                    <div class="metrics-card">
-                        <h5>Bid Variance</h5>
-                        <div class="metric-value" id="bid-variance">{{.BidVariance}}</div>
-                        <div class="metric-description">Pricing dispersion</div>
-                    </div>
-                    <div class="metrics-card">
-                        <h5>Avg. Bidders per Task</h5>
-                        <div class="metric-value" id="avg-bidders">{{.AvgBiddersPerTask}}</div>
-                        <div class="metric-description">Bidding pressure</div>
-                    </div>
-                </div>
-                <div class="chart-grid">
-                    <div class="sub-chart">
-                        <h4>Bid Variance Per Task (Boxplot)</h4>
-                        <div id="bid-variance-boxplot" class="graph-container"></div>
-                    </div>
-                    <div class="sub-chart">
-                        <h4>Bid Volume & Pricing Dispersion</h4>
-                        <div id="competition-analysis" class="graph-container"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Tab Content: Efficiency -->
-        <div id="efficiency-tab" class="tab-content">
-            <div id="efficiency-dashboard" class="chart-container">
-                <h3>Efficiency Analysis</h3>
-                <div class="metrics-panel">
-                    <div class="metrics-card">
-                        <h5>Price Efficiency</h5>
-                        <div class="metric-value" id="price-efficiency">--</div>
-                        <div class="metric-description">Value optimization</div>
-                    </div>
-                    <div class="metrics-card">
-                        <h5>Client Surplus</h5>
-                        <div class="metric-value" id="client-surplus">{{.ClientSurplus}}</div>
-                        <div class="metric-description">Savings from optimal selection</div>
-                    </div>
-                    <div class="metrics-card">
-                        <h5>Avg. Task Cost</h5>
-                        <div class="metric-value" id="efficiency-cost">{{.AvgTaskCost}}</div>
-                        <div class="metric-description">Average price of completed tasks</div>
-                    </div>
-                </div>
-                <div class="chart-grid">
-                    <div class="sub-chart">
-                        <h4>Price Efficiency & Client Surplus</h4>
-                        <div id="efficiency-analysis" class="graph-container"></div>
-                    </div>
-                    <div class="sub-chart">
-                        <h4>Bid Price Distribution (Density Plot)</h4>
-                        <div id="price-efficiency-plot" class="graph-container"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Tab Content: Equity -->
-        <div id="equity-tab" class="tab-content">
-            <div id="equity-dashboard" class="chart-container">
-                <h3>Equity Analysis</h3>
-                <div class="metrics-panel">
-                    <div class="metrics-card">
-                        <h5>Gini Coefficient</h5>
-                        <div class="metric-value" id="gini-coefficient">{{.GiniCoefficient}}</div>
-                        <div class="metric-description">Distribution inequality</div>
-                    </div>
-                    <div class="metrics-card">
-                        <h5>Specialist Win Rate</h5>
-                        <div class="metric-value" id="equity-specialist-rate">{{.SpecialistWinRate}}</div>
-                        <div class="metric-description">% of tasks won by specialists</div>
-                    </div>
-                    <div class="metrics-card">
-                        <h5>Participation Balance</h5>
-                        <div class="metric-value" id="participation-balance">--</div>
-                        <div class="metric-description">Evenness of opportunity</div>
-                    </div>
-                </div>
-                <div class="chart-grid">
-                    <div class="sub-chart">
-                        <h4>Lorenz Curve - Win Distribution</h4>
-                        <div id="equity-lorenz" class="graph-container"></div>
-                    </div>
-                    <div class="sub-chart">
-                        <h4>Win Rate Distribution (CDF)</h4>
-                        <div id="win-rate-distribution" class="graph-container"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Tab Content: Strategic Friction -->
-        <div id="friction-tab" class="tab-content">
-            <div id="friction-dashboard" class="chart-container">
-                <h3>Strategic Friction Analysis</h3>
-                <div class="metrics-panel">
-                    <div class="metrics-card">
-                        <h5>Bid-to-Win Ratio</h5>
-                        <div class="metric-value" id="bid-to-win-ratio">--</div>
-                        <div class="metric-description">Cost of competition</div>
-                    </div>
-                    <div class="metrics-card">
-                        <h5>Repeat Matching Rate</h5>
-                        <div class="metric-value" id="repeat-matching-rate">--</div>
-                        <div class="metric-description">Trust dynamics</div>
-                    </div>
-                </div>
-                <div class="chart-grid">
-                    <div class="sub-chart">
-                        <h4>Agent-Task Matching Frequency (Heatmap)</h4>
-                        <div id="matching-heatmap" class="graph-container"></div>
-                    </div>
-                    <div class="sub-chart">
-                        <h4>Strategic Friction: Competition vs Trust</h4>
-                        <div id="strategic-friction" class="graph-container"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Tab Content: Robustness -->
-        <div id="robustness-tab" class="tab-content">
-            <div id="robustness-dashboard" class="chart-container">
-                <h3>Robustness & Scaling Analysis</h3>
-                <div class="metrics-panel">
-                    <div class="metrics-card">
-                        <h5>Allocation Entropy</h5>
-                        <div class="metric-value" id="allocation-entropy">--</div>
-                        <div class="metric-description">Task distribution diversity</div>
-                    </div>
-                    <div class="metrics-card">
-                        <h5>Participation Elasticity</h5>
-                        <div class="metric-value" id="participation-elasticity">--</div>
-                        <div class="metric-description">Market responsiveness</div>
-                    </div>
-                </div>
-                <div class="chart-grid">
-                    <div class="sub-chart">
-                        <h4>Agent Performance Metrics (Bar Chart w/ Error Bars)</h4>
-                        <div id="agent-bar-chart" class="graph-container"></div>
-                    </div>
-                    <div class="sub-chart">
-                        <h4>Market Robustness Analysis</h4>
-                        <div id="robustness-analysis" class="graph-container"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div id="dashboard-panel">
+    <div id="dashboard-title">SWEChain Experimentation</div>
+    <div id="dashboard-subtitle">Multi-Agent Network Dashboard</div>
+    <div id="legend-agents"></div>
+    <div id="metrics-panel"></div>
+    <div id="network-container"></div>
+    <div class="charts-row">
+      <div id="degree-histogram" class="mini-chart"></div>
+      <div id="lorenz-curve" class="mini-chart"></div>
+      <div id="winrate-distribution" class="mini-chart"></div>
+      <div id="component-histogram" class="mini-chart"></div>
+      <div id="clustering-histogram" class="mini-chart"></div>
+      <div id="centrality-histogram" class="mini-chart"></div>
     </div>
-    
-    <!-- Modal for node/task details -->
-    <div id="modal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2 id="modal-title">Node Details</h2>
-        <div id="modal-body"></div>
-      </div>
+  </div>
+  <div id="tooltip"></div>
+  <div id="modal">
+    <div id="modal-content">
+      <span class="close">&times;</span>
+      <h3 id="modal-title"></h3>
+      <div id="modal-body"></div>
     </div>
-    
-    <!-- Load D3.js -->
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    
-    <!-- Main JavaScript -->
-    <script>
-    // Dynamic client-side time generation - never use fixed values 
-    function updateTimestamp() {
-        const now = new Date();
-        // Format date as YYYY-MM-DD HH:MM:SS
-        const year = now.getFullYear();
-        const month = String(now.getMonth() + 1).padStart(2, '0');
-        const day = String(now.getDate()).padStart(2, '0');
-        const hours = String(now.getHours()).padStart(2, '0');
-        const minutes = String(now.getMinutes()).padStart(2, '0');
-        const seconds = String(now.getSeconds()).padStart(2, '0');
-        
-        const formattedDate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-        document.getElementById('current-time').textContent = formattedDate;
-    }
-    
-    // Generate a completely random session ID - never use fixed usernames
-    function generateSessionId() {
-        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        const length = 10;
-        let result = '';
-        
-        // Add timestamp component for uniqueness
-        result += Date.now().toString(36) + '-';
-        
-        // Add random characters
-        for (let i = 0; i < length; i++) {
-            result += characters.charAt(Math.floor(Math.random() * characters.length));
-        }
-        
-        document.getElementById('session-id').textContent = result;
-    }
-    
-    // Initialize data structures
-    let graphData = null;
-    let marketMetrics = null;
-    let agentMetrics = null;
-    let taskMetrics = null;
-    let lorenzData = null;
-    
-    // Tab switching functionality
-    document.addEventListener('DOMContentLoaded', function() {
-        // Set up tab functionality
-        const tabButtons = document.querySelectorAll('.tab-button');
-        tabButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                // Remove active class from all buttons
-                tabButtons.forEach(btn => btn.classList.remove('active'));
-                
-                // Add active class to clicked button
-                this.classList.add('active');
-                
-                // Hide all tab content
-                const tabContents = document.querySelectorAll('.tab-content');
-                tabContents.forEach(tab => tab.classList.remove('active'));
-                
-                // Show the selected tab content
-                const tabId = `${this.dataset.tab}-tab`;
-                document.getElementById(tabId).classList.add('active');
-            });
-        });
-        
-        // Initialize dynamic elements
-        updateTimestamp();
-        generateSessionId();
-        setInterval(updateTimestamp, 60000); // Update timestamp every minute
-        
-        // Load data and initialize visualizations
-        loadData().then(() => {
-            // Initialize network visualization
-            createNetworkVisualization(graphData);
-            
-            // Set up control handlers
-            document.getElementById('filter-type').addEventListener('change', applyFilters);
-            document.getElementById('filter-agent').addEventListener('change', applyFilters);
-            document.getElementById('layout-type').addEventListener('change', updateNetworkLayout);
-            
-            // Initialize all visualizations
-            initializeVisualizations();
-            
-            // Update metrics display
-            updateMetricsDisplay();
-        }).catch(error => {
-            console.error("Error loading data:", error);
-            showErrorMessage("Failed to load network data. Please try again later.");
-        });
-    });
-    
-    // Load all necessary data
-    async function loadData() {
-        try {
-            // Fetch main graph data
-            const dataResponse = await fetch('/data');
-            graphData = await dataResponse.json();
-            
-            // Fetch market metrics
-            const metricsResponse = await fetch('/api/market-metrics');
-            marketMetrics = await metricsResponse.json();
-            
-            // Fetch agent metrics
-            const agentResponse = await fetch('/api/agent-metrics');
-            agentMetrics = await agentResponse.json();
-            
-            // Fetch task metrics
-            const taskResponse = await fetch('/api/task-metrics');
-            taskMetrics = await taskResponse.json();
-            
-            // Fetch Lorenz curve data
-            const lorenzResponse = await fetch('/api/lorenz-curve');
-            lorenzData = await lorenzResponse.json();
-            
-        } catch (error) {
-            console.error("Error fetching data:", error);
-            throw error;
-        }
-    }
-    
-    // Initialize all visualizations
-    function initializeVisualizations() {
-        // Market Liquidity visualizations
-        createDegreeDistribution();
-        createBipartiteGraph();
-        
-        // Competition visualizations
-        createBidVarianceBoxplots();
-        createCompetitionAnalysis();
-        
-        // Efficiency visualizations
-        createEfficiencyAnalysis();
-        createPriceEfficiencyPlot();
-        
-        // Equity visualizations
-        createLorenzCurve();
-        createWinRateDistribution();
-        
-        // Strategic Friction visualizations
-        createMatchingHeatmap();
-        createStrategicFrictionAnalysis();
-        
-        // Robustness visualizations
-        createAgentBarChart();
-        createRobustnessAnalysis();
-    }
-    
-    // Update all metrics displays
-    function updateMetricsDisplay() {
-        if (!marketMetrics) return;
-        
-        // Calculate average degree
-        const avgDegree = graphData.nodes.reduce((sum, node) => sum + (node.degree || 0), 0) / graphData.nodes.length;
-        
-        // Update all metrics
-        document.getElementById('avg-degree').textContent = avgDegree.toFixed(1);
-        document.getElementById('bid-volume').textContent = marketMetrics.bid_volume ? marketMetrics.bid_volume.toFixed(0) : "--";
-        document.getElementById('price-efficiency').textContent = marketMetrics.avg_price_efficiency ? 
-            `${(marketMetrics.avg_price_efficiency * 100).toFixed(1)}%` : "--";
-        document.getElementById('participation-balance').textContent = marketMetrics.gini_coefficient ? 
-            (1 - marketMetrics.gini_coefficient).toFixed(2) : "--";
-        document.getElementById('bid-to-win-ratio').textContent = marketMetrics.avg_bid_to_win_ratio ? 
-            marketMetrics.avg_bid_to_win_ratio.toFixed(1) : "--";
-        document.getElementById('repeat-matching-rate').textContent = marketMetrics.repeat_matching_rate ? 
-            `${(marketMetrics.repeat_matching_rate * 100).toFixed(1)}%` : "--";
-        document.getElementById('allocation-entropy').textContent = marketMetrics.allocation_entropy ? 
-            `${(marketMetrics.allocation_entropy * 100).toFixed(1)}%` : "--";
-        document.getElementById('participation-elasticity').textContent = marketMetrics.participation_elasticity ? 
-            marketMetrics.participation_elasticity.toFixed(2) : "--";
-    }
-    
-    // Show error message
-    function showErrorMessage(message) {
-        const containers = document.querySelectorAll('.graph-container');
-        containers.forEach(container => {
-            container.innerHTML = `
-                <div class="error-message">
-                    <p>${message}</p>
-                </div>
-            `;
-        });
-    }
-    
-    // Network visualization
-    function createNetworkVisualization(data) {
-        if (!data || !data.nodes || !data.links) {
-            showErrorMessage("Invalid network data");
-            return;
-        }
-        
-        const container = d3.select('#network-container');
-        const width = container.node().getBoundingClientRect().width;
-        const height = container.node().getBoundingClientRect().height;
-        
-        // Clear previous content
-        container.select('svg').remove();
-        
-        // Create SVG
-        const svg = container.append('svg')
-            .attr('width', width)
-            .attr('height', height);
-        
-        // Add zoom behavior
-        const zoom = d3.zoom()
-            .scaleExtent([0.1, 8])
-            .on('zoom', (event) => {
-                g.attr('transform', event.transform);
-            });
-        
-        svg.call(zoom);
-        
-        const g = svg.append('g');
-        
-        // Define arrow markers
-        g.append('defs').selectAll('marker')
-            .data(['outsourced', 'bidded', 'assigned'])
-            .enter().append('marker')
-            .attr('id', d => d)
-            .attr('viewBox', '0 -5 10 10')
-            .attr('refX', 15)
-            .attr('refY', 0)
-            .attr('markerWidth', 6)
-            .attr('markerHeight', 6)
-            .attr('orient', 'auto')
-            .append('path')
-            .attr('d', 'M0,-5L10,0L0,5')
-            .attr('fill', d => {
-                if (d === 'outsourced') return getComputedStyle(document.documentElement).getPropertyValue('--out-color');
-                if (d === 'bidded') return getComputedStyle(document.documentElement).getPropertyValue('--bid-color');
-                return getComputedStyle(document.documentElement).getPropertyValue('--assign-color');
-            });
-        
-        // Create force simulation
-        const simulation = d3.forceSimulation(data.nodes)
-            .force('link', d3.forceLink(data.links).id(d => d.id).distance(100))
-            .force('charge', d3.forceManyBody().strength(-100))
-            .force('center', d3.forceCenter(width / 2, height / 2))
-            .force('x', d3.forceX(width / 2).strength(0.05))
-            .force('y', d3.forceY(height / 2).strength(0.05))
-            .force('collision', d3.forceCollide().radius(25));
-        
-        // Create links
-        const link = g.append('g')
-            .attr('class', 'links')
-            .selectAll('line')
-            .data(data.links)
-            .enter().append('line')
-            .attr('class', d => `link ${d.type}`)
-            .style('stroke', d => {
-                if (d.type === 'outsourced') return getComputedStyle(document.documentElement).getPropertyValue('--out-color');
-                if (d.type === 'bidded') return getComputedStyle(document.documentElement).getPropertyValue('--bid-color');
-                return getComputedStyle(document.documentElement).getPropertyValue('--assign-color');
-            })
-            .style('stroke-width', d => Math.sqrt(d.weight || 1) * 1.5)
-            .style('stroke-dasharray', d => d.type === 'bidded' ? '5,5' : null)
-            .attr('marker-end', d => `url(#${d.type})`);
-        
-        // Create nodes
-        const node = g.append('g')
-            .attr('class', 'nodes')
-            .selectAll('circle')
-            .data(data.nodes)
-            .enter().append('circle')
-            .attr('class', 'node')
-            .attr('r', d => 5 + (d.degree || 0))
-            .attr('fill', d => {
-                if (d.role === 'task') return getComputedStyle(document.documentElement).getPropertyValue('--task-color');
-                if (d.specialist) return getComputedStyle(document.documentElement).getPropertyValue('--specialist-color');
-                return getComputedStyle(document.documentElement).getPropertyValue('--agent-color');
-            })
-            .call(d3.drag()
-                .on('start', dragstarted)
-                .on('drag', dragged)
-                .on('end', dragended))
-            .on('mouseover', showNodeTooltip)
-            .on('mouseout', hideTooltip)
-            .on('click', showNodeDetails);
-        
-        // Add node labels
-        const label = g.append('g')
-            .attr('class', 'labels')
-            .selectAll('text')
-            .data(data.nodes)
-            .enter().append('text')
-            .attr('font-size', '10px')
-            .attr('font-family', 'sans-serif')
-            .text(d => d.name)
-            .style('pointer-events', 'none')
-            .style('fill', '#333')
-            .style('text-anchor', 'middle')
-            .style('text-shadow', '0 0 3px white, 0 0 3px white, 0 0 3px white, 0 0 3px white');
-        
-        // Update positions on tick
-        simulation.on('tick', () => {
-            link
-                .attr('x1', d => d.source.x)
-                .attr('y1', d => d.source.y)
-                .attr('x2', d => d.target.x)
-                .attr('y2', d => d.target.y);
-            
-            node
-                .attr('cx', d => d.x)
-                .attr('cy', d => d.y);
-            
-            label
-                .attr('x', d => d.x)
-                .attr('y', d => d.y + 15);
-        });
-        
-        // Drag functions
-        function dragstarted(event, d) {
-            if (!event.active) simulation.alphaTarget(0.3).restart();
-            d.fx = d.x;
-            d.fy = d.y;
-        }
-        
-        function dragged(event, d) {
-            d.fx = event.x;
-            d.fy = event.y;
-        }
-        
-        function dragended(event, d) {
-            if (!event.active) simulation.alphaTarget(0);
-            d.fx = null;
-            d.fy = null;
-        }
-        
-        // Save simulation for layout updates
-        window.networkSimulation = simulation;
-    }
-    
-    // Show tooltip for nodes
-    function showNodeTooltip(event, d) {
-        const tooltip = d3.select('#tooltip');
-        tooltip.style('display', 'block')
-            .style('left', `${event.pageX + 10}px`)
-            .style('top', `${event.pageY - 10}px`)
-            .html(`
-                <div style="font-weight: bold;">${d.name}</div>
-                <div>Type: ${d.role === 'task' ? 'Task' : 'Agent'}</div>
-                ${d.role === 'agent' ? `<div>Specialist: ${d.specialist ? 'Yes' : 'No'}</div>` : ''}
-                <div>Connections: ${d.degree || 0}</div>
-            `);
-    }
-    
-    // Hide tooltip
-    function hideTooltip() {
-        d3.select('#tooltip').style('display', 'none');
-    }
-    
-    // Show node details in modal
-    function showNodeDetails(event, d) {
-        const modal = document.getElementById('modal');
-        const modalTitle = document.getElementById('modal-title');
-        const modalBody = document.getElementById('modal-body');
-        
-        modalTitle.textContent = d.name;
-        
-        // Build appropriate content based on node type
-        let content = `<p><strong>ID:</strong> ${d.id}</p>`;
-        content += `<p><strong>Type:</strong> ${d.role === 'task' ? 'Task' : 'Agent'}</p>`;
-        
-        if (d.role === 'agent') {
-            content += `<p><strong>Specialist:</strong> ${d.specialist ? 'Yes' : 'No'}</p>`;
-            
-            // Find metrics for this agent
-            const agentData = agentMetrics.find(a => a.id === d.id);
-            if (agentData) {
-                content += `<hr>`;
-                content += `<h3>Performance Metrics</h3>`;
-                content += `<p><strong>Bids Placed:</strong> ${agentData.bids}</p>`;
-                content += `<p><strong>Wins:</strong> ${agentData.wins}</p>`;
-                content += `<p><strong>Win Rate:</strong> ${(agentData.win_rate * 100).toFixed(1)}%</p>`;
-                content += `<p><strong>Bid-to-Win Ratio:</strong> ${agentData.bid_to_win_ratio.toFixed(2)}</p>`;
-                content += `<p><strong>Average Bid Value:</strong> $${agentData.avg_bid_value.toFixed(2)}</p>`;
-                content += `<p><strong>Total Earnings:</strong> $${agentData.total_value.toFixed(2)}</p>`;
-            }
-        } else if (d.role === 'task') {
-            // Find metrics for this task
-            const taskData = taskMetrics.find(t => t.id === d.id);
-            if (taskData) {
-                content += `<hr>`;
-                content += `<h3>Task Metrics</h3>`;
-                content += `<p><strong>Bids Received:</strong> ${taskData.bid_count}</p>`;
-                content += `<p><strong>Average Bid:</strong> $${taskData.avg_bid.toFixed(2)}</p>`;
-                content += `<p><strong>Bid Variance:</strong> ${taskData.variance.toFixed(2)}</p>`;
-                content += `<p><strong>Winning Bid:</strong> $${taskData.winning_bid.toFixed(2)}</p>`;
-                content += `<p><strong>Client Surplus:</strong> $${taskData.client_surplus.toFixed(2)}</p>`;
-            }
-        }
-        
-        modalBody.innerHTML = content;
-        modal.style.display = 'block';
-    }
-    
-    // Close modal when clicking the close button
-    document.querySelector('.close').addEventListener('click', function() {
-        document.getElementById('modal').style.display = 'none';
-    });
-    
-    // Close modal when clicking outside the content
-    window.addEventListener('click', function(event) {
-        const modal = document.getElementById('modal');
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
-    
-    // Apply filters to network visualization
-    function applyFilters() {
-        // Implementation for filtering the network visualization
-        // This would filter nodes and links based on selected options
-    }
-    
-    // Update network layout
-    function updateNetworkLayout() {
-        if (!window.networkSimulation || !graphData) return;
-        
-        const layoutType = document.getElementById('layout-type').value;
-        const simulation = window.networkSimulation;
-        
-        if (layoutType === 'bipartite') {
-            // Set up bipartite layout
-            const width = d3.select('#network-container').node().getBoundingClientRect().width;
-            const height = d3.select('#network-container').node().getBoundingClientRect().height;
-            
-            // Separate tasks and agents
-            const tasks = graphData.nodes.filter(n => n.role === 'task');
-            const agents = graphData.nodes.filter(n => n.role === 'agent');
-            
-            // Position tasks on left, agents on right
-            tasks.forEach((node, i) => {
-                const y = height * 0.1 + (height * 0.8) * (i / Math.max(tasks.length, 1));
-                node.fx = width * 0.25;
-                node.fy = y;
-            });
-            
-            agents.forEach((node, i) => {
-                const y = height * 0.1 + (height * 0.8) * (i / Math.max(agents.length, 1));
-                node.fx = width * 0.75;
-                node.fy = y;
-            });
-            
-            // Restart simulation
-            simulation.alpha(1).restart();
-        } else {
-            // Reset to force-directed layout
-            graphData.nodes.forEach(node => {
-                node.fx = null;
-                node.fy = null;
-            });
-            
-            // Restart simulation
-            simulation.alpha(1).restart();
-        }
-    }
-    
-    // Create degree distribution visualization
-    function createDegreeDistribution() {
-        if (!graphData) return;
-        
-        // Implementation for degree distribution visualization
-        // This would show the distribution of node degrees (number of connections)
-    }
-    
-    // Create bipartite graph
-    function createBipartiteGraph() {
-        if (!graphData) return;
-        
-        // Implementation for bipartite graph visualization
-        // This would show a structural comparison of the network
-    }
-    
-    // Create bid variance boxplots
-    function createBidVarianceBoxplots() {
-        if (!taskMetrics) return;
-        
-        // Implementation for boxplots showing bid variance per auction
-        // This would display the distribution of bids for each task
-    }
-    
-    // Create competition analysis visualization
-    function createCompetitionAnalysis() {
-        if (!taskMetrics) return;
-        
-        // Implementation for competition analysis visualization
-        // This would show bid volume and pricing dispersion
-    }
-    
-    // Create efficiency analysis visualization
-    function createEfficiencyAnalysis() {
-        if (!taskMetrics) return;
-        
-        // Implementation for efficiency analysis visualization
-        // This would show price efficiency and client surplus
-    }
-    
-    // Create price efficiency plot
-    function createPriceEfficiencyPlot() {
-        if (!graphData) return;
-        
-        // Implementation for price efficiency plot (violin or density plot)
-        // This would show the distribution of bid prices
-    }
-    
-    // Create Lorenz curve
-    function createLorenzCurve() {
-        if (!lorenzData) return;
-        
-        // Implementation for Lorenz curve visualization
-        // This would show the distribution of wins/earnings
-    }
-    
-    // Create win rate distribution
-    function createWinRateDistribution() {
-        if (!agentMetrics) return;
-        
-        // Implementation for win rate distribution (CDF)
-        // This would show the cumulative distribution of win rates
-    }
-    
-    // Create matching heatmap
-    function createMatchingHeatmap() {
-        if (!graphData) return;
-        
-        // Implementation for matching heatmap visualization
-        // This would show repeat matching rates between agents and tasks
-    }
-    
-    // Create strategic friction analysis
-    function createStrategicFrictionAnalysis() {
-        if (!agentMetrics) return;
-        
-        // Implementation for strategic friction analysis
-        // This would show the relationship between competition and trust
-    }
-    
-    // Create agent bar chart
-    function createAgentBarChart() {
-        if (!agentMetrics) return;
-        
-        // Implementation for agent performance bar chart with error bars
-        // This would show metrics like degree and bid-to-win ratios
-    }
-    
-    // Create robustness analysis
-    function createRobustnessAnalysis() {
-        if (!marketMetrics) return;
-        
-        // Implementation for robustness analysis visualization
-        // This would show allocation entropy and participation elasticity
-    }
-    </script>
+  </div>
+  <script src="static/scripts.js"></script>
 </body>
 </html>

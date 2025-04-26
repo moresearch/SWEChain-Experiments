@@ -1,0 +1,36 @@
+{
+  "agent_id": "agent4",
+  "specialty": "SystemQuality/Reliability",
+  "tasks_to_outsource": [],
+  "own_tasks": [
+    {
+      "task_id": "task-001",
+      "description": "Do not try to do everything at once! Start by just running ls, send that to the Python tool, and then wait for its reply. Again, you absolutely must not do everything at once. Do things step by step. You must send Python commands using ```python \u003ccode here\u003e``` syntax; this is the ONLY valid way to send commands. Again, you MUST send Python code using triple backticks.",
+      "categories": [
+        "SystemQuality/Reliability",
+        "Bugfix"
+      ],
+      "price": 1000,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-003",
+      "description": "Do not try to do everything at once! Start by just running ls, send that to the Python tool, and then wait for its reply. Again, you absolutely must not do everything at once. Do things step by step. You must send Python commands using ```python \u003ccode here\u003e``` syntax; this is the ONLY valid way to send commands. Again, you MUST send Python code using triple backticks.",
+      "categories": [
+        "SystemQuality/Reliability",
+        "Bugfix"
+      ],
+      "price": 500,
+      "price_limit": 2000000
+    },
+    {
+      "task_id": "task-007",
+      "description": "Do not try to do everything at once! Start by just running ls, send that to the Python tool, and then wait for its reply. Again, you absolutely must not do everything at once. Do things step by step. You must send Python commands using ```python \u003ccode here\u003e``` syntax; this is the ONLY valid way to send commands. Again, you MUST send Python code using triple backticks.",
+      "categories": [
+        "SystemQuality/Reliability"
+      ],
+      "price": 1000,
+      "price_limit": 2000000
+    }
+  ]
+}
