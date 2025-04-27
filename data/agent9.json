@@ -1,5 +1,5 @@
 {
-  "agent_id": "agent2",
+  "agent_id": "agent9",
   "specialities": [
     {
       "name": "NewFeaturesOrEnhancements",
@@ -12,9 +12,9 @@
       "example": "When attempting to log in, the app doesn't switch focus to the first digit field after clicking 'didn't receive a magic code?'"
     },
     {
-      "name": "SystemWideQualityAndReliability",
-      "description": "This agent's speciality includes topics related to refactoring code, performance, optimization.",
-      "example": "Opening a thread calls the OpenReport API twice."
+      "name": "ReliabilityImprovements",
+      "description": "This agent's speciality includes logging, monitoring, testing.",
+      "example": "Add a character limit on the length of task names, room names, etc."
     },
     {
       "name": "UI/UX",

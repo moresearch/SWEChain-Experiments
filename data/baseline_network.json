@@ -1,0 +1,243 @@
+{
+  "schema_version": "1.1",
+  "generated_at": "2025-04-27T01:59:54Z",
+  "nodes": [
+    {
+      "id": "task_2",
+      "type": "task",
+      "specialty": "UI/UX"
+    },
+    {
+      "id": "task_propose_edges",
+      "type": "task"
+    },
+    {
+      "id": "task_code_review_expensify",
+      "type": "task"
+    },
+    {
+      "id": "task_3",
+      "type": "task",
+      "specialty": "NewFeaturesOrEnhancements"
+    },
+    {
+      "id": "expensify_agent",
+      "type": "agent",
+      "specialty": "Code Review and Debugging Assistance"
+    },
+    {
+      "id": "task_debugging_expensify",
+      "type": "task"
+    },
+    {
+      "id": "agent_expertise_in_bug_fixes",
+      "type": "agent",
+      "price_min": 500,
+      "price_max": 2000000
+    },
+    {
+      "id": "agent9",
+      "type": "agent",
+      "specialities": [
+        {
+          "name": "NewFeaturesOrEnhancements",
+          "description": "This agent's speciality includes new functionality, optimization of existing features.",
+          "example": "Add the ability to mention yourself and use @here in the mentions auto-suggestions list."
+        },
+        {
+          "name": "ApplicationLogic",
+          "description": "This agent's specialty includes state management, client-side routing, form handling tasks.",
+          "example": "When attempting to log in, the app doesn't switch focus to the first digit field after clicking 'didn't receive a magic code?'"
+        },
+        {
+          "name": "ReliabilityImprovements",
+          "description": "This agent's specialty includes logging, monitoring, testing.",
+          "example": "Add a character limit on the length of task names, room names, etc."
+        },
+        {
+          "name": "UI/UX",
+          "description": "This agent's specialty includes design changes, layout, interaction improvements.",
+          "example": "Overlay background color is different."
+        }
+      ]
+    },
+    {
+      "id": "task_1",
+      "type": "task",
+      "specialty": "ServerSideLogic"
+    },
+    {
+      "id": "Manager_01",
+      "type": "manager"
+    },
+    {
+      "id": "agent4",
+      "type": "agent",
+      "specialities": [
+        {
+          "name": "ServerSideLogic",
+          "description": "API endpoints, DB queries, authentication, data processing-related tasks.",
+          "example": "The tooltip displays the users' email instead of their display name when hovering over the counter in the split preview."
+        },
+        {
+          "name": "ReliabilityImprovements",
+          "description": "This agent's speciality includes logging, monitoring, testing.",
+          "example": "Add a character limit on the length of task names, room names, etc."
+        },
+        {
+          "name": "ApplicationLogic",
+          "description": "This agent's specialty includes state management, client-side routing, form handling tasks.",
+          "example": "When attempting to log in, the app doesn't switch focus to the first digit field after clicking 'didn't receive a magic code?'"
+        },
+        {
+          "name": "BugFixes",
+          "description": "This agent's specialty includes unexpected behaviours, errors, inconsistencies.",
+          "example": "Navigating back from the flag as offensive screen doesn't display the correct report page."
+        },
+        {
+          "name": "SystemWideQualityAndReliability",
+          "description": "This agent's specialty includes topics related to refactoring code, performance, optimization.",
+          "example": "Opening a thread calls the OpenReport API twice."
+        },
+        {
+          "name": "NewFeaturesOrEnhancements",
+          "description": "This agent's specialty includes new functionality, optimization of existing features.",
+          "example": "Add the ability to mention yourself and use @here in the mentions auto-suggestions list."
+        }
+      ]
+    },
+    {
+      "id": "task_CodeFixExpensifyIssue",
+      "type": "task",
+      "status": "not_started"
+    },
+    {
+      "id": "agent5",
+      "type": "agent",
+      "specialities": [
+        {
+          "name": "BugFixes",
+          "description": "This agent's speciality includes unexpected behaviours, errors, inconsistencies.",
+          "example": "Navigating back from the flag as offensive screen doesn't display the correct report page."
+        },
+        {
+          "name": "NewFeaturesOrEnhancements",
+          "description": "This agent's specialty includes new functionality, optimization of existing features.",
+          "example": "Add the ability to mention yourself and use @here in the mentions auto-suggestions list."
+        },
+        {
+          "name": "SystemWideQualityAndReliability",
+          "description": "This agent's specialty includes topics related to refactoring code, performance, optimization.",
+          "example": "Opening a thread calls the OpenReport API twice."
+        }
+      ]
+    },
+    {
+      "id": "agent_1",
+      "type": "agent",
+      "specialty": "ReliabilityImprovements",
+      "timestamp": "2025-04-26T21:24:46Z"
+    },
+    {
+      "id": "agent8",
+      "type": "agent",
+      "specialities": [
+        {
+          "name": "ServerSideLogic",
+          "description": "API endpoints, DB queries, authentication, data processing-related tasks.",
+          "example": "The tooltip displays the users' email instead of their display name when hovering over the counter in the split preview."
+        },
+        {
+          "name": "UI/UX",
+          "description": "This agent's speciality includes design changes, layout, interaction improvements.",
+          "example": "Overlay background color is different."
+        },
+        {
+          "name": "NewFeaturesOrEnhancements",
+          "description": "This agent's speciality includes new functionality, optimization of existing features.",
+          "example": "Add the ability to mention yourself and use @here in the mentions auto-suggestions list."
+        }
+      ]
+    },
+    {
+      "id": "task_review_codebase_expensify",
+      "type": "task"
+    },
+    {
+      "id": "AI_Assistant_01",
+      "type": "agent",
+      "specialty": "ReliabilityImprovements",
+      "price_min": 500,
+      "price_max": 2000000
+    },
+    {
+      "id": "agent_ExpensifyReview",
+      "type": "agent",
+      "specialty": "SystemWideQualityAndReliability",
+      "price_min": 1000,
+      "price_max": 2000000
+    }
+  ],
+  "edges": [
+    {
+      "source": "agent_ExpensifyReview",
+      "target": "task_CodeFixExpensifyIssue",
+      "type": "mentorship"
+    },
+    {
+      "source": "task_CodeFixExpensifyIssue",
+      "target": "agent_ExpensifyReview",
+      "type": "depends_on"
+    },
+    {
+      "source": "agent_1",
+      "target": "task_1",
+      "type": "collaboration"
+    },
+    {
+      "source": "agent_expertise_in_bug_fixes",
+      "target": "task_review_codebase_expensify",
+      "type": "mentorship"
+    },
+    {
+      "source": "agent_expertise_in_bug_fixes",
+      "target": "task_propose_edges",
+      "type": "collaboration"
+    },
+    {
+      "source": "agent8",
+      "target": "task_1",
+      "type": "bids"
+    },
+    {
+      "source": "agent_1",
+      "target": "task_1",
+      "type": "bidding"
+    },
+    {
+      "source": "agent5",
+      "target": "agent4",
+      "type": "collaboration"
+    },
+    {
+      "source": "AI_Assistant_01",
+      "target": "Manager_01",
+      "type": "mentorship"
+    },
+    {
+      "source": "agent8",
+      "target": "agent4",
+      "type": "collaboration"
+    },
+    {
+      "source": "agent8",
+      "target": "task_2",
+      "type": "bids"
+    },
+    {
+      "source": "agent8",
+      "target": "task_3",
+      "type": "bids"
+    }
+  ]
+}

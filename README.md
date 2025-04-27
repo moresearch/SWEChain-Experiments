@@ -97,3 +97,48 @@ go run swe_manager_task_distribution.go -h
 **Note:**  
 - The input CSV must have the expected columns (e.g. `variant`, `prompt`, etc.) and only SWE Manager tasks will be processed.
 - The output directory will be created if it does not exist.
+
+
+
+
+Speciality: ApplicationLogic
+Description: This agent's speciality includes state management, client-side routing, form handling tasks.
+Example: "When attempting to log in, the app doesn't switch focus to the first digit field after clicking 'didn't receive a magic code?'"
+
+Speciality: ServerSideLogic
+Description: API endpoints, DB queries, authentication, data processing-related tasks.
+Example: The tooltip displays the users' email instead of their display name when hovering over the counter in the split preview.
+
+Speciality: BugFixes
+Description: This agent's speciality includes unexpected behaviours, errors, inconsistencies.
+Example: Navigating back from the flag as offensive screen doesn't display the correct report page.
+
+Speciality: UI/UX
+Description: This agent's speciality includes design changes, layout, interaction improvements.
+Example: Overlay background color is different.
+
+Speciality: SystemWideQualityAndReliability
+Description: This agent's speciality includes topics related to refactoring code, performance, optimization.
+Example: Opening a thread calls the OpenReport API twice.
+
+Speciality: NewFeatures or Enhancements
+Description: This agent's speciality includes new functionality, optimization of existing features.
+Example: Add the ability to mention yourself and use @here in the mentions auto-suggestions list.
+
+Speciality: Reliability Improvements
+Description: This agent's speciality includes logging, monitoring, testing.
+Example: Add a character limit on the length of task names, room names, etc.
+
+
+
+## Dashboard 
+
+### Force-directed graph
+
+### Disjoint force-directed graph
+
+### Arc diagram
+
+### Hexbin map
+
+### Hierarchical edge bundling

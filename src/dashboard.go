@@ -2,735 +2,431 @@ package main
 
 import (
 	"encoding/json"
-	"flag"
 	"fmt"
 	"html/template"
-	"io/ioutil"
 	"log"
-	"math"
 	"net/http"
 	"os"
-	"sort"
+	"strings"
+	"sync"
 )
 
+// Node represents an entity in the network (agent, task, etc.)
 type Node struct {
-	ID        string `json:"id"`
-	Group     string `json:"group"`
-	Name      string `json:"name"`
-	Role      string `json:"role"`      // "agent" or "task"
-	Specialty string `json:"specialty"` // For agents: their specialty (now always set)
-	Degree    int    `json:"degree"`
+	ID       string            `json:"id"`
+	Type     string            `json:"type"`
+	Label    string            `json:"label"`
+	Group    string            `json:"group,omitempty"`
+	Metadata map[string]string `json:"metadata,omitempty"`
 }
 
-type Link struct {
-	Source     string  `json:"source"`
-	Target     string  `json:"target"`
-	Type       string  `json:"type"` // "assigned", "bidded", "outsourced"
-	Label      string  `json:"label,omitempty"`
-	Weight     int     `json:"weight"`
-	BidCount   int     `json:"bid_count"`
-	WinningBid float64 `json:"winning_bid"`
+// Edge represents a connection or relationship between two nodes.
+type Edge struct {
+	Source   string            `json:"source"`
+	Target   string            `json:"target"`
+	Type     string            `json:"type"`
+	Metadata map[string]string `json:"metadata,omitempty"`
 }
 
-type GraphData struct {
-	Nodes []Node `json:"nodes"`
-	Links []Link `json:"links"`
+// Network holds nodes, edges, and (added) metrics.
+type Network struct {
+	Nodes   []Node            `json:"nodes"`
+	Edges   []Edge            `json:"edges"`
+	Metrics map[string]string `json:"metrics,omitempty"`
 }
 
-// Metrics and supporting types (unchanged)
-type MarketMetrics struct {
-	NetworkDensity          float64      `json:"network_density"`
-	DegreeDistribution      []DegreeData `json:"degree_distribution"`
-	BidVolume               float64      `json:"bid_volume"`
-	BidVariance             float64      `json:"bid_variance"`
-	AvgPriceEfficiency      float64      `json:"avg_price_efficiency"`
-	ClientSurplus           float64      `json:"client_surplus"`
-	GiniCoefficient         float64      `json:"gini_coefficient"`
-	WinRateDistribution     []float64    `json:"win_rate_distribution"`
-	AvgBidToWinRatio        float64      `json:"avg_bid_to_win_ratio"`
-	RepeatMatchingRate      float64      `json:"repeat_matching_rate"`
-	AllocationEntropy       float64      `json:"allocation_entropy"`
-	ParticipationElasticity float64      `json:"participation_elasticity"`
-}
+var (
+	mu      sync.Mutex
+	network Network
+)
 
-type DegreeData struct {
-	Degree int `json:"degree"`
-	Count  int `json:"count"`
-}
-
-type AgentMetrics struct {
-	ID              string  `json:"id"`
-	Name            string  `json:"name"`
-	Role            string  `json:"role"`
-	Specialty       string  `json:"specialty"`
-	Bids            int     `json:"bids"`
-	Wins            int     `json:"wins"`
-	WinRate         float64 `json:"win_rate"`
-	BidToWinRatio   float64 `json:"bid_to_win_ratio"`
-	RepeatMatchRate float64 `json:"repeat_match_rate"`
-	AvgBidValue     float64 `json:"avg_bid_value"`
-	TotalValue      float64 `json:"total_value"`
-}
-
-type TaskMetrics struct {
-	ID            string  `json:"id"`
-	Name          string  `json:"name"`
-	BidCount      int     `json:"bid_count"`
-	AvgBid        float64 `json:"avg_bid"`
-	StdDev        float64 `json:"std_dev"`
-	Variance      float64 `json:"variance"`
-	CoV           float64 `json:"cov"` // Coefficient of variation
-	WinningBid    float64 `json:"winning_bid"`
-	ClientSurplus float64 `json:"client_surplus"`
-}
-
-type LorenzPoint struct {
-	X         float64 `json:"x"`
-	Y         float64 `json:"y"`
-	Agent     string  `json:"agent,omitempty"`
-	Specialty string  `json:"specialty,omitempty"`
-	Value     float64 `json:"value,omitempty"`
-}
-
-type PageData struct {
-	NetworkDensity     string
-	OutsourcingRatio   string
-	BiddingRatio       string
-	AvgTaskCost        string
-	AvgBiddersPerTask  string
-	AvgWinningBidPrice string
-	BidVariance        string
-	NoBidRate          string
-	NoAuctionRate      string
-	GiniCoefficient    string
-	ClientSurplus      string
-}
-
-var processedData []byte
-var advancedMetrics *MarketMetrics
-var indexTemplate *template.Template
-
-func degreeCentrality(graphData GraphData) map[string]int {
-	degreeMap := make(map[string]int)
-	for _, node := range graphData.Nodes {
-		degreeMap[node.ID] = 0
+// computeMetrics calculates simple economic network metrics.
+func computeMetrics(nodes []Node, edges []Edge) map[string]string {
+	if len(nodes) == 0 {
+		return map[string]string{}
 	}
-	for _, link := range graphData.Links {
-		degreeMap[link.Source]++
-		degreeMap[link.Target]++
+	// Node counts by type
+	nodeTypeCount := map[string]int{}
+	for _, n := range nodes {
+		nodeTypeCount[n.Type]++
 	}
-	return degreeMap
-}
 
-func calculateDegreeDistribution(degrees map[string]int) []DegreeData {
-	degreeFreq := make(map[int]int)
-	for _, degree := range degrees {
-		degreeFreq[degree]++
+	// Degree (connections per node)
+	degree := map[string]int{}
+	for _, e := range edges {
+		degree[e.Source]++
+		degree[e.Target]++
 	}
-	distribution := make([]DegreeData, 0, len(degreeFreq))
-	for degree, count := range degreeFreq {
-		distribution = append(distribution, DegreeData{Degree: degree, Count: count})
+	totalDegree := 0
+	for _, d := range degree {
+		totalDegree += d
 	}
-	sort.Slice(distribution, func(i, j int) bool {
-		return distribution[i].Degree < distribution[j].Degree
-	})
-	return distribution
-}
+	avgDegree := float64(totalDegree) / float64(len(nodes))
 
-func calculateGiniCoefficient(values []float64) float64 {
-	n := len(values)
-	if n == 0 {
-		return 0
+	// Edge types
+	edgeTypeCount := map[string]int{}
+	for _, e := range edges {
+		edgeTypeCount[e.Type]++
 	}
-	sort.Float64s(values)
-	sumValues := 0.0
-	for _, v := range values {
-		sumValues += v
-	}
-	if sumValues == 0 {
-		return 0
-	}
-	cumulativeSum := 0.0
-	lorenzArea := 0.0
-	for i, v := range values {
-		cumulativeSum += v
-		x1 := float64(i) / float64(n)
-		x2 := float64(i+1) / float64(n)
-		y1 := cumulativeSum / sumValues
-		lorenzArea += (x2 - x1) * y1
-	}
-	return 1.0 - 2.0*lorenzArea
-}
 
-func calculateEntropy(probabilities []float64) float64 {
-	var entropy float64
-	for _, p := range probabilities {
-		if p > 0 {
-			entropy -= p * math.Log2(p)
+	// Find the node with the maximum degree (network hub)
+	maxDeg, hub := 0, ""
+	for id, d := range degree {
+		if d > maxDeg {
+			maxDeg = d
+			hub = id
 		}
 	}
-	return entropy
-}
 
-func calculateAllocationEntropy(graphData GraphData) float64 {
-	agentAssignments := make(map[string]int)
-	for _, link := range graphData.Links {
-		if link.Type == "assigned" {
-			agentAssignments[link.Source]++
-		}
-	}
-	totalAssignments := 0
-	for _, count := range agentAssignments {
-		totalAssignments += count
-	}
-	if totalAssignments == 0 {
-		return 0
-	}
-	probabilities := make([]float64, 0, len(agentAssignments))
-	for _, count := range agentAssignments {
-		probabilities = append(probabilities, float64(count)/float64(totalAssignments))
-	}
-	rawEntropy := calculateEntropy(probabilities)
-	maxEntropy := math.Log2(float64(len(agentAssignments)))
-	if maxEntropy > 0 {
-		return rawEntropy / maxEntropy
-	}
-	return 0
-}
-
-func calculateAgentMetrics(graphData GraphData) []AgentMetrics {
-	agents := make([]AgentMetrics, 0)
-	for _, node := range graphData.Nodes {
-		if node.Role == "agent" {
-			bids := 0
-			totalBidValue := 0.0
-			for _, link := range graphData.Links {
-				if link.Source == node.ID && link.Type == "bidded" {
-					bids++
-					totalBidValue += link.WinningBid
-				}
-			}
-			wins := 0
-			totalWinValue := 0.0
-			taskCounts := make(map[string]int)
-			for _, link := range graphData.Links {
-				if link.Source == node.ID && link.Type == "assigned" {
-					wins++
-					totalWinValue += link.WinningBid
-					taskCounts[link.Target]++
-				}
-			}
-			repeatMatches := 0
-			for _, count := range taskCounts {
-				if count > 1 {
-					repeatMatches++
-				}
-			}
-			repeatMatchRate := 0.0
-			if wins > 0 {
-				repeatMatchRate = float64(repeatMatches) / float64(wins)
-			}
-			winRate := 0.0
-			bidToWinRatio := 0.0
-			avgBidValue := 0.0
-			if bids > 0 {
-				winRate = float64(wins) / float64(bids)
-				avgBidValue = totalBidValue / float64(bids)
-			}
-			if wins > 0 {
-				bidToWinRatio = float64(bids) / float64(wins)
-			} else if bids > 0 {
-				bidToWinRatio = float64(bids)
-			}
-			agents = append(agents, AgentMetrics{
-				ID:              node.ID,
-				Name:            node.Name,
-				Role:            node.Role,
-				Specialty:       node.Specialty,
-				Bids:            bids,
-				Wins:            wins,
-				WinRate:         winRate,
-				BidToWinRatio:   bidToWinRatio,
-				RepeatMatchRate: repeatMatchRate,
-				AvgBidValue:     avgBidValue,
-				TotalValue:      totalWinValue,
-			})
-		}
-	}
-	return agents
-}
-
-func calculateTaskMetrics(graphData GraphData) []TaskMetrics {
-	tasks := make([]TaskMetrics, 0)
-	for _, node := range graphData.Nodes {
-		if node.Role == "task" {
-			var bidValues []float64
-			for _, link := range graphData.Links {
-				if link.Target == node.ID && link.Type == "bidded" && link.WinningBid > 0 {
-					bidValues = append(bidValues, link.WinningBid)
-				}
-			}
-			bidCount := len(bidValues)
-			avgBid := 0.0
-			variance := 0.0
-			stdDev := 0.0
-			cov := 0.0
-			if bidCount > 0 {
-				sum := 0.0
-				for _, bid := range bidValues {
-					sum += bid
-				}
-				avgBid = sum / float64(bidCount)
-				sumSquaredDiff := 0.0
-				for _, bid := range bidValues {
-					diff := bid - avgBid
-					sumSquaredDiff += diff * diff
-				}
-				if bidCount > 1 {
-					variance = sumSquaredDiff / float64(bidCount-1)
-					stdDev = math.Sqrt(variance)
-					if avgBid > 0 {
-						cov = stdDev / avgBid
-					}
-				}
-			}
-			winningBid := 0.0
-			for _, link := range graphData.Links {
-				if link.Target == node.ID && link.Type == "assigned" {
-					winningBid = link.WinningBid
-					break
-				}
-			}
-			clientSurplus := 0.0
-			if avgBid > 0 && winningBid > 0 {
-				clientSurplus = avgBid - winningBid
-			}
-			tasks = append(tasks, TaskMetrics{
-				ID:            node.ID,
-				Name:          node.Name,
-				BidCount:      bidCount,
-				AvgBid:        avgBid,
-				StdDev:        stdDev,
-				Variance:      variance,
-				CoV:           cov,
-				WinningBid:    winningBid,
-				ClientSurplus: clientSurplus,
-			})
-		}
-	}
-	return tasks
-}
-
-func calculateMarketMetrics(graphData GraphData) *MarketMetrics {
-	metrics := &MarketMetrics{}
-	degrees := degreeCentrality(graphData)
-	degreeDistribution := calculateDegreeDistribution(degrees)
-	metrics.DegreeDistribution = degreeDistribution
-	agentCount := 0
-	taskCount := 0
-	for _, node := range graphData.Nodes {
-		if node.Role == "agent" {
-			agentCount++
-		} else if node.Role == "task" {
-			taskCount++
-		}
-	}
-	possibleConnections := agentCount * taskCount
-	actualConnections := 0
-	for _, link := range graphData.Links {
-		sourceNode := findNodeByID(graphData.Nodes, link.Source)
-		targetNode := findNodeByID(graphData.Nodes, link.Target)
-		if sourceNode != nil && targetNode != nil {
-			if (sourceNode.Role == "agent" && targetNode.Role == "task") ||
-				(sourceNode.Role == "task" && targetNode.Role == "agent") {
-				actualConnections++
-			}
-		}
-	}
-	if possibleConnections > 0 {
-		metrics.NetworkDensity = float64(actualConnections) / float64(possibleConnections)
-	}
-	bidCount := 0
-	totalBidValue := 0.0
-	bidValues := []float64{}
-	for _, link := range graphData.Links {
-		if link.Type == "bidded" {
-			bidCount++
-			if link.WinningBid > 0 {
-				totalBidValue += link.WinningBid
-				bidValues = append(bidValues, link.WinningBid)
-			}
-		}
-	}
-	metrics.BidVolume = float64(bidCount)
-	if len(bidValues) > 1 {
-		mean := totalBidValue / float64(len(bidValues))
-		sumSquaredDiff := 0.0
-		for _, bid := range bidValues {
-			diff := bid - mean
-			sumSquaredDiff += diff * diff
-		}
-		variance := sumSquaredDiff / float64(len(bidValues)-1)
-		metrics.BidVariance = variance
-	}
-	agentMetrics := calculateAgentMetrics(graphData)
-	winValues := make([]float64, 0, len(agentMetrics))
-	winRates := make([]float64, 0, len(agentMetrics))
-	for _, agent := range agentMetrics {
-		if agent.TotalValue > 0 {
-			winValues = append(winValues, agent.TotalValue)
-		}
-		if agent.Bids > 0 {
-			winRates = append(winRates, agent.WinRate)
-		}
-	}
-	metrics.GiniCoefficient = calculateGiniCoefficient(winValues)
-	metrics.WinRateDistribution = winRates
-	totalBidToWinRatio := 0.0
-	totalRepeatMatchRate := 0.0
-	agentsWithBids := 0
-	for _, agent := range agentMetrics {
-		if agent.Bids > 0 {
-			agentsWithBids++
-			totalBidToWinRatio += agent.BidToWinRatio
-			totalRepeatMatchRate += agent.RepeatMatchRate
-		}
-	}
-	if agentsWithBids > 0 {
-		metrics.AvgBidToWinRatio = totalBidToWinRatio / float64(agentsWithBids)
-		metrics.RepeatMatchingRate = totalRepeatMatchRate / float64(agentsWithBids)
-	}
-	taskMetrics := calculateTaskMetrics(graphData)
-	totalClientSurplus := 0.0
-	tasksWithBids := 0
-	for _, task := range taskMetrics {
-		if task.BidCount > 0 && task.WinningBid > 0 {
-			tasksWithBids++
-			totalClientSurplus += task.ClientSurplus
-		}
-	}
-	if tasksWithBids > 0 {
-		metrics.AvgPriceEfficiency = totalClientSurplus / float64(tasksWithBids)
-		metrics.ClientSurplus = totalClientSurplus
-	}
-	metrics.AllocationEntropy = calculateAllocationEntropy(graphData)
-	if agentCount > 0 && taskCount > 0 {
-		metrics.ParticipationElasticity = metrics.NetworkDensity * (1.0 - metrics.GiniCoefficient) * 2.0
-		if metrics.ParticipationElasticity > 2.0 {
-			metrics.ParticipationElasticity = 2.0
-		}
+	// Prepare metrics
+	metrics := map[string]string{
+		"Node count":          fmt.Sprintf("%d", len(nodes)),
+		"Edge count":          fmt.Sprintf("%d", len(edges)),
+		"Avg node degree":     fmt.Sprintf("%.2f", avgDegree),
+		"Node type breakdown": formatMapInt(nodeTypeCount),
+		"Edge type breakdown": formatMapInt(edgeTypeCount),
+		"Network hub":         hub + " (degree " + fmt.Sprintf("%d", maxDeg) + ")",
 	}
 	return metrics
 }
 
-func findNodeByID(nodes []Node, id string) *Node {
-	for i, node := range nodes {
-		if node.ID == id {
-			return &nodes[i]
+func formatMapInt(m map[string]int) string {
+	parts := []string{}
+	for k, v := range m {
+		if k == "" {
+			k = "(none)"
 		}
+		parts = append(parts, k+": "+fmt.Sprintf("%d", v))
 	}
-	return nil
+	return strings.Join(parts, ", ")
 }
 
-func calculateNetworkMetrics(graphData GraphData) map[string]interface{} {
-	metrics := make(map[string]interface{})
-	agentCount := 0
-	taskCount := 0
-	for _, node := range graphData.Nodes {
-		if node.Role == "agent" {
-			agentCount++
-		} else if node.Role == "task" {
-			taskCount++
-		}
+// serveDashboard renders the main dashboard page.
+func serveDashboard(w http.ResponseWriter, r *http.Request) {
+	mu.Lock()
+	if network.Edges == nil {
+		network.Edges = []Edge{}
 	}
-	assignedCount := 0
-	outsourcedCount := 0
-	biddedCount := 0
-	totalLinks := len(graphData.Links)
-	totalBidCount := 0
-	totalWinningBids := 0.0
-	bidValues := []float64{}
-	noBidCount := 0
-	validBidCount := 0
-	totalSpecialistTasks := 0
-	for _, link := range graphData.Links {
-		switch link.Type {
-		case "assigned":
-			assignedCount++
-			if link.BidCount > 0 {
-				totalBidCount += link.BidCount
-				validBidCount++
-			} else {
-				noBidCount++
-			}
-			if link.WinningBid > 0 {
-				totalWinningBids += link.WinningBid
-				bidValues = append(bidValues, link.WinningBid)
-			}
-			sourceIsAgent := false
-			targetIsTask := false
-			for _, node := range graphData.Nodes {
-				if node.ID == link.Source && node.Role == "agent" {
-					sourceIsAgent = true
-				}
-				if node.ID == link.Target && node.Role == "task" {
-					targetIsTask = true
-				}
-			}
-			if sourceIsAgent && targetIsTask {
-				totalSpecialistTasks++
-			}
-		case "outsourced":
-			outsourcedCount++
-		case "bidded":
-			biddedCount++
-		}
+	if network.Nodes == nil {
+		network.Nodes = []Node{}
 	}
-	possibleLinks := agentCount * taskCount
-	if possibleLinks > 0 {
-		metrics["networkDensity"] = float64(assignedCount) / float64(possibleLinks)
-	} else {
-		metrics["networkDensity"] = 0.0
-	}
-	if totalLinks > 0 {
-		metrics["outsourcingRatio"] = float64(outsourcedCount) / float64(totalLinks)
-		metrics["biddingRatio"] = float64(biddedCount) / float64(totalLinks)
-	} else {
-		metrics["outsourcingRatio"] = 0.0
-		metrics["biddingRatio"] = 0.0
-	}
-	metrics["specialistWinRate"] = 1.0 // All agents are specialists in this model
-	if len(bidValues) > 0 {
-		metrics["avgTaskCost"] = totalWinningBids / float64(len(bidValues))
-	} else {
-		metrics["avgTaskCost"] = 0.0
-	}
-	if validBidCount > 0 {
-		metrics["avgBiddersPerTask"] = float64(totalBidCount) / float64(validBidCount)
-	} else {
-		metrics["avgBiddersPerTask"] = 0.0
-	}
-	metrics["avgWinningBidPrice"] = metrics["avgTaskCost"]
-	if len(bidValues) > 1 {
-		mean := totalWinningBids / float64(len(bidValues))
-		sumSquaredDiff := 0.0
-		for _, value := range bidValues {
-			diff := value - mean
-			sumSquaredDiff += diff * diff
-		}
-		variance := sumSquaredDiff / float64(len(bidValues))
-		metrics["bidVariance"] = math.Sqrt(variance) / mean
-	} else {
-		metrics["bidVariance"] = 0.0
-	}
-	if assignedCount > 0 {
-		metrics["noBidRate"] = float64(noBidCount) / float64(assignedCount)
-	} else {
-		metrics["noBidRate"] = 0.0
-	}
-	metrics["noAuctionRate"] = metrics["noBidRate"]
-	advancedMetrics = calculateMarketMetrics(graphData)
-	metrics["giniCoefficient"] = advancedMetrics.GiniCoefficient
-	metrics["clientSurplus"] = advancedMetrics.ClientSurplus
-	return metrics
-}
-
-func handleIndex(w http.ResponseWriter, r *http.Request) {
-	var graphData GraphData
-	if err := json.Unmarshal(processedData, &graphData); err != nil {
-		log.Printf("Error parsing JSON data: %v", err)
-		http.Error(w, "Error processing data", http.StatusInternalServerError)
-		return
-	}
-	metrics := calculateNetworkMetrics(graphData)
-	pageData := PageData{
-		NetworkDensity:     fmt.Sprintf("%.2f", metrics["networkDensity"].(float64)),
-		OutsourcingRatio:   fmt.Sprintf("%.0f%%", metrics["outsourcingRatio"].(float64)*100),
-		BiddingRatio:       fmt.Sprintf("%.0f%%", metrics["biddingRatio"].(float64)*100),
-		AvgTaskCost:        fmt.Sprintf("$%.2f", metrics["avgTaskCost"].(float64)),
-		AvgBiddersPerTask:  fmt.Sprintf("%.1f", metrics["avgBiddersPerTask"].(float64)),
-		AvgWinningBidPrice: fmt.Sprintf("$%.2f", metrics["avgWinningBidPrice"].(float64)),
-		BidVariance:        fmt.Sprintf("%.1f%%", metrics["bidVariance"].(float64)*100),
-		NoBidRate:          fmt.Sprintf("%.1f%%", metrics["noBidRate"].(float64)*100),
-		NoAuctionRate:      fmt.Sprintf("%.1f%%", metrics["noAuctionRate"].(float64)*100),
-		GiniCoefficient:    fmt.Sprintf("%.3f", metrics["giniCoefficient"].(float64)),
-		ClientSurplus:      fmt.Sprintf("$%.2f", metrics["clientSurplus"].(float64)),
-	}
-	err := indexTemplate.Execute(w, pageData)
+	network.Metrics = computeMetrics(network.Nodes, network.Edges)
+	networkJSON, err := json.Marshal(network)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+		log.Printf("[serveDashboard] Failed to marshal network: %v", err)
 	}
-}
-
-func handleData(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	w.Write(processedData)
-}
-
-func handleMarketMetrics(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	if advancedMetrics == nil {
-		http.Error(w, "Market metrics not calculated", http.StatusInternalServerError)
-		return
-	}
-	jsonData, err := json.Marshal(advancedMetrics)
-	if err != nil {
-		http.Error(w, "Error serializing market metrics", http.StatusInternalServerError)
-		return
-	}
-	w.Write(jsonData)
-}
-
-func handleAgentMetrics(w http.ResponseWriter, r *http.Request) {
-	var graphData GraphData
-	if err := json.Unmarshal(processedData, &graphData); err != nil {
-		log.Printf("Error parsing JSON data: %v", err)
-		http.Error(w, "Error processing data", http.StatusInternalServerError)
-		return
-	}
-	agentMetrics := calculateAgentMetrics(graphData)
-	w.Header().Set("Content-Type", "application/json")
-	jsonData, err := json.Marshal(agentMetrics)
-	if err != nil {
-		http.Error(w, "Error serializing agent metrics", http.StatusInternalServerError)
-		return
-	}
-	w.Write(jsonData)
-}
-
-func handleTaskMetrics(w http.ResponseWriter, r *http.Request) {
-	var graphData GraphData
-	if err := json.Unmarshal(processedData, &graphData); err != nil {
-		log.Printf("Error parsing JSON data: %v", err)
-		http.Error(w, "Error processing data", http.StatusInternalServerError)
-		return
-	}
-	taskMetrics := calculateTaskMetrics(graphData)
-	w.Header().Set("Content-Type", "application/json")
-	jsonData, err := json.Marshal(taskMetrics)
-	if err != nil {
-		http.Error(w, "Error serializing task metrics", http.StatusInternalServerError)
-		return
-	}
-	w.Write(jsonData)
-}
-
-func handleLorenzCurve(w http.ResponseWriter, r *http.Request) {
-	var graphData GraphData
-	if err := json.Unmarshal(processedData, &graphData); err != nil {
-		log.Printf("Error parsing JSON data: %v", err)
-		http.Error(w, "Error processing data", http.StatusInternalServerError)
-		return
-	}
-	agents := make([]struct {
-		Agent     string
-		Specialty string
-		Value     float64
-	}, 0)
-	for _, node := range graphData.Nodes {
-		if node.Role == "agent" {
-			totalValue := 0.0
-			for _, link := range graphData.Links {
-				if link.Source == node.ID && link.Type == "assigned" {
-					totalValue += link.WinningBid
-				}
-			}
-			agents = append(agents, struct {
-				Agent     string
-				Specialty string
-				Value     float64
-			}{
-				Agent:     node.Name,
-				Specialty: node.Specialty,
-				Value:     totalValue,
-			})
-		}
-	}
-	sort.Slice(agents, func(i, j int) bool {
-		return agents[i].Value < agents[j].Value
+	mu.Unlock()
+	page := dashboardHTML
+	tmpl := template.Must(template.New("dashboard").Parse(page))
+	err = tmpl.Execute(w, map[string]interface{}{
+		"Network": template.JS(networkJSON),
 	})
-	lorenzCurve := make([]LorenzPoint, 0, len(agents)+1)
-	lorenzCurve = append(lorenzCurve, LorenzPoint{X: 0, Y: 0})
-	totalValue := 0.0
-	for _, agent := range agents {
-		totalValue += agent.Value
-	}
-	cumulativeValue := 0.0
-	for i, agent := range agents {
-		cumulativeValue += agent.Value
-		lorenzCurve = append(lorenzCurve, LorenzPoint{
-			X:         float64(i+1) / float64(len(agents)),
-			Y:         cumulativeValue / totalValue,
-			Agent:     agent.Agent,
-			Specialty: agent.Specialty,
-			Value:     agent.Value,
-		})
-	}
-	w.Header().Set("Content-Type", "application/json")
-	jsonData, err := json.Marshal(lorenzCurve)
 	if err != nil {
-		http.Error(w, "Error serializing Lorenz curve data", http.StatusInternalServerError)
-		return
+		log.Printf("[serveDashboard] Failed to execute template: %v", err)
 	}
-	w.Write(jsonData)
 }
+
+const dashboardHTML = `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Network Dashboard</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', Lato, Arial, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      margin: 0;
+      min-height: 100vh;
+    }
+    .dashboard-title {
+      font-size: 2.1em;
+      text-align: center;
+      color: #2563eb;
+      margin: 32px 0 8px 0;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .summary-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 32px;
+      max-width: 1200px;
+      margin-left: auto; margin-right: auto;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 16px #e0e7ef;
+      padding: 18px 36px 10px 36px;
+      min-width: 220px;
+      flex: 1 1 220px;
+      max-width: 380px;
+      margin: 0 8px;
+    }
+    .card-title { font-size: 1.18em; color: #2d3748; margin-bottom: 4px; font-weight: 600;}
+    .card-content { font-size: 1.45em; font-weight: 500; }
+    .visual-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+      max-width: 1500px;
+      margin: 0 auto 48px auto;
+    }
+    .viz-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 16px #e0e7ef;
+      padding: 22px 18px 10px 18px;
+      min-width: 450px;
+      flex: 1 1 680px;
+      max-width: 820px;
+      margin: 0 8px 30px 8px;
+      text-align: center;
+      position: relative;
+    }
+    .viz-title { font-size: 1.13em; color: #2d3748; font-weight: 600; margin-bottom: 8px;}
+    .viz-tooltip {
+      font-size: 0.94em;
+      color: #444;
+      background: #e3e9f6;
+      border-radius: 8px;
+      padding: 8px 18px;
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      box-shadow: 0 2px 6px #eef3fa;
+      opacity: 0.8;
+      pointer-events: none;
+      display: none;
+    }
+    .viz-title:hover + .viz-tooltip { display: block; }
+    svg { width: 100%; height: 540px; background: #fafdff; border-radius: 10px; }
+    .metrics-panel { background: #f3f7fc; border-radius: 12px; padding: 16px; margin: 0 auto 20px auto; width: max-content;}
+    table.metrics-table { border-collapse: collapse; margin: 0 auto; }
+    table.metrics-table td, th { border: none; padding: 6px 12px; }
+    table.metrics-table th { color: #64748b; }
+    .bar-label { font-size: 0.96em; fill: #374151; font-weight: 600; }
+    .bar { fill: #2563eb; }
+    .pie-label { font-size: 0.95em; fill: #374151; }
+    @media (max-width: 950px) {
+      .summary-cards, .visual-section { flex-direction: column; align-items: center; }
+      .card, .viz-card { min-width: 90vw; max-width: 99vw; }
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard-title">Network Dashboard</div>
+  <div class="summary-cards">
+    <div class="card">
+      <div class="card-title">Node Count</div>
+      <div class="card-content" id="node-count"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Edge Count</div>
+      <div class="card-content" id="edge-count"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Avg Node Degree</div>
+      <div class="card-content" id="avg-degree"></div>
+    </div>
+  </div>
+  <div class="visual-section">
+    <div class="viz-card">
+      <div class="viz-title">Network Force Graph</div>
+      <div class="viz-tooltip">Drag nodes, scroll to zoom. Color by node type.</div>
+      <svg id="force-graph"></svg>
+    </div>
+    <div class="viz-card">
+      <div class="viz-title">Node Type Breakdown</div>
+      <div class="viz-tooltip">Distribution of agents, tasks, managers, etc.</div>
+      <svg id="pie-node-type"></svg>
+    </div>
+    <div class="viz-card">
+      <div class="viz-title">Degree Distribution</div>
+      <div class="viz-tooltip">How many nodes have each number of connections?</div>
+      <svg id="bar-degree"></svg>
+    </div>
+    <div class="viz-card">
+      <div class="viz-title">Adjacency Matrix</div>
+      <div class="viz-tooltip">Rows and columns are nodes; filled cell = connection.</div>
+      <svg id="adj-matrix"></svg>
+    </div>
+  </div>
+  <script>
+    // Assumes you inject graph as {{.Network}}
+    let graph = {{.Network}};
+
+    // Set summary cards
+    document.getElementById("node-count").textContent = graph.nodes.length;
+    document.getElementById("edge-count").textContent = graph.edges.length;
+    let degSum = 0, degMap = {};
+    graph.nodes.forEach(n => degMap[n.id]=0);
+    graph.edges.forEach(e => { degMap[e.source]++; degMap[e.target]++; });
+    for (let k in degMap) degSum += degMap[k];
+    document.getElementById("avg-degree").textContent = (degSum/graph.nodes.length).toFixed(2);
+
+    // Helper: group by field
+    function groupBy(arr, field) {
+      return arr.reduce((acc, obj) => {
+        let val = obj[field] || "unknown";
+        acc[val] = (acc[val]||0)+1;
+        return acc;
+      }, {});
+    }
+
+    // --- Force-Directed Graph ---
+    function renderForceGraph(nodes, links) {
+      const svg = d3.select("#force-graph");
+      svg.selectAll("*").remove();
+      const width = svg.node().clientWidth, height = svg.node().clientHeight;
+      const color = d3.scaleOrdinal(d3.schemeTableau10);
+      const g = svg.append("g");
+      // Zoom/Pan
+      svg.call(d3.zoom().scaleExtent([0.2,4]).on("zoom", function(e){g.attr("transform", "translate(" + e.transform.x + "," + e.transform.y + ") scale(" + e.transform.k + ")");}));
+      // Simulation
+      const sim = d3.forceSimulation(nodes)
+        .force("link", d3.forceLink(links).id(function(d){return d.id;}).distance(120))
+        .force("charge", d3.forceManyBody().strength(-220))
+        .force("center", d3.forceCenter(width/2, height/2));
+      const link = g.append("g").selectAll("line").data(links).enter().append("line").attr("stroke", "#d1e7fd").attr("stroke-width", 2.1);
+      const node = g.append("g").selectAll("circle").data(nodes).enter().append("circle")
+        .attr("r", 16)
+        .attr("fill", function(d){return color(d.type);})
+        .attr("stroke", "#222").attr("stroke-width", 1.1)
+        .on("mouseover", function(e,d){ d3.select(this).transition().attr("r",22); })
+        .on("mouseout", function(e,d){ d3.select(this).transition().attr("r",16); })
+        .call(d3.drag()
+          .on("start", dragstarted)
+          .on("drag", dragged)
+          .on("end", dragended)
+        );
+      node.append("title").text(function(d){return d.label||d.id;});
+      sim.on("tick", function(){
+        link.attr("x1",function(d){return d.source.x;}).attr("y1",function(d){return d.source.y;})
+            .attr("x2",function(d){return d.target.x;}).attr("y2",function(d){return d.target.y;});
+        node.attr("cx",function(d){return d.x;}).attr("cy",function(d){return d.y;});
+      });
+      function dragstarted(event, d) { if(!event.active) sim.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; }
+      function dragged(event, d) { d.fx = event.x; d.fy = event.y; }
+      function dragended(event, d) { if(!event.active) sim.alphaTarget(0); d.fx = null; d.fy = null; }
+    }
+
+    // --- Pie Chart for Node Types ---
+    function renderPieNodeType(nodes) {
+      const svg = d3.select("#pie-node-type");
+      svg.selectAll("*").remove();
+      const width = svg.node().clientWidth, height = svg.node().clientHeight;
+      const radius = Math.min(width, height)/2-24;
+      const g = svg.append("g").attr("transform", "translate(" + (width/2) + "," + (height/2) + ")");
+      const typeCounts = groupBy(nodes, "type");
+      const pie = d3.pie().value(function(d){return d[1];})(Object.entries(typeCounts));
+      const arc = d3.arc().innerRadius(0).outerRadius(radius);
+      const color = d3.scaleOrdinal(d3.schemeTableau10);
+      g.selectAll("path").data(pie).enter().append("path")
+        .attr("d", arc)
+        .attr("fill", function(d){return color(d.data[0]);})
+        .attr("stroke", "#fff").attr("stroke-width", 1.5);
+      g.selectAll("text").data(pie).enter().append("text")
+        .attr("transform", function(d){return "translate(" + arc.centroid(d) + ")";})
+        .attr("text-anchor","middle")
+        .attr("dy", "0.33em")
+        .attr("class","pie-label")
+        .text(function(d){return d.data[0] + " (" + d.data[1] + ")";});
+    }
+
+    // --- Degree Distribution Bar Chart ---
+    function renderBarDegree(nodes, links) {
+      const svg = d3.select("#bar-degree");
+      svg.selectAll("*").remove();
+      const width = svg.node().clientWidth, height = svg.node().clientHeight;
+      let degMap = {};
+      nodes.forEach(n => degMap[n.id]=0);
+      links.forEach(e => { degMap[e.source]++; degMap[e.target]++; });
+      const degCounts = {};
+      Object.values(degMap).forEach(deg => degCounts[deg]=(degCounts[deg]||0)+1);
+      const data = Object.entries(degCounts).map(function(entry){return {deg:+entry[0], count:entry[1]};});
+      data.sort(function(a,b){return a.deg-b.deg;});
+      const margin = {top:30, right:20, bottom:50, left:55};
+      const x = d3.scaleBand().domain(data.map(function(d){return d.deg;})).range([margin.left, width-margin.right]).padding(0.17);
+      const y = d3.scaleLinear().domain([0,d3.max(data,function(d){return d.count;})]).range([height-margin.bottom, margin.top]);
+      svg.append("g").selectAll("rect").data(data).enter().append("rect")
+        .attr("class","bar").attr("x",function(d){return x(d.deg);}).attr("y",function(d){return y(d.count);})
+        .attr("width",x.bandwidth()).attr("height",function(d){return height-margin.bottom-y(d.count);});
+      svg.append("g").attr("transform","translate(0,"+(height-margin.bottom)+")").call(d3.axisBottom(x));
+      svg.append("g").attr("transform","translate("+margin.left+",0)").call(d3.axisLeft(y));
+      svg.append("text").attr("x",width/2).attr("y",height-8).attr("text-anchor","middle").attr("fill","#888").text("Node Degree");
+      svg.append("text").attr("transform","rotate(-90)").attr("y",15).attr("x",-height/2).attr("text-anchor","middle").attr("fill","#888").text("Node Count");
+    }
+
+    // --- Adjacency Matrix ---
+    function renderAdjMatrix(nodes, links) {
+      const svg = d3.select("#adj-matrix");
+      svg.selectAll("*").remove();
+      const width = svg.node().clientWidth, height = svg.node().clientHeight;
+      const ids = nodes.map(function(n){return n.id;});
+      const n = ids.length;
+      const cellSize = Math.min((width-60)/n, (height-60)/n);
+      const idIdx = {}; ids.forEach(function(id,i){idIdx[id]=i;});
+      const matrix = Array.from({length:n}, function(){return Array(n).fill(0);});
+      links.forEach(function(e){
+        let i=idIdx[e.source], j=idIdx[e.target];
+        if (i!=null && j!=null) matrix[i][j]=1;
+      });
+      const g = svg.append("g").attr("transform","translate(40,40)");
+      g.selectAll("rect").data(d3.merge(matrix.map(function(row,i){return row.map(function(v,j){return {i:i,j:j,v:v};});})))
+        .enter().append("rect")
+        .attr("x",function(d){return d.j*cellSize;}).attr("y",function(d){return d.i*cellSize;})
+        .attr("width",cellSize-1).attr("height",cellSize-1)
+        .attr("fill",function(d){return d.v?"#2563eb":"#e2e8f0";}).attr("opacity",function(d){return d.v?0.88:0.65;});
+      g.selectAll(".rowLabel").data(ids).enter().append("text")
+        .attr("x",-6).attr("y",function(d,i){return i*cellSize+cellSize/2+2;})
+        .attr("text-anchor","end").attr("font-size","0.93em").attr("fill","#555").text(function(d){return d;});
+      g.selectAll(".colLabel").data(ids).enter().append("text")
+        .attr("x",function(d,i){return i*cellSize+cellSize/2;}).attr("y",-6)
+        .attr("text-anchor","middle").attr("font-size","0.93em").attr("fill","#555").text(function(d){return d;});
+    }
+
+    // --- Render all charts ---
+    function renderAll(graph) {
+      renderForceGraph(graph.nodes, graph.edges);
+      renderPieNodeType(graph.nodes);
+      renderBarDegree(graph.nodes, graph.edges);
+      renderAdjMatrix(graph.nodes, graph.edges);
+    }
+    renderAll(graph);
+  </script>
+</body>
+</html>
+`
 
 func main() {
-	port := flag.Int("port", 8080, "Port to serve on")
-	jsonFile := flag.String("input", "", "Path to network data JSON file")
-	templateFile := flag.String("template", "index.html", "Path to HTML template file")
-	flag.Parse()
-	if *jsonFile == "" {
-		if len(flag.Args()) > 0 {
-			*jsonFile = flag.Args()[0]
-		} else {
-			fmt.Println("Usage: go run dashboard.go -input <network_data.json> [-port 8080] [-template index.html]")
-			os.Exit(1)
-		}
-	}
-	jsonData, err := ioutil.ReadFile(*jsonFile)
+	raw, err := os.ReadFile("data/baseline_network.json")
 	if err != nil {
-		log.Fatalf("Error reading JSON file: %v", err)
+		log.Fatalf("Failed to read baseline_network.json: %v", err)
 	}
-	var graphData GraphData
-	if err := json.Unmarshal(jsonData, &graphData); err != nil {
-		log.Fatalf("Error unmarshalling JSON: %v", err)
-	}
-	// Ensure specialty is set for each agent node
-	for i, node := range graphData.Nodes {
-		if node.Role == "agent" {
-			if node.Specialty == "" {
-				graphData.Nodes[i].Specialty = node.Name
-			}
-		}
-	}
-	degreeCentralities := degreeCentrality(graphData)
-	for i, node := range graphData.Nodes {
-		graphData.Nodes[i].Degree = degreeCentralities[node.ID]
-	}
-	processedData, err = json.Marshal(graphData)
+	log.Printf("[main] Loaded baseline_network.json, %d bytes", len(raw))
+	err = json.Unmarshal(raw, &network)
 	if err != nil {
-		log.Fatalf("Error encoding JSON: %v", err)
+		log.Fatalf("[main] Failed to unmarshal baseline_network.json: %v", err)
 	}
-	advancedMetrics = calculateMarketMetrics(graphData)
-	indexTemplate, err = template.ParseFiles(*templateFile)
-	if err != nil {
-		log.Fatalf("Error loading template: %v", err)
+	if network.Edges == nil {
+		log.Printf("[main] Edges is nil, initializing as empty slice")
+		network.Edges = []Edge{}
 	}
-	http.HandleFunc("/", handleIndex)
-	http.HandleFunc("/data", handleData)
-	http.HandleFunc("/api/market-metrics", handleMarketMetrics)
-	http.HandleFunc("/api/agent-metrics", handleAgentMetrics)
-	http.HandleFunc("/api/task-metrics", handleTaskMetrics)
-	http.HandleFunc("/api/lorenz-curve", handleLorenzCurve)
-	if _, err := os.Stat("static"); err == nil {
-		fs := http.FileServer(http.Dir("static"))
-		http.Handle("/static/", http.StripPrefix("/static/", fs))
+	if network.Nodes == nil {
+		log.Printf("[main] Nodes is nil, initializing as empty slice")
+		network.Nodes = []Node{}
 	}
-	serverAddr := fmt.Sprintf(":%d", *port)
-	fmt.Printf("Starting server at http://localhost%s\n", serverAddr)
-	fmt.Println("Press Ctrl+C to stop")
-	if err := http.ListenAndServe(serverAddr, nil); err != nil {
-		log.Fatalf("Server error: %v", err)
-	}
+	network.Metrics = computeMetrics(network.Nodes, network.Edges)
+	log.Printf("[main] After load: nodes=%d, edges=%d", len(network.Nodes), len(network.Edges))
+	http.HandleFunc("/", serveDashboard)
+	log.Println("[main] Dashboard running at http://localhost:8080")
+	http.ListenAndServe(":8080", nil)
 }
