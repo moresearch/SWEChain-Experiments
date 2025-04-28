@@ -148,8 +148,7 @@ const dashboardHTML = `
       <div class="viz-row">
         <div class="viz-card">
           <div class="viz-title">Network Graph</div>
-		  <svg id="network-overview" width="850" height="600"></svg>
-
+          <svg id="force-graph" height="480"></svg>
           <div class="legend" id="legend-network">
             <span class="legend-item"><span class="legend-circle" style="background:#2563eb"></span> Agent</span>
             <span class="legend-item"><span class="legend-circle" style="background:#ff9800"></span> Issue/Task</span>
@@ -351,237 +350,113 @@ const dashboardHTML = `
     graph.nodes.forEach(function(n) { idToNode[n.id] = n; });
   </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <!-- Panel 1: Economic Network -->
-<script>
-console.log("Panel 1: Enhanced Network Overview", graph && graph.nodes, graph && graph.edges);
+  <script>
+    function renderForceGraph(nodes, links) {
+      const svg = d3.select("#force-graph");
+      svg.selectAll("*").remove();
+      const width = svg.node().clientWidth, height = svg.node().clientHeight;
+      const g = svg.append("g");
+      g.append("rect")
+        .attr("width", width)
+        .attr("height", height)
+        .attr("fill", "#fafdff")
+        .attr("stroke", "#e0e7ef")
+        .attr("stroke-width", 2)
+        .lower();
+      svg.call(d3.zoom().scaleExtent([0.1, 3]).on("zoom", function(event) {
+        g.attr("transform", "translate(" + event.transform.x + "," + event.transform.y + ") scale(" + event.transform.k + ")");
+      }));
 
-// Color and shape mapping
-const nodeColors = {
-  agent: "#2563eb",    // blue
-  issue: "#fd7e14",    // orange
-  skill: "#059669"     // teal/green
-};
-const nodeShapes = {
-  agent: d3.symbolCircle,
-  issue: d3.symbolSquare,
-  skill: d3.symbolDiamond
-};
+      const sim = d3.forceSimulation(nodes)
+        .force("link", d3.forceLink(links).id(function(d){return d.id;}).distance(180))
+        .force("charge", d3.forceManyBody().strength(-320))
+        .force("center", d3.forceCenter(width/2, height/2));
 
-const width = 850, height = 600;
-const svg = d3.select("#network-overview");
-svg.selectAll("*").remove(); // Clear previous
+      const link = g.append("g").selectAll("line").data(links).enter().append("line")
+        .attr("stroke", function(d) { return edgeColor(d.type); })
+        .attr("stroke-width", 3.3)
+        .attr("opacity", 0.93)
+        .on("click", function(e, d) {
+          e.stopPropagation();
+          showModal("Edge: " + d.type,
+            "<b>Source:</b> " + (d.source.label || d.source.id || d.source) + "<br>"
+            + "<b>Target:</b> " + (d.target.label || d.target.id || d.target) + "<br>"
+            + "<b>Type:</b> " + d.type + "<br>"
+            + (d.type && d.type.toLowerCase() === "bid" && typeof d.bid_value === "number"
+                ? "<b>Bid Value:</b> <span class='bid-highlight'>" + d.bid_value.toFixed(2) + "</span><br>"
+                : "")
+            + (d.reasoning ? "<br><b>Reasoning:</b> " + d.reasoning : "")
+          );
+        });
 
-// Tooltip
-const tooltip = d3.select("body").append("div")
-  .attr("class", "network-tooltip")
-  .style("position", "absolute")
-  .style("background", "#fff")
-  .style("border", "1px solid #bbb")
-  .style("border-radius", "6px")
-  .style("padding", "6px 12px")
-  .style("pointer-events", "none")
-  .style("font", "14px sans-serif")
-  .style("box-shadow", "0 2px 12px #0002")
-  .style("visibility", "hidden");
+      const node = g.append("g").selectAll("circle").data(nodes).enter().append("circle")
+        .attr("r", 21)
+        .attr("fill", function(d){return nodeColor(d.type);})
+        .attr("stroke", "#222").attr("stroke-width", 1.5)
+        .style("cursor", "pointer")
+        .on("mouseover", function(e,d){ d3.select(this).transition().attr("r",28); })
+        .on("mouseout", function(e,d){ d3.select(this).transition().attr("r",21); })
+        .on("click", function(e, d) {
+          e.stopPropagation();
+          showModal(
+            "Node: " + (d.label || d.id),
+            "<b>Type:</b> " + d.type + "<br>"
+            + (d.label ? "<b>Label:</b> " + d.label + "<br>" : "")
+            + (d.Group ? "<b>Group:</b> " + d.Group + "<br>" : "")
+            + (d.Desc ? "<b>Description:</b> " + d.Desc + "<br>" : "")
+            + (d.PriceMin ? "<b>Price Min:</b> " + d.PriceMin + "<br>" : "")
+            + (d.PriceMax ? "<b>Price Max:</b> " + d.PriceMax + "<br>" : "")
+            + (d.Specialities && d.Specialities.length ?
+                "<b>Specialities:</b> <ul style='margin:0 0 0 16px'>" +
+                  d.Specialities.map(function(s){ return "<li>"+s.Name+"</li>"; }).join("") +
+                "</ul>" : "")
+            + (d.Speciality ?
+                "<b>Speciality:</b> " + d.Speciality.Name + "<br>" : "")
+          );
+        });
+      // Drag support
+      const drag = d3.drag()
+        .on("start", function (event, d) {
+          if (!event.active) sim.alphaTarget(0.3).restart();
+          d.fx = d.x;
+          d.fy = d.y;
+        })
+        .on("drag", function (event, d) {
+          d.fx = event.x;
+          d.fy = event.y;
+        })
+        .on("end", function (event, d) {
+          if (!event.active) sim.alphaTarget(0);
+          d.fx = null;
+          d.fy = null;
+        });
+      node.call(drag);
 
-// Prepare simulation
-const simulation = d3.forceSimulation(graph.nodes)
-  .force("link", d3.forceLink(graph.edges).id(function(d){ return d.id; }).distance(70).strength(0.8))
-  .force("charge", d3.forceManyBody().strength(-260))
-  .force("center", d3.forceCenter(width / 2, height / 2))
-  .force("collide", d3.forceCollide().radius(30));
+      g.append("g").selectAll("text.node-label").data(nodes).enter().append("text")
+        .attr("class", "node-label")
+        .attr("x", function(d){return d.x;})
+        .attr("y", function(d){return d.y-28;})
+        .attr("text-anchor","middle")
+        .attr("dy",".35em").attr("fill","#233").attr("font-size","1em")
+        .text(function(d){return d.label||d.id;});
 
-// Edges
-const link = svg.append("g")
-  .attr("stroke", "#999")
-  .attr("stroke-opacity", 0.55)
-  .selectAll("line")
-  .data(graph.edges)
-  .join("line")
-  .attr("stroke-width", function(d){ return d.type === "assigned" ? 3 : 1.5; })
-  .attr("stroke-dasharray", function(d){ return d.type === "bid" ? "4,2" : null; })
-  .attr("marker-end", function(d){ return d.type === "assigned" ? "url(#arrowhead)" : null; });
-
-// Arrowhead marker for assignment edges
-svg.append("defs").append("marker")
-  .attr("id", "arrowhead")
-  .attr("viewBox", "-0 -5 10 10")
-  .attr("refX", 28)
-  .attr("refY", 0)
-  .attr("orient", "auto")
-  .attr("markerWidth", 8)
-  .attr("markerHeight", 8)
-  .attr("xoverflow", "visible")
-  .append("svg:path")
-  .attr("d", "M 0,-5 L 10,0 L 0,5")
-  .attr("fill", "#fd7e14")
-  .style("stroke","none");
-
-// Nodes
-const node = svg.append("g")
-  .attr("stroke", "#fff")
-  .attr("stroke-width", 2)
-  .selectAll("path")
-  .data(graph.nodes)
-  .join("path")
-  .attr("d", d3.symbol().type(function(d){ return nodeShapes[d.type] || d3.symbolCircle; }).size(function(d){ return 600; }))
-  .attr("fill", function(d){ return nodeColors[d.type] || "#aaa"; })
-  .style("cursor", "pointer")
-  .on("mouseover", function(e, d) {
-    d3.select(this).attr("stroke", "#222").attr("stroke-width", 4);
-    var html = "<b>" + d.type.charAt(0).toUpperCase() + d.type.slice(1) + "</b><br>";
-    if (d.name) html += d.name + "<br>";
-    if (d.speciality && d.speciality.name) html += "Skill: " + d.speciality.name + "<br>";
-    if (d.skills) html += "Skills: " + d.skills.map(function(s){ return s.name; }).join(", ") + "<br>";
-    if (typeof d.price_min === "number") html += "Min Price: " + d.price_min + "<br>";
-    if (typeof d.price_max === "number") html += "Max Price: " + d.price_max + "<br>";
-    tooltip.html(html).style("visibility", "visible");
-  })
-  .on("mousemove", function(e) {
-    tooltip.style("top", (e.pageY + 12) + "px").style("left", (e.pageX + 12) + "px");
-  })
-  .on("mouseout", function() {
-    d3.select(this).attr("stroke", "#fff").attr("stroke-width", 2);
-    tooltip.style("visibility", "hidden");
-  })
-  .call(d3.drag()
-    .on("start", dragstarted)
-    .on("drag", dragged)
-    .on("end", dragended)
-  );
-
-// Node labels
-const label = svg.append("g")
-  .selectAll("text")
-  .data(graph.nodes)
-  .join("text")
-  .text(function(d){ return d.name || d.id; })
-  .attr("font-size", 13)
-  .attr("font-family", "sans-serif")
-  .attr("fill", "#333")
-  .attr("stroke", "white")
-  .attr("stroke-width", 2)
-  .attr("paint-order", "stroke")
-  .attr("dy", 4)
-  .attr("text-anchor", "middle");
-
-// Zoom/pan
-svg.call(d3.zoom()
-  .extent([[0, 0], [width, height]])
-  .scaleExtent([0.3, 2])
-  .on("zoom", function(event) {
-    svg.selectAll("g").attr("transform", event.transform);
-    label.attr("transform", event.transform);
-  })
-);
-
-// Simulation tick
-simulation.on("tick", function() {
-  link
-    .attr("x1", function(d){ return d.source.x; })
-    .attr("y1", function(d){ return d.source.y; })
-    .attr("x2", function(d){ return d.target.x; })
-    .attr("y2", function(d){ return d.target.y; });
-
-  node
-    .attr("transform", function(d){ return "translate(" + d.x + "," + d.y + ")"; });
-
-  label
-    .attr("x", function(d){ return d.x; })
-    .attr("y", function(d){ return d.y + 24; });
-});
-
-// Drag functions
-function dragstarted(event, d) {
-  if (!event.active) simulation.alphaTarget(0.3).restart();
-  d.fx = d.x;
-  d.fy = d.y;
-}
-function dragged(event, d) {
-  d.fx = event.x;
-  d.fy = event.y;
-}
-function dragended(event, d) {
-  if (!event.active) simulation.alphaTarget(0);
-  d.fx = null;
-  d.fy = null;
-}
-
-// Legend
-const legend = svg.append("g")
-  .attr("transform", "translate(20," + (height - 120) + ")");
-const legendData = [
-  { type: "agent", label: "Agent" },
-  { type: "issue", label: "Issue" },
-  { type: "skill", label: "Skill" }
-];
-legend.selectAll("path")
-  .data(legendData)
-  .join("path")
-  .attr("d", d3.symbol().type(function(d){ return nodeShapes[d.type]; }).size(400))
-  .attr("fill", function(d){ return nodeColors[d.type]; })
-  .attr("transform", function(d, i){ return "translate(0," + (i*32) + ")"; });
-legend.selectAll("text")
-  .data(legendData)
-  .join("text")
-  .attr("x", 22)
-  .attr("y", function(d, i){ return i*32 + 6; })
-  .attr("font-size", 15)
-  .attr("font-family", "sans-serif")
-  .attr("fill", "#333")
-  .text(function(d){ return d.label; });
-
-// Title
-svg.append("text")
-  .attr("x", width/2)
-  .attr("y", 34)
-  .attr("text-anchor", "middle")
-  .attr("font-size", 22)
-  .attr("font-family", "sans-serif")
-  .attr("font-weight", "bold")
-  .attr("fill", "#222")
-  .text("Market Network Overview");
-
-</script>
-
-<style>
-.network-tooltip {
-  z-index: 99;
-}
-</style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      sim.on("tick", function(){
+        link.attr("x1",function(d){return d.source.x;}).attr("y1",function(d){return d.source.y;})
+            .attr("x2",function(d){return d.target.x;}).attr("y2",function(d){return d.target.y;});
+        node.attr("cx",function(d){return d.x;}).attr("cy",function(d){return d.y;});
+        g.selectAll("text.node-label").attr("x",function(d){return d.x;}).attr("y",function(d){return d.y-28;});
+      });
+    }
+    // Prepare data for network graph
+    let filteredEdges = graph.edges.filter(function(e) { return idToNode[e.source] && idToNode[e.target]; });
+    let links = filteredEdges.map(function(e) {
+      let src = idToNode[e.source];
+      let tgt = idToNode[e.target];
+      return Object.assign({}, e, {source: src, target: tgt});
+    });
+    renderForceGraph(graph.nodes, links);
+  </script>
 
 
 
