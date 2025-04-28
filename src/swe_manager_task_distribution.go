@@ -164,7 +164,7 @@ func main() {
 	rand.Seed(time.Now().UnixNano())
 
 	inputFile := flag.String("input", "./data/data.csv", "Input CSV file")
-	outputDir := flag.String("output", "./data", "Output directory for agent JSON files")
+	outputDir := flag.String("output", "./data/agents", "Output directory for agent JSON files")
 	model := flag.String("model", "cogito:14b", "LLM model name")
 	ollamaURL := flag.String("ollama_url", "http://localhost:11434/api/generate", "Ollama API URL")
 	numIssues := flag.Int("num_issues", 10, "Number of issues/tasks to process")
