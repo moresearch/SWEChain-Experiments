@@ -189,7 +189,7 @@ const dashboardHTML = `
       <div class="viz-row">
         <div class="viz-card">
           <div class="viz-title">Skill Price and Demand</div>
-          <svg id="price-demand-bar"></svg>
+		  <svg id="price-demand-bar" width="800" height="420"></svg>
         </div>
       </div>
     </div>
@@ -199,7 +199,7 @@ const dashboardHTML = `
       <div class="viz-row">
         <div class="viz-card">
           <div class="viz-title">Agents per Speciality & Avg. Bids per Task</div>
-          <svg id="supply-competition-scatter"></svg>
+		  <svg id="supply-bar" width="800" height="420"></svg>
         </div>
       </div>
     </div>
@@ -229,7 +229,7 @@ const dashboardHTML = `
       <div class="viz-row">
         <div class="viz-card">
           <div class="viz-title">Supply vs. Demand per Skill</div>
-          <svg id="supply-demand-bar"></svg>
+		  <svg id="market-balance-bar" width="800" height="420"></svg>
         </div>
       </div>
     </div>
@@ -469,42 +469,195 @@ const dashboardHTML = `
 <script>
 console.log("Panel 2: START", graph && graph.nodes);
 
-function renderPriceDemandBar(nodes) {
-  // Step 1: filter for issues with speciality and price_min
-  var filtered = nodes.filter(function(n) {
-    var isIssue = (n.type || "").toLowerCase() === "issue";
-    var hasSpeciality = n.speciality && typeof n.speciality.name === "string";
-    var hasPriceMin = typeof n.price_min === "number";
-    return isIssue && hasSpeciality && hasPriceMin;
+// Filter issues with speciality and price_min
+const issues = (graph.nodes || []).filter(n =>
+  (n.type || "").toLowerCase() === "issue" &&
+  n.speciality && typeof n.speciality.name === "string" &&
+  typeof n.price_min === "number"
+);
+console.log("Panel 2: filtered issues with speciality and price_min", issues);
+
+// Calculate demand and avg price per skill
+const skillData = {};
+issues.forEach(issue => {
+  const skill = issue.speciality.name;
+  if (!skillData[skill]) {
+    skillData[skill] = { demand: 0, prices: [] };
+  }
+  skillData[skill].demand += 1;
+  skillData[skill].prices.push(issue.price_min);
+});
+const data = Object.entries(skillData).map(([skill, v]) => ({
+  skill,
+  demand: v.demand,
+  avgPrice: v.prices.length ? (v.prices.reduce((a, b) => a + b, 0) / v.prices.length) : 0
+})).sort((a, b) => b.demand - a.demand);
+
+console.log("Panel 2: final data array for chart", data);
+
+const svg = d3.select("#price-demand-bar");
+svg.selectAll("*").remove();
+const width = svg.node().clientWidth,
+      height = 420,
+      margin = { top: 40, right: 60, bottom: 120, left: 70 };
+
+if (data.length === 0) {
+  svg.append("text")
+    .attr("x", width/2)
+    .attr("y", height/2)
+    .attr("text-anchor", "middle")
+    .attr("fill", "gray")
+    .text("No data available.");
+  console.log("Panel 2: No data available to render.");
+} else {
+  const x = d3.scaleBand()
+    .domain(data.map(d => d.skill))
+    .range([margin.left, width - margin.right])
+    .padding(0.2);
+
+  const yLeft = d3.scaleLinear()
+    .domain([0, d3.max(data, d => d.demand) || 1]).nice()
+    .range([height - margin.bottom, margin.top]);
+
+  const yRight = d3.scaleLinear()
+    .domain([0, d3.max(data, d => d.avgPrice) || 1]).nice()
+    .range([height - margin.bottom, margin.top]);
+
+  // Bars for demand
+  svg.append("g")
+    .selectAll("rect")
+    .data(data)
+    .enter().append("rect")
+    .attr("x", d => x(d.skill))
+    .attr("y", d => yLeft(d.demand))
+    .attr("width", x.bandwidth())
+    .attr("height", d => yLeft(0) - yLeft(d.demand))
+    .attr("fill", "#2dd4bf");
+
+  // Line for average price
+  const line = d3.line()
+    .x(d => x(d.skill) + x.bandwidth()/2)
+    .y(d => yRight(d.avgPrice));
+
+  svg.append("path")
+    .datum(data)
+    .attr("fill", "none")
+    .attr("stroke", "#f59e42")
+    .attr("stroke-width", 3)
+    .attr("d", line);
+
+  // Dots for price
+  svg.append("g")
+    .selectAll("circle")
+    .data(data)
+    .enter().append("circle")
+    .attr("cx", d => x(d.skill) + x.bandwidth()/2)
+    .attr("cy", d => yRight(d.avgPrice))
+    .attr("r", 5)
+    .attr("fill", "#f59e42");
+
+  // X Axis with rotated labels
+  svg.append("g")
+    .attr("transform", "translate(0," + (height - margin.bottom) + ")")
+    .call(d3.axisBottom(x).tickSize(0))
+    .selectAll("text")
+    .style("text-anchor", "end")
+    .attr("dx", "-0.6em")
+    .attr("dy", "0.1em")
+    .attr("transform", "rotate(-65)");
+
+  // Y Axis left (Demand)
+  svg.append("g")
+    .attr("transform", "translate(" + margin.left + ",0)")
+    .call(d3.axisLeft(yLeft).ticks(6))
+    .append("text")
+    .attr("x", -margin.left + 10)
+    .attr("y", margin.top - 15)
+    .attr("fill", "#2dd4bf")
+    .attr("text-anchor", "start")
+    .text("Demand (issues)");
+
+  // Y Axis right (Price)
+  svg.append("g")
+    .attr("transform", "translate(" + (width - margin.right) + ",0)")
+    .call(d3.axisRight(yRight).ticks(6))
+    .append("text")
+    .attr("x", 40)
+    .attr("y", margin.top - 15)
+    .attr("fill", "#f59e42")
+    .attr("text-anchor", "end")
+    .text("Average Price");
+
+  // Title
+  svg.append("text")
+    .attr("x", width / 2)
+    .attr("y", margin.top - 18)
+    .attr("text-anchor", "middle")
+    .text("Price vs Demand per Skill");
+
+  // Legend
+  svg.append("rect")
+    .attr("x", width - margin.right - 150)
+    .attr("y", margin.top - 35)
+    .attr("width", 22)
+    .attr("height", 16)
+    .attr("fill", "#2dd4bf");
+  svg.append("text")
+    .attr("x", width - margin.right - 120)
+    .attr("y", margin.top - 22)
+    .text("Demand (bars)")
+    .attr("alignment-baseline", "middle");
+
+  svg.append("circle")
+    .attr("cx", width - margin.right - 60 + 8)
+    .attr("cy", margin.top - 27 + 8)
+    .attr("r", 8)
+    .attr("fill", "#f59e42");
+  svg.append("text")
+    .attr("x", width - margin.right - 40)
+    .attr("y", margin.top - 22)
+    .text("Avg Price")
+    .attr("alignment-baseline", "middle");
+}
+
+console.log("Panel 2: Render complete.");
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Panel 3: Competition vs. Labor Supply -->
+<script>
+console.log("Panel 3: START", graph && graph.nodes);
+
+function renderSupplyBar(nodes) {
+  // Count agents per skill
+  var skillCounts = {};
+  nodes.filter(n => (n.type || "").toLowerCase() === "agent" && Array.isArray(n.specialities)).forEach(agent => {
+    agent.specialities.forEach(spec => {
+      if (spec && typeof spec.name === "string") {
+        skillCounts[spec.name] = (skillCounts[spec.name] || 0) + 1;
+      }
+    });
   });
-  console.log("Panel 2: filtered issues with speciality and price_min", filtered);
 
-  // Step 2: Aggregate by skill
-  var specialities = {};
-  filtered.forEach(function(n) {
-    var skill = n.speciality.name;
-    if (!specialities[skill]) specialities[skill] = {count:0, prices:[]};
-    specialities[skill].count++;
-    specialities[skill].prices.push(n.price_min);
-  });
+  var data = Object.entries(skillCounts).map(([name, count]) => ({ name, count }))
+    .sort((a, b) => b.count - a.count);
 
-  // Step 3: Build data array for D3
-  var data = Object.entries(specialities).map(function(entry){
-    var name = entry[0], v = entry[1];
-    return {
-      name: name,
-      count: v.count,
-      avgPrice: v.prices.reduce(function(a,b){return a+b;},0)/v.prices.length
-    };
-  }).sort(function(a,b){return b.count-a.count;}).slice(0,15);
+  console.log("Panel 3: skillCounts", skillCounts);
+  console.log("Panel 3: data", data);
 
-  console.log("Panel 2: final data array for chart", data);
-
-  // Step 4: D3 rendering
-  var svg = d3.select("#price-demand-bar");
+  var svg = d3.select("#supply-bar");
   svg.selectAll("*").remove();
   var width = svg.node().clientWidth,
-      height = 420, margin = {top:40, right:30, bottom:60, left:100};
+      height = 420, margin = {top:40, right:30, bottom:140, left:100}; // bottom margin increased for vertical labels
 
   if (data.length === 0) {
     svg.append("text")
@@ -513,148 +666,59 @@ function renderPriceDemandBar(nodes) {
       .attr("text-anchor", "middle")
       .attr("fill", "gray")
       .text("No data available.");
-    console.log("Panel 2: No data available to render.");
+    console.log("Panel 3: No data available to render.");
     return;
   }
 
-  var x = d3.scaleBand().domain(data.map(function(d){return d.name;})).range([margin.left, width-margin.right]).padding(0.15);
-  var yLeft = d3.scaleLinear().domain([0, d3.max(data,function(d){return d.count;}) || 1]).nice().range([height-margin.bottom, margin.top]);
-  var yRight = d3.scaleLinear().domain([0, d3.max(data,function(d){return d.avgPrice;}) || 1]).nice().range([height-margin.bottom, margin.top]);
+  var x = d3.scaleBand().domain(data.map(d => d.name)).range([margin.left, width-margin.right]).padding(0.18);
+  var y = d3.scaleLinear().domain([0, d3.max(data, d => d.count) || 1]).nice().range([height-margin.bottom, margin.top]);
 
-  // Demand bars
   svg.append("g")
     .selectAll("rect")
     .data(data)
     .enter().append("rect")
-    .attr("x",function(d){return x(d.name);})
-    .attr("y",function(d){return yLeft(d.count);})
-    .attr("width",x.bandwidth()/2)
-    .attr("height",function(d){return yLeft(0)-yLeft(d.count);})
-    .attr("fill","#2563eb");
-
-  // Price line
-  var line = d3.line()
-    .x(function(d){return x(d.name)+x.bandwidth()/4;})
-    .y(function(d){return yRight(d.avgPrice);});
-  svg.append("path")
-    .datum(data)
-    .attr("fill","none")
-    .attr("stroke","#fd7e14")
-    .attr("stroke-width",3)
-    .attr("d",line);
-
-  // Price dots
-  svg.append("g").selectAll("circle")
-    .data(data)
-    .enter().append("circle")
-    .attr("cx",function(d){return x(d.name)+x.bandwidth()/4;})
-    .attr("cy",function(d){return yRight(d.avgPrice);})
-    .attr("r",5)
-    .attr("fill","#fd7e14");
-
-  // X axis (skills)
+    .attr("x", d => x(d.name))
+    .attr("y", d => y(d.count))
+    .attr("width", x.bandwidth())
+    .attr("height", d => y(0) - y(d.count))
+    .attr("fill", "#2563eb");
+  // X Axis with vertical labels
   svg.append("g")
-    .attr("transform","translate(0,"+(height-margin.bottom)+")")
-    .call(d3.axisBottom(x).tickFormat(function(d){return d;}).tickSizeOuter(0));
-
-  // Left Y axis (demand)
+    .attr("transform", "translate(0," + (height - margin.bottom) + ")")
+    .call(d3.axisBottom(x).tickSize(0))
+    .selectAll("text")
+    .style("text-anchor", "end")
+    .attr("dx", "-0.6em")
+    .attr("dy", "0.1em")
+    .attr("transform", "rotate(-90)");
   svg.append("g")
-    .attr("transform","translate("+(margin.left)+",0)")
-    .call(d3.axisLeft(yLeft).ticks(6))
-    .append("text")
-    .attr("fill","#2563eb").attr("x",-40).attr("y",margin.top-20)
-    .attr("text-anchor","end").text("Demand (Issues)");
+    .attr("transform", "translate(" + (margin.left) + ",0)")
+    .call(d3.axisLeft(y).ticks(6));
+  svg.append("text")
+    .attr("x", width / 2)
+    .attr("y", margin.top - 18)
+    .attr("text-anchor", "middle")
+    .text("Agent Supply per Skill");
+  svg.append("text")
+    .attr("x", -(height / 2))
+    .attr("y", margin.left - 70)
+    .attr("transform", "rotate(-90)")
+    .attr("text-anchor", "middle")
+    .text("Number of Agents");
 
-  // Right Y axis (price)
-  svg.append("g")
-    .attr("transform","translate("+(width-margin.right)+",0)")
-    .call(d3.axisRight(yRight).ticks(6))
-    .append("text")
-    .attr("fill","#fd7e14").attr("x",40).attr("y",margin.top-20)
-    .attr("text-anchor","start").text("Avg Price");
-
-  console.log("Panel 2: Render complete.");
+  console.log("Panel 3: Render complete.");
 }
-renderPriceDemandBar(graph.nodes);
+renderSupplyBar(graph.nodes);
 </script>
 
 
 
 
 
-  <!-- Panel 3: Competition vs. Labor Supply -->
-<script>
-function renderSupplyCompetitionScatter(nodes, edges) {
-  // Supply: #agents per skill; Competition: avg bids per task per skill
-  var agentSkills = {};
-  nodes.forEach(function(n) {
-    if ((n.type||"").toLowerCase() === "agent" && n.specialities) {
-      n.specialities.forEach(function(s) {
-        if (!agentSkills[s.name]) agentSkills[s.name]=0;
-        agentSkills[s.name]++;
-      });
-    }
-  });
-  var taskSkills = {};
-  nodes.forEach(function(n) {
-    if ((n.type||"").toLowerCase() === "task" && n.speciality) {
-      var key = n.speciality.name;
-      if (!taskSkills[key]) taskSkills[key] = [];
-      taskSkills[key].push(n.id);
-    }
-  });
-  var bidsPerTask = {};
-  Object.entries(taskSkills).forEach(function(entry) {
-    var skill = entry[0], taskIds = entry[1];
-    var bids = edges.filter(function(e){ return e.type && e.type.toLowerCase()==="bid" && taskIds.indexOf(e.target)!==-1; }).length;
-    bidsPerTask[skill] = taskIds.length ? bids / taskIds.length : 0;
-  });
 
-  var allSkills = Array.from(new Set(Object.keys(agentSkills).concat(Object.keys(bidsPerTask))));
-  var data = allSkills.map(function(skill){
-    return {
-      skill: skill,
-      agents: agentSkills[skill]||0,
-      avgBids: bidsPerTask[skill]||0
-    };
-  });
 
-  var width = d3.select("#supply-competition-scatter").node().clientWidth,
-      height = 420, margin = {top:40, right:30, bottom:60, left:70};
-  var svg = d3.select("#supply-competition-scatter");
-  svg.selectAll("*").remove();
-  var x = d3.scaleLinear().domain([0, d3.max(data,function(d){return d.agents;})]).nice().range([margin.left, width-margin.right]);
-  var y = d3.scaleLinear().domain([0, d3.max(data,function(d){return d.avgBids;})]).nice().range([height-margin.bottom, margin.top]);
-  svg.append("g")
-    .selectAll("circle")
-    .data(data)
-    .enter().append("circle")
-    .attr("cx",function(d){return x(d.agents);})
-    .attr("cy",function(d){return y(d.avgBids);})
-    .attr("r",10)
-    .attr("fill","#2563eb")
-    .attr("opacity",0.7)
-    .append("title").text(function(d){return d.skill;});
-  svg.append("g")
-    .attr("transform","translate(0,"+(height-margin.bottom)+")")
-    .call(d3.axisBottom(x).ticks(7));
-  svg.append("g")
-    .attr("transform","translate("+(margin.left)+",0)")
-    .call(d3.axisLeft(y).ticks(7));
-  svg.selectAll(".scatter-label")
-    .data(data)
-    .enter().append("text")
-    .attr("x",function(d){return x(d.agents);})
-    .attr("y",function(d){return y(d.avgBids)-14;})
-    .text(function(d){return d.skill;})
-    .attr("font-size","0.9em")
-    .attr("fill","#374151")
-    .attr("text-anchor","middle");
-  svg.append("text").attr("x", width/2).attr("y", height-10).attr("text-anchor","middle").attr("fill","#374151").text("Labor Supply (Agents per Skill)");
-  svg.append("text").attr("x", 20).attr("y", margin.top-20).attr("fill","#374151").text("Competition (Avg Bids per Task)");
-}
-renderSupplyCompetitionScatter(graph.nodes, graph.edges);
-</script>
+
+
 
 
 
@@ -866,84 +930,132 @@ renderEngagementHeatmap(graph.nodes, graph.edges);
 
 
   <!-- Panel 6: Market Balance/Gaps -->
-  <script>
-function renderSupplyDemandBar(nodes) {
-  var skillDemand = {}, skillSupply = {};
-  nodes.forEach(function(n) {
-    if ((n.type||"").toLowerCase()==="task" && n.speciality) {
-      var skill = n.speciality.name;
-      if (!skillDemand[skill]) skillDemand[skill]=0;
-      skillDemand[skill]++;
-    }
-    if ((n.type||"").toLowerCase()==="agent" && n.specialities) {
-      n.specialities.forEach(function(s) {
-        if (!skillSupply[s.name]) skillSupply[s.name]=0;
-        skillSupply[s.name]++;
-      });
-    }
-  });
-  var allSkills = Array.from(new Set(Object.keys(skillDemand).concat(Object.keys(skillSupply))));
-  var data = allSkills.map(function(skill){
-    return {
-      skill: skill,
-      demand: skillDemand[skill]||0,
-      supply: skillSupply[skill]||0
-    };
-  }).sort(function(a,b){return b.demand-a.demand;}).slice(0,15);
+<script>
+console.log("Panel 6: START", graph && graph.nodes);
 
-  var width = d3.select("#supply-demand-bar").node().clientWidth,
-      height = 420, margin = {top:40, right:30, bottom:60, left:140};
-  var svg = d3.select("#supply-demand-bar");
+function renderMarketBalanceBar(nodes) {
+  // Supply: agents per skill
+  var agentSkillCounts = {};
+  nodes.filter(n => (n.type || "").toLowerCase() === "agent" && Array.isArray(n.specialities)).forEach(agent => {
+    agent.specialities.forEach(spec => {
+      if (spec && typeof spec.name === "string") {
+        agentSkillCounts[spec.name] = (agentSkillCounts[spec.name] || 0) + 1;
+      }
+    });
+  });
+
+  // Demand: issues per skill
+  var issueSkillCounts = {};
+  nodes.filter(n => (n.type || "").toLowerCase() === "issue" && n.speciality && typeof n.speciality.name === "string").forEach(issue => {
+    var skill = issue.speciality.name;
+    issueSkillCounts[skill] = (issueSkillCounts[skill] || 0) + 1;
+  });
+
+  // Merge skill sets
+  var allSkills = Array.from(new Set([...Object.keys(agentSkillCounts), ...Object.keys(issueSkillCounts)]));
+
+  // Prepare data for both supply and demand
+  var data = allSkills.map(skill => ({
+    skill: skill,
+    supply: agentSkillCounts[skill] || 0,
+    demand: issueSkillCounts[skill] || 0,
+  })).sort((a, b) => b.demand - a.demand);
+
+  console.log("Panel 6: data", data);
+
+  var svg = d3.select("#market-balance-bar");
   svg.selectAll("*").remove();
-  var y = d3.scaleBand().domain(data.map(function(d){return d.skill;})).range([margin.top, height-margin.bottom]).padding(0.18);
-  var x = d3.scaleLinear().domain([0, d3.max(data,function(d){return Math.max(d.demand,d.supply);})]).nice().range([margin.left, width-margin.right]);
-  // Demand bars
-  svg.append("g")
-    .selectAll("rect.demand")
-    .data(data)
-    .enter().append("rect")
-    .attr("class","demand")
-    .attr("y",function(d){return y(d.skill);})
-    .attr("x",x(0))
-    .attr("height",y.bandwidth()/2)
-    .attr("width",function(d){return x(d.demand)-x(0);})
-    .attr("fill","#fd7e14");
+  var width = svg.node().clientWidth,
+      height = 420, margin = {top:40, right:30, bottom:60, left:160};
+
+  if (data.length === 0) {
+    svg.append("text")
+      .attr("x", width/2)
+      .attr("y", height/2)
+      .attr("text-anchor", "middle")
+      .attr("fill", "gray")
+      .text("No data available.");
+    console.log("Panel 6: No data available to render.");
+    return;
+  }
+
+  var y = d3.scaleBand().domain(data.map(d => d.skill)).range([margin.top, height-margin.bottom]).padding(0.15);
+  var x = d3.scaleLinear().domain([0, d3.max(data, d => Math.max(d.supply, d.demand)) || 1]).nice().range([margin.left, width-margin.right]);
+
   // Supply bars
   svg.append("g")
     .selectAll("rect.supply")
     .data(data)
     .enter().append("rect")
-    .attr("class","supply")
-    .attr("y",function(d){return y(d.skill)+y.bandwidth()/2;})
-    .attr("x",x(0))
-    .attr("height",y.bandwidth()/2)
-    .attr("width",function(d){return x(d.supply)-x(0);})
-    .attr("fill","#2563eb");
+    .attr("class", "supply")
+    .attr("y", d => y(d.skill))
+    .attr("x", x(0))
+    .attr("height", y.bandwidth()/2)
+    .attr("width", d => x(d.supply) - x(0))
+    .attr("fill", "#2563eb");
+
+  // Demand bars
   svg.append("g")
-    .attr("transform","translate("+(margin.left)+",0)")
+    .selectAll("rect.demand")
+    .data(data)
+    .enter().append("rect")
+    .attr("class", "demand")
+    .attr("y", d => y(d.skill) + y.bandwidth()/2)
+    .attr("x", x(0))
+    .attr("height", y.bandwidth()/2)
+    .attr("width", d => x(d.demand) - x(0))
+    .attr("fill", "#fd7e14");
+
+  svg.append("g")
+    .attr("transform", "translate("+(margin.left)+",0)")
     .call(d3.axisLeft(y));
   svg.append("g")
-    .attr("transform","translate(0,"+(height-margin.bottom)+")")
-    .call(d3.axisBottom(x).ticks(7));
-  svg.selectAll(".bar-label-demand")
-    .data(data)
-    .enter().append("text")
-    .attr("class","bar-label-demand")
-    .attr("y",function(d){return y(d.skill)+y.bandwidth()/2-5;})
-    .attr("x",function(d){return x(d.demand)+8;})
-    .text(function(d){return d.demand;});
-  svg.selectAll(".bar-label-supply")
-    .data(data)
-    .enter().append("text")
-    .attr("class","bar-label-supply")
-    .attr("y",function(d){return y(d.skill)+y.bandwidth()-7;})
-    .attr("x",function(d){return x(d.supply)+8;})
-    .text(function(d){return d.supply;});
-  svg.append("text").attr("x", width-150).attr("y", margin.top+10).attr("fill","#fd7e14").attr("font-size","1em").text("Demand (Tasks)");
-  svg.append("text").attr("x", width-150).attr("y", margin.top+30).attr("fill","#2563eb").attr("font-size","1em").text("Supply (Agents)");
+    .attr("transform", "translate(0,"+(height-margin.bottom)+")")
+    .call(d3.axisBottom(x).ticks(6));
+
+  // Legends
+  svg.append("rect")
+    .attr("x", width-margin.right-120)
+    .attr("y", margin.top-35)
+    .attr("width", 22)
+    .attr("height", 16)
+    .attr("fill", "#2563eb");
+  svg.append("text")
+    .attr("x", width-margin.right-90)
+    .attr("y", margin.top-22)
+    .text("Supply")
+    .attr("alignment-baseline", "middle");
+
+  svg.append("rect")
+    .attr("x", width-margin.right-60)
+    .attr("y", margin.top-35)
+    .attr("width", 22)
+    .attr("height", 16)
+    .attr("fill", "#fd7e14");
+  svg.append("text")
+    .attr("x", width-margin.right-30)
+    .attr("y", margin.top-22)
+    .text("Demand")
+    .attr("alignment-baseline", "middle");
+
+  console.log("Panel 6: Render complete.");
 }
-renderSupplyDemandBar(graph.nodes);
+renderMarketBalanceBar(graph.nodes);
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
 `
