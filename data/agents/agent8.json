@@ -1,0 +1,30 @@
+{
+  "agent_id": "agent8",
+  "specialities": [
+    {
+      "name": "BugFixes",
+      "description": "This agent's speciality includes unexpected behaviours, errors, inconsistencies.",
+      "example": "Navigating back from the flag as offensive screen doesn't display the correct report page.",
+      "weight": 31.29
+    },
+    {
+      "name": "ServerSideLogic",
+      "description": "API endpoints, DB queries, authentication, data processing-related tasks.",
+      "example": "The tooltip displays the users' email instead of their display name when hovering over the counter in the split preview.",
+      "weight": 36.76
+    },
+    {
+      "name": "NewFeaturesOrEnhancements",
+      "description": "This agent's speciality includes new functionality, optimization of existing features.",
+      "example": "Add the ability to mention yourself and use @here in the mentions auto-suggestions list.",
+      "weight": 19.32
+    },
+    {
+      "name": "UI/UX",
+      "description": "This agent's speciality includes design changes, layout, interaction improvements.",
+      "example": "Overlay background color is different.",
+      "weight": 12.63
+    }
+  ],
+  "tasks": []
+}

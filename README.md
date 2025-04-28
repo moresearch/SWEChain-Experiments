@@ -75,6 +75,16 @@ go run src/swe_manager_task_distribution.go \
   -ollama_url http://localhost:11434/api/generate \
   -num_issues 10 \
   -llm_retries 5
+
+
+go run swe_manager_task_distribution.go \
+  -input ./data/data.csv \
+  -output ./data/agents \
+  -model cogito:14b \
+  -ollama_url http://localhost:11434/api/generate \
+  -num_issues 4 \
+  -num_agents 3 \
+  -llm_retries 2
 ```
 
 - Reads from `data/tasks.csv`
