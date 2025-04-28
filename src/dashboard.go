@@ -146,9 +146,10 @@ const dashboardHTML = `
     <div class="panel">
       <div class="panel-title">Economic Network</div>
       <div class="viz-row">
+
         <div class="viz-card">
           <div class="viz-title">Network Graph</div>
-		  <svg id="network-overview" width="850" height="600"></svg>
+		  <svg id="network-overview"></svg>
 
 
           <div class="legend" id="legend-network">
@@ -367,114 +368,135 @@ const dashboardHTML = `
 
 
   <!-- Panel 1: Economic Network -->
-  <script>
-console.log("Panel 1: Enhanced Network Overview", graph && graph.nodes, graph && graph.edges);
+<script>
+// DEBUG: Show everything about how graph is loaded
+console.debug("PANEL 1 DEBUG: typeof graph", typeof graph);
+console.debug("PANEL 1 DEBUG: graph keys", graph && Object.keys(graph));
+console.debug("PANEL 1 DEBUG: graph.nodes", graph && graph.nodes, "Array?", Array.isArray(graph && graph.nodes));
+console.debug("PANEL 1 DEBUG: graph.edges", graph && graph.edges, "Array?", Array.isArray(graph && graph.edges));
+console.debug("PANEL 1 DEBUG: window.graphData", window.graphData);
 
-// Debug: Check data presence and structure
 if (!graph || !Array.isArray(graph.nodes) || !Array.isArray(graph.edges)) {
-  console.error("Panel 1: graph, graph.nodes, or graph.edges is missing or malformed", graph);
+  console.error("PANEL 1: Required graph data missing or malformed.", graph);
+  if (typeof graph !== "object") {
+    console.error("PANEL 1: graph is not an object!", graph);
+  }
+  if (!Array.isArray(graph && graph.nodes)) {
+    console.error("PANEL 1: graph.nodes is not an array!", graph && graph.nodes);
+  }
+  if (!Array.isArray(graph && graph.edges)) {
+    console.error("PANEL 1: graph.edges is not an array!", graph && graph.edges);
+  }
 } else {
-  console.log("Panel 1: Number of nodes:", graph.nodes.length);
-  console.log("Panel 1: Number of edges:", graph.edges.length);
-  if (graph.nodes.length > 0) {
-    console.log("Panel 1: First node sample:", graph.nodes[0]);
+  // Defensive: don't mutate global graph.edges
+  const nodes = graph.nodes.map(n => ({...n}));
+  const nodeIdSet = new Set(nodes.map(n => n.id));
+  const edges = graph.edges.filter(e => nodeIdSet.has(e.source) && nodeIdSet.has(e.target)).map(e => ({...e}));
+
+  // Compute node degree for size
+  const nodeDegree = {};
+  edges.forEach(e => {
+    nodeDegree[e.source] = (nodeDegree[e.source] || 0) + 1;
+    nodeDegree[e.target] = (nodeDegree[e.target] || 0) + 1;
+  });
+  nodes.forEach(n => n.degree = nodeDegree[n.id] || 1);
+
+  // D3 settings
+  const nodeColors = { agent: "#2563eb", issue: "#fd7e14", skill: "#059669" };
+  const nodeShapes = { agent: d3.symbolCircle, issue: d3.symbolSquare, skill: d3.symbolDiamond };
+  const edgeColors = { assigned: "#2563eb", bid: "#fd7e14", auction: "#059669", default: "#aaa" };
+
+  const width = 1200, height = 480; // SVG height consistent with your CSS
+  const svg = d3.select("#network-overview")
+    .attr("width", width)
+    .attr("height", height);
+  svg.selectAll("*").remove();
+
+  // Tooltip (unique per panel!)
+  const tooltip = d3.select("body").append("div")
+    .attr("class", "network-tooltip panel1-tooltip")
+    .style("position", "absolute")
+    .style("background", "#fff")
+    .style("border", "1px solid #bbb")
+    .style("border-radius", "6px")
+    .style("padding", "6px 12px")
+    .style("pointer-events", "none")
+    .style("font", "14px sans-serif")
+    .style("box-shadow", "0 2px 12px #0002")
+    .style("visibility", "hidden");
+
+  // Node size scaling
+  const minSize = 450, maxSize = 2500;
+  const minDegree = d3.min(nodes, n => n.degree);
+  const maxDegree = d3.max(nodes, n => n.degree);
+  function nodeSize(degree) {
+    if (maxDegree === minDegree) return minSize;
+    return minSize + (maxSize - minSize) * (degree - minDegree) / (maxDegree - minDegree);
   }
-  if (graph.edges.length > 0) {
-    console.log("Panel 1: First edge sample:", graph.edges[0]);
-  }
-}
 
-// Color and shape mapping
-const nodeColors = {
-  agent: "#2563eb",    // blue
-  issue: "#fd7e14",    // orange
-  skill: "#059669"     // teal/green
-};
-const nodeShapes = {
-  agent: d3.symbolCircle,
-  issue: d3.symbolSquare,
-  skill: d3.symbolDiamond
-};
-
-const width = 850, height = 600;
-const svg = d3.select("#network-overview");
-svg.selectAll("*").remove(); // Clear previous
-
-// Tooltip
-const tooltip = d3.select("body").append("div")
-  .attr("class", "network-tooltip")
-  .style("position", "absolute")
-  .style("background", "#fff")
-  .style("border", "1px solid #bbb")
-  .style("border-radius", "6px")
-  .style("padding", "6px 12px")
-  .style("pointer-events", "none")
-  .style("font", "14px sans-serif")
-  .style("box-shadow", "0 2px 12px #0002")
-  .style("visibility", "hidden");
-
-// Defensive: Only run if data is present
-if (graph && Array.isArray(graph.nodes) && Array.isArray(graph.edges)) {
-  // Prepare simulation
-  const simulation = d3.forceSimulation(graph.nodes)
-    .force("link", d3.forceLink(graph.edges).id(function(d){ return d.id; }).distance(70).strength(0.8))
-    .force("charge", d3.forceManyBody().strength(-260))
+  // Simulation
+  const simulation = d3.forceSimulation(nodes)
+    .force("link", d3.forceLink(edges).id(d => d.id).distance(200).strength(0.14))
+    .force("charge", d3.forceManyBody().strength(-180))
     .force("center", d3.forceCenter(width / 2, height / 2))
-    .force("collide", d3.forceCollide().radius(30));
+    .force("collide", d3.forceCollide().radius(d => 14 + Math.min(38, d.degree * 2.5)))
+    .alphaDecay(0.014);
 
   // Edges
-  const link = svg.append("g")
-    .attr("stroke", "#999")
-    .attr("stroke-opacity", 0.55)
-    .selectAll("line")
-    .data(graph.edges)
-    .join("line")
-    .attr("stroke-width", function(d){ return d.type === "assigned" ? 3 : 1.5; })
-    .attr("stroke-dasharray", function(d){ return d.type === "bid" ? "4,2" : null; })
-    .attr("marker-end", function(d){ return d.type === "assigned" ? "url(#arrowhead)" : null; });
-
-  // Arrowhead marker for assignment edges
   svg.append("defs").append("marker")
-    .attr("id", "arrowhead")
+    .attr("id", "arrowhead1")
     .attr("viewBox", "-0 -5 10 10")
     .attr("refX", 28)
     .attr("refY", 0)
     .attr("orient", "auto")
-    .attr("markerWidth", 8)
-    .attr("markerHeight", 8)
+    .attr("markerWidth", 10)
+    .attr("markerHeight", 10)
     .attr("xoverflow", "visible")
     .append("svg:path")
     .attr("d", "M 0,-5 L 10,0 L 0,5")
-    .attr("fill", "#fd7e14")
+    .attr("fill", edgeColors.assigned)
     .style("stroke","none");
+
+  const link = svg.append("g")
+    .attr("stroke-linecap", "round")
+    .attr("stroke-opacity", 0.75)
+    .selectAll("line")
+    .data(edges)
+    .join("line")
+    .attr("stroke-width", d => d.type === "assigned" ? 3.6 : d.type === "bid" ? 2.4 : 1.5)
+    .attr("stroke", d => edgeColors[d.type] || edgeColors.default)
+    .attr("stroke-dasharray", d => d.type === "bid" ? "6,4" : d.type === "auction" ? "2,4" : null)
+    .attr("marker-end", d => d.type === "assigned" ? "url(#arrowhead1)" : null);
 
   // Nodes
   const node = svg.append("g")
     .attr("stroke", "#fff")
-    .attr("stroke-width", 2)
+    .attr("stroke-width", 2.5)
     .selectAll("path")
-    .data(graph.nodes)
+    .data(nodes)
     .join("path")
-    .attr("d", d3.symbol().type(function(d){ return nodeShapes[d.type] || d3.symbolCircle; }).size(function(d){ return 600; }))
-    .attr("fill", function(d){ return nodeColors[d.type] || "#aaa"; })
+    .attr("d", d => d3.symbol().type(nodeShapes[d.type] || d3.symbolCircle).size(nodeSize(d.degree))())
+    .attr("fill", d => nodeColors[d.type] || "#aaa")
     .style("cursor", "pointer")
     .on("mouseover", function(e, d) {
-      d3.select(this).attr("stroke", "#222").attr("stroke-width", 4);
-      var html = "<b>" + d.type.charAt(0).toUpperCase() + d.type.slice(1) + "</b><br>";
+      d3.select(this).attr("stroke", "#222").attr("stroke-width", 5);
+      let html = "<b>" + d.type.charAt(0).toUpperCase() + d.type.slice(1) + "</b><br>";
       if (d.name) html += d.name + "<br>";
       if (d.speciality && d.speciality.name) html += "Skill: " + d.speciality.name + "<br>";
-      if (d.skills) html += "Skills: " + d.skills.map(function(s){ return s.name; }).join(", ") + "<br>";
+      if (d.skills) html += "Skills: " + d.skills.map(s => s.name).join(", ") + "<br>";
       if (typeof d.price_min === "number") html += "Min Price: " + d.price_min + "<br>";
       if (typeof d.price_max === "number") html += "Max Price: " + d.price_max + "<br>";
+      html += "Connections: " + d.degree;
       tooltip.html(html).style("visibility", "visible");
-      console.log("Panel 1: Hovered node", d);
+      link.attr("stroke-opacity", l => (l.source.id === d.id || l.target.id === d.id) ? 1 : 0.18);
     })
     .on("mousemove", function(e) {
       tooltip.style("top", (e.pageY + 12) + "px").style("left", (e.pageX + 12) + "px");
     })
     .on("mouseout", function() {
-      d3.select(this).attr("stroke", "#fff").attr("stroke-width", 2);
+      d3.select(this).attr("stroke", "#fff").attr("stroke-width", 2.5);
       tooltip.style("visibility", "hidden");
+      link.attr("stroke-opacity", 0.75);
     })
     .call(d3.drag()
       .on("start", dragstarted)
@@ -482,53 +504,51 @@ if (graph && Array.isArray(graph.nodes) && Array.isArray(graph.edges)) {
       .on("end", dragended)
     );
 
-  // Node labels
+  // Labels
   const label = svg.append("g")
     .selectAll("text")
-    .data(graph.nodes)
+    .data(nodes)
     .join("text")
-    .text(function(d){ return d.name || d.id; })
-    .attr("font-size", 13)
+    .text(d => d.name || d.id)
+    .attr("font-size", d => 13 + Math.min(10, Math.round(d.degree / 2)))
     .attr("font-family", "sans-serif")
-    .attr("fill", "#333")
-    .attr("stroke", "white")
-    .attr("stroke-width", 2)
+    .attr("fill", "#222")
+    .attr("stroke", "#fff")
+    .attr("stroke-width", 3)
     .attr("paint-order", "stroke")
-    .attr("dy", 4)
-    .attr("text-anchor", "middle");
+    .attr("pointer-events", "none")
+    .attr("text-anchor", "middle")
+    .attr("dy", d => d.type === "agent" ? -28 : 32);
 
   // Zoom/pan
   svg.call(d3.zoom()
     .extent([[0, 0], [width, height]])
-    .scaleExtent([0.3, 2])
+    .scaleExtent([0.38, 2.3])
     .on("zoom", function(event) {
       svg.selectAll("g").attr("transform", event.transform);
-      label.attr("transform", event.transform);
     })
   );
 
   // Simulation tick
   simulation.on("tick", function() {
     link
-      .attr("x1", function(d){ return d.source.x; })
-      .attr("y1", function(d){ return d.source.y; })
-      .attr("x2", function(d){ return d.target.x; })
-      .attr("y2", function(d){ return d.target.y; });
-
+      .attr("x1", d => d.source.x)
+      .attr("y1", d => d.source.y)
+      .attr("x2", d => d.target.x)
+      .attr("y2", d => d.target.y);
     node
-      .attr("transform", function(d){ return "translate(" + d.x + "," + d.y + ")"; });
-
+      .attr("transform", d => "translate(" + d.x + "," + d.y + ")");
     label
-      .attr("x", function(d){ return d.x; })
-      .attr("y", function(d){ return d.y + 24; });
+      .attr("x", d => d.x)
+      .attr("y", d => d.type === "agent" ? d.y - 36 : d.y + 40);
   });
 
-  // Drag functions
+  // Dragging
   function dragstarted(event, d) {
-    if (!event.active) simulation.alphaTarget(0.3).restart();
+    if (!event.active) simulation.alphaTarget(0.33).restart();
     d.fx = d.x;
     d.fy = d.y;
-    console.log("Panel 1: Drag start", d);
+    simulation.alpha(0.38).alphaDecay(0.006).restart();
   }
   function dragged(event, d) {
     d.fx = event.x;
@@ -538,62 +558,13 @@ if (graph && Array.isArray(graph.nodes) && Array.isArray(graph.edges)) {
     if (!event.active) simulation.alphaTarget(0);
     d.fx = null;
     d.fy = null;
-    console.log("Panel 1: Drag end", d);
+    simulation.alpha(0.33).alphaDecay(0.008).restart();
+    setTimeout(function() {
+      simulation.alphaDecay(0.014);
+    }, 1600);
   }
-
-  // Legend
-  const legend = svg.append("g")
-    .attr("transform", "translate(20," + (height - 120) + ")");
-  const legendData = [
-    { type: "agent", label: "Agent" },
-    { type: "issue", label: "Issue" },
-    { type: "skill", label: "Skill" }
-  ];
-  legend.selectAll("path")
-    .data(legendData)
-    .join("path")
-    .attr("d", d3.symbol().type(function(d){ return nodeShapes[d.type]; }).size(400))
-    .attr("fill", function(d){ return nodeColors[d.type]; })
-    .attr("transform", function(d, i){ return "translate(0," + (i*32) + ")"; });
-  legend.selectAll("text")
-    .data(legendData)
-    .join("text")
-    .attr("x", 22)
-    .attr("y", function(d, i){ return i*32 + 6; })
-    .attr("font-size", 15)
-    .attr("font-family", "sans-serif")
-    .attr("fill", "#333")
-    .text(function(d){ return d.label; });
-
-  // Title
-  svg.append("text")
-    .attr("x", width/2)
-    .attr("y", 34)
-    .attr("text-anchor", "middle")
-    .attr("font-size", 22)
-    .attr("font-family", "sans-serif")
-    .attr("font-weight", "bold")
-    .attr("fill", "#222")
-    .text("Market Network Overview");
-
-  console.log("Panel 1: Render complete.");
-} else {
-  svg.append("text")
-    .attr("x", width/2)
-    .attr("y", 60)
-    .attr("text-anchor", "middle")
-    .attr("font-size", 20)
-    .attr("fill", "red")
-    .text("No data available for network overview.");
 }
 </script>
-<style>
-.network-tooltip {
-  z-index: 99;
-}
-</style>
-
-
 
 
 
