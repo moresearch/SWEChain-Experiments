@@ -70,21 +70,43 @@ go run swe_manager_task_distribution.go -input data/tasks.csv -llm_retries 5
 ```sh
 go run src/swe_manager_task_distribution.go \
   -input ./data/data.csv \
-  -output ./data \
-  -model granite3.3:8b \
+  -output ./data/tiny \
+  -model qwen3:32b \
   -ollama_url http://localhost:11434/api/generate \
-  -num_issues 10 \
+  -num_issues 25 \
+  -num_agents 5 \
   -llm_retries 5
 
 
-go run swe_manager_task_distribution.go \
+go run src/swe_manager_task_distribution.go \
   -input ./data/data.csv \
-  -output ./data/agents \
-  -model cogito:14b \
+  -output ./data/small \
+  -model qwen3:32b \
   -ollama_url http://localhost:11434/api/generate \
-  -num_issues 4 \
-  -num_agents 3 \
-  -llm_retries 2
+  -num_issues 50 \
+  -num_agents 10 \
+  -llm_retries 5
+
+
+go run src/swe_manager_task_distribution.go \
+  -input ./data/data.csv \
+  -output ./data/medium \
+  -model qwen3:32b \
+  -ollama_url http://localhost:11434/api/generate \
+  -num_issues 100 \
+  -num_agents 20 \
+  -llm_retries 5
+
+
+go run src/swe_manager_task_distribution.go \
+  -input ./data/data.csv \
+  -output ./data/large \
+  -model qwen3:32b \
+  -ollama_url http://localhost:11434/api/generate \
+  -num_issues 200 \
+  -num_agents 30 \
+  -llm_retries 5
+
 ```
 
 - Reads from `data/tasks.csv`
